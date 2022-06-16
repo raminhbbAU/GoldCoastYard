@@ -61,10 +61,9 @@ const DecoratorBlob2 = styled(SvgDecoratorBlob2)`
 export default ({
   heading = "Checkout the Menu",
   tabs = {
-    Starters: [
+    SUV: [
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Veg Mixer",
         content: "Tomato Salad & Carrot",
         price: "$5.99",
@@ -73,8 +72,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1432139555190-58524dae6a55?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Macaroni",
         content: "Cheese Pizza",
         price: "$2.99",
@@ -83,8 +81,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Nelli",
         content: "Hamburger & Fries",
         price: "$7.99",
@@ -93,8 +90,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Jalapeno Poppers",
         content: "Crispy Soyabeans",
         price: "$8.99",
@@ -103,8 +99,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Cajun Chicken",
         content: "Roasted Chicken & Egg",
         price: "$7.99",
@@ -113,8 +108,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Chillie Cake",
         content: "Deepfried Chicken",
         price: "$2.99",
@@ -123,8 +117,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Guacamole Mex",
         content: "Mexican Chilli",
         price: "$3.99",
@@ -133,8 +126,7 @@ export default ({
         url: "#"
       },
       {
-        imageSrc:
-          "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+        imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
         title: "Carnet Nachos",
         content: "Chilli Crispy Nachos",
         price: "$3.99",
@@ -143,9 +135,9 @@ export default ({
         url: "#"
       }
     ],
-    Main: getRandomCards(),
-    Soup: getRandomCards(),
-    Desserts: getRandomCards()
+    Sedan: getRandomCards(),
+    Hatchback: getRandomCards(),
+    Crossover: getRandomCards()
   }
 }) => {
   /*
@@ -237,8 +229,7 @@ export default ({
 const getRandomCards = () => {
   const cards = [
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Chicken Chilled",
       content: "Chicken Main Course",
       price: "$5.99",
@@ -247,8 +238,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1582254465498-6bc70419b607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Samsa Beef",
       content: "Fried Mexican Beef",
       price: "$3.99",
@@ -257,8 +247,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1565310022184-f23a884f29da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Carnet Nachos",
       content: "Chilli Crispy Nachos",
       price: "$3.99",
@@ -267,8 +256,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Guacamole Mex",
       content: "Mexican Chilli",
       price: "$3.99",
@@ -277,8 +265,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1550461716-dbf266b2a8a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Chillie Cake",
       content: "Deepfried Chicken",
       price: "$2.99",
@@ -287,8 +274,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327??ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Nelli",
       content: "Hamburger & Fries",
       price: "$7.99",
@@ -297,8 +283,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Jalapeno Poppers",
       content: "Crispy Soyabeans",
       price: "$8.99",
@@ -307,8 +292,7 @@ const getRandomCards = () => {
       url: "#"
     },
     {
-      imageSrc:
-        "https://images.unsplash.com/photo-1473093226795-af9932fe5856?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+      imageSrc: process.env.PUBLIC_URL + "/assets/images/car.jpg",
       title: "Cajun Chicken",
       content: "Roasted Chicken & Egg",
       price: "$7.99",

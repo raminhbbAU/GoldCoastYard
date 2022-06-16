@@ -18,7 +18,7 @@ const ThreeColumnContainer = styled.div`
   ${tw`mt-10 flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap lg:justify-center max-w-screen-lg mx-auto`}
 `;
 const Column = styled.div`
-  ${tw`lg:w-1/3 max-w-xs`}
+  ${tw`lg:w-1/3 max-w-xs border-4 border border-primary-300 rounded-lg mr-4`}
 `;
 
 const Card = styled.a`
@@ -49,6 +49,8 @@ const Card = styled.a`
 const DecoratorBlob = styled(SvgDecoratorBlob3)`
   ${tw`pointer-events-none absolute right-0 bottom-0 w-64 opacity-25 transform translate-x-32 translate-y-40`}
 `;
+
+const PrimaryButton = tw.button`font-bold px-8 lg:px-10 py-3 rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 focus:shadow-outline focus:outline-none transition duration-300`;
 
 export default ({
   cards = [
@@ -102,8 +104,7 @@ export default ({
                 <p className="description">{card.description}</p>
                 {linkText && (
                   <span className="link">
-                    <span>{linkText}</span>
-                    <ArrowRightIcon className="icon" />
+                    <PrimaryButton as="a" href={""}>{linkText}</PrimaryButton>               
                   </span>
                 )}
               </Card>
