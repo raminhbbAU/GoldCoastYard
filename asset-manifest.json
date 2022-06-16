@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/GoldCoastYard/static/css/main.05187c9d.chunk.css",
-    "main.js": "/GoldCoastYard/static/js/main.3e76ce6b.chunk.js",
-    "main.js.map": "/GoldCoastYard/static/js/main.3e76ce6b.chunk.js.map",
+    "main.js": "/GoldCoastYard/static/js/main.af7ee7ff.chunk.js",
+    "main.js.map": "/GoldCoastYard/static/js/main.af7ee7ff.chunk.js.map",
     "runtime-main.js": "/GoldCoastYard/static/js/runtime-main.0f256a6f.js",
     "runtime-main.js.map": "/GoldCoastYard/static/js/runtime-main.0f256a6f.js.map",
     "static/css/2.df954f26.chunk.css": "/GoldCoastYard/static/css/2.df954f26.chunk.css",
@@ -107,6 +107,6 @@
     "static/css/2.df954f26.chunk.css",
     "static/js/2.01369a33.chunk.js",
     "static/css/main.05187c9d.chunk.css",
-    "static/js/main.3e76ce6b.chunk.js"
+    "static/js/main.af7ee7ff.chunk.js"
   ]
 }
