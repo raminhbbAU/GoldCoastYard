@@ -35,7 +35,7 @@ const WatchVideoButton = styled.button`
   }
 `;
 
-const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w-none`;
+const IllustrationContainer = tw.div`flex justify-center md:justify-end items-center relative max-w-3xl lg:max-w`;
 
 // Random Decorator Blobs (shapes that you see in background)
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
@@ -79,52 +79,66 @@ export default ({
     <>
       <Header />
       <Container>
-        <TwoColumn>
-          <LeftColumn>
-            <Heading>{heading}</Heading>
-            <Paragraph>{description}</Paragraph>
-            <Actions>
-              <PrimaryButton as="a" href={primaryButtonUrl}>{primaryButtonText}</PrimaryButton>
-              
-              {watchVideoButtonText != "" && (
-                <WatchVideoButton onClick={toggleModal}>
-                  <span className="playIconContainer">
-                    <PlayIcon className="playIcon" />
-                  </span>
-                  <span className="playText">{watchVideoButtonText}</span>
-                </WatchVideoButton>
-              )}
-
-
-            </Actions>
-          </LeftColumn>
-          <RightColumn>
-            <IllustrationContainer>
-              <img
-                css={imageCss}
-                src={imageSrc}
-                alt="Hero"
-              />
-              {imageDecoratorBlob && <DecoratorBlob2 />}
-            </IllustrationContainer>
-          </RightColumn>
-        </TwoColumn>
-        <DecoratorBlob1 />
-        <StyledModal
-          closeTimeoutMS={300}
-          className="mainHeroModal"
-          isOpen={modalIsOpen}
-          onRequestClose={toggleModal}
-          shouldCloseOnOverlayClick={true}
-        >
-          <CloseModalButton onClick={toggleModal}>
-            <CloseIcon tw="w-6 h-6" />
-          </CloseModalButton>
-          <div className="content">
-            <ResponsiveVideoEmbed url={watchVideoYoutubeUrl} tw="w-full" />
-          </div>
-        </StyledModal>
+        <IllustrationContainer>
+          <img css={imageCss} src={imageSrc} alt="Hero" />
+        </IllustrationContainer>
       </Container>
     </>
   );
+
+  // return (
+  //   <>
+  //     <Header />
+  //     <Container>
+  //       <TwoColumn>
+  //         <LeftColumn>
+  //           <Heading>{heading}</Heading>
+  //           <Paragraph>{description}</Paragraph>
+  //           <Actions>
+  //             <PrimaryButton as="a" href={primaryButtonUrl}>{primaryButtonText}</PrimaryButton>
+              
+  //             {watchVideoButtonText != "" && (
+  //               <WatchVideoButton onClick={toggleModal}>
+  //                 <span className="playIconContainer">
+  //                   <PlayIcon className="playIcon" />
+  //                 </span>
+  //                 <span className="playText">{watchVideoButtonText}</span>
+  //               </WatchVideoButton>
+  //             )}
+
+
+  //           </Actions>
+  //         </LeftColumn>
+  //         <RightColumn>
+  //           <IllustrationContainer>
+  //             <img
+  //               css={imageCss}
+  //               src={imageSrc}
+  //               alt="Hero"
+  //             />
+  //             {imageDecoratorBlob && <DecoratorBlob2 />}
+  //           </IllustrationContainer>
+  //         </RightColumn>
+  //       </TwoColumn>
+  //       <DecoratorBlob1 />
+  //       <StyledModal
+  //         closeTimeoutMS={300}
+  //         className="mainHeroModal"
+  //         isOpen={modalIsOpen}
+  //         onRequestClose={toggleModal}
+  //         shouldCloseOnOverlayClick={true}
+  //       >
+  //         <CloseModalButton onClick={toggleModal}>
+  //           <CloseIcon tw="w-6 h-6" />
+  //         </CloseModalButton>
+  //         <div className="content">
+  //           <ResponsiveVideoEmbed url={watchVideoYoutubeUrl} tw="w-full" />
+  //         </div>
+  //       </StyledModal>
+  //     </Container>
+  //   </>
+  // );
+
+
+
 };

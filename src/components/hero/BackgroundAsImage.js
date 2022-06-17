@@ -6,21 +6,23 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import Header, { NavLink, NavLinks, PrimaryLink, LogoLink, NavToggle, DesktopNavLinks } from "../headers/light.js";
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
 
-const StyledHeader = styled(Header)`
-  ${tw`pt-8 max-w-none`}
-  ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
-    ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
-  }
-  ${NavToggle}.closed {
-    ${tw`text-gray-100 hover:text-primary-500`}
-  }
-`;
+
+
+// const StyledHeader = styled(Header)`
+//   ${tw`pt-8 max-w-none`}
+//   ${DesktopNavLinks} ${NavLink}, ${LogoLink} {
+//     ${tw`text-gray-100 hover:border-gray-300 hover:text-gray-300`}
+//   }
+//   ${NavToggle}.closed {
+//     ${tw`text-gray-100 hover:text-primary-500`}
+//   }
+// `;
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
-  background-image: url("https://images.unsplash.com/photo-1522071901873-411886a10004?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80");
+  background-image: url(${ ({Background}) => Background });
 `;
 
-const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-25`;
+const OpacityOverlay = tw.div`z-10 absolute inset-0 bg-primary-500 opacity-15`;
 
 const HeroContainer = tw.div`z-20 relative px-4 sm:px-8 max-w-screen-xl mx-auto`;
 const TwoColumn = tw.div`pt-24 pb-32 px-4 flex justify-between items-center flex-col lg:flex-row`;
@@ -55,34 +57,19 @@ const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
   }
 `;
 
-export default () => {
-  const navLinks = [
-    <NavLinks key={1}>
-      <NavLink href="#">
-        About
-      </NavLink>
-      <NavLink href="#">
-        Blog
-      </NavLink>
-      <NavLink href="#">
-        Locations
-      </NavLink>
-      <NavLink href="#">
-        Pricing
-      </NavLink>
-    </NavLinks>,
-    <NavLinks key={2}>
-      <PrimaryLink href="/#">
-        Hire Us
-      </PrimaryLink>
-    </NavLinks>
-  ];
+export default (
+  heading = "Modern React Templates, Just For You",
+  description="Our templates are easy to setup, understand and customize. Fully modular components with a variety of pages and components.",
+  primaryButtonText="Get Started",
+  primaryButtonUrl="#",
+) => {
 
   return (
-    <Container>
+    <Container Background={process.env.PUBLIC_URL + "/assets/images/banner01.jpg"}>
+    
       <OpacityOverlay />
       <HeroContainer>
-        <StyledHeader links={navLinks} />
+        <Header />
         <TwoColumn>
           <LeftColumn>
             <Notification>We have now launched operations in Europe.</Notification>
@@ -91,14 +78,9 @@ export default () => {
               <br />
               <SlantedBackground>Marketing Team.</SlantedBackground>
             </Heading>
-            <PrimaryAction>Read Customer Stories</PrimaryAction>
+            <PrimaryAction href={primaryButtonUrl}>{primaryButtonText}</PrimaryAction>
           </LeftColumn>
-          <RightColumn>
-            <StyledResponsiveVideoEmbed
-              url="//player.vimeo.com/video/374265101?title=0&portrait=0&byline=0&autoplay=0&responsive=1"
-              background="transparent"
-            />
-          </RightColumn>
+
         </TwoColumn>
       </HeroContainer>
     </Container>

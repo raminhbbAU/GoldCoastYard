@@ -5,6 +5,7 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import { Container, Content2Xl, ContentWithVerticalPadding } from "components/misc/Layouts";
 
 import Hero from "components/hero/TwoColumnWithVideo.js";
+import Hero2 from "components/hero/BackgroundAsImage.js";
 import Features from "components/features/ThreeColSimple.js";
 import TabGrid from "components/cards/TabCardGrid.js";
 
@@ -50,7 +51,7 @@ export default function Home () {
                 <Hero
                     heading={<>You Can Sell Your Car<HighlightedText>Just One Click!</HighlightedText></>}
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    imageSrc= {process.env.PUBLIC_URL + "/assets/images/back1.jpg"} 
+                    imageSrc= {process.env.PUBLIC_URL + "/assets/images/banner01.jpg"} 
                     imageCss={imageCss}
                     imageDecoratorBlob={true}
                     primaryButtonText="Order Now"
