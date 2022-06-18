@@ -1,0 +1,35 @@
+{
+    "Menu":"Menu",
+    "Home":"Home",
+    "UsedCar":"UsedCar",
+    "Finance":"Finance",
+    "Service":"Service",
+    "News":"News",
+    "Contact":"Contact",
+    "SellMyCar":"Sell My Car",
+
+    "Intro_Title":"Let's Find Your Next Car",
+    "Intro_Description":"Search for the best online inventories of used cars from dealers across the country",
+    "Intro_Button":[{"id":1,"color":"#FFF","title":"Read More"}] ,
+
+    "Service_Title":"",
+    "Service_Description":"",
+    "Service_List":[
+      {"id":1,"name":"Sell My Car","description":"description","img":"img/svg/car-rental.svg"},
+      {"id":2,"name":"Finance","description":"description","img":"img/svg/money.svg"},
+      {"id":3,"name":"Service","description":"description","img":"img/svg/service.svg"}
+    ],
+
+  
+    "Stock_Title":"200+ Available Vehicles",
+
+    "Tell us everything":"Tell us everything",
+    "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
+    "Let's Chat": "Let's Chat",
+    "Address": "Address",
+    "Address_Line1": "Adl Boulevard,",
+    "Address_Line2": "North Pounak district,",
+    "Address_Line3": "Tehran",
+    "Social media": "Social media"
+  }
+  
