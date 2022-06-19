@@ -17,7 +17,10 @@ export const CardSection = styled("div")`
 `;
 
 export const PageTitle = styled("h6")`
-  margin-bottom:100px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom:20px;
+  color:#616161;
 `;
 
 export const StockName = styled("p")`

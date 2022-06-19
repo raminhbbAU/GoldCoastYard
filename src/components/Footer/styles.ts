@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
-  background: rgb(227, 232, 243);
+  background: #212121;
   padding: 2.5rem 20px;
 `;
 
@@ -30,12 +30,11 @@ export const NavLink = styled(Link)`
 `;
 
 export const Extra = styled("section")`
-  background: rgb(241, 242, 243);
-  position: relative;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 2rem;
+  background: #212121;
+  display: flex;
+  justify-content: center;
+  alignItems: 'center',
+  padding-bottom: 5rem;
 `;
 
 export const LogoContainer = styled("div")`
@@ -44,7 +43,7 @@ export const LogoContainer = styled("div")`
 `;
 
 export const Para = styled("div")`
-  color: #18216d;
+  color: #FFFFFF;
   font-size: 14px;
   width: 70%;
 `;
@@ -69,9 +68,8 @@ export const Large = styled(Link)<any>`
 `;
 
 export const Chat = styled("p")`
-  color: #18216d;
+  color: #FFFF00;
   max-width: fit-content;
-  border-bottom: 1px solid #18216d;
   cursor: pointer;
   margin-top: 1rem;
   transition: all 0.3s ease-in-out;
@@ -126,9 +124,9 @@ export const FooterContainer = styled("div")`
 `;
 
 export const Language = styled("h4")`
-  font-size: 22px;
+  font-size: 16px;
   text-transform: capitalize;
-  color: #18216d;
+  color: #888;
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;
@@ -138,7 +136,7 @@ export const Language = styled("h4")`
 export const Right = styled("p")`
   font-size: 10px;
   text-transform: capitalize;
-  color: #888;
+  color: #FFFFFF;
 
   @media screen and (max-width: 414px) {
     padding: 1.5rem 0;

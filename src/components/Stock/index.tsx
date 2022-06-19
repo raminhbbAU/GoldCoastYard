@@ -19,8 +19,8 @@ const Stock = ({ title, Stocks, id}: Props) => {
     });
   };
 
-  const StockList = Stocks.map((member: any) => (    
-    <Col lg={8} md={8} sm={12} xs={24}>
+  const StockList = Stocks.slice(0, 4).map((member: any) => (    
+    <Col lg={6} md={8} sm={12} xs={24}>
       <CardSection>
         <CarThumbnailCard {...member}/>      
       </CardSection>
@@ -29,20 +29,17 @@ const Stock = ({ title, Stocks, id}: Props) => {
 
   return (
     <StockSection id={id}>
-      <Slide direction="down">
-
         <Row>
           <Col lg={24} md={24} sm={24} xs={24}>
             <PageTitle>{title}</PageTitle>
           </Col>
         </Row>
-
+      <Slide direction="down">
         {StockList && (
-          <Row align="top" justify="space-between">
+          <Row align="top" >
           {StockList}
           </Row>
         )}
-
       </Slide>
     </StockSection>
   );
