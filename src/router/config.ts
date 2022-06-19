@@ -1,10 +1,5 @@
 const routes = [
     {
-      path: "",
-      exact: true,
-      component: "Home",
-    },
-    {
       path: "/",
       exact: true,
       component: "Home",
@@ -18,6 +13,11 @@ const routes = [
       path: "/Home",
       exact: true,
       component: "Home",
+    },
+    {
+      path: "/UsedCar",
+      exact: true,
+      component: "UsedCar",
     },
   ];
   

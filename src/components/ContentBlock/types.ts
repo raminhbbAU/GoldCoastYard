@@ -7,5 +7,6 @@ export interface ContentBlockProps {
   t?: any;
   id: string;
   type?: string;
-  picture?: string
+  picture?: string;
+  minHeight?:any;
 }
