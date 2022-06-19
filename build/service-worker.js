@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/GoldCoastYard/precache-manifest.36fa26f5103001b6071b08936810deda.js"
+  "/GoldCoastYard/precache-manifest.24f7c0eabea912a9ddbde5aac7b153e2.js"
 );
 
 workbox.clientsClaim();
