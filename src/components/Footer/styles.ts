@@ -43,10 +43,11 @@ export const LogoContainer = styled("div")`
   position: relative;
 `;
 
-export const Para = styled("div")`
+export const Para = styled("div")<any>`
   color: #FFFFFF;
   font-size: 14px;
   width: 70%;
+  margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "0px")};
 `;
 
 export const Large = styled(Link)<any>`
@@ -156,4 +157,12 @@ export const Label = styled("label")`
     padding: 1.5rem 0;
     margin-bottom: 1rem;
   }
+`;
+
+
+export const SocialLink = styled("a")`
+  padding:3px;
+`;
+
+export const ChatOnlineLink = styled("a")`
 `;

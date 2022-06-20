@@ -34,13 +34,13 @@ const Stock = ({ title, Stocks, id}: Props) => {
             <PageTitle>{title}</PageTitle>
           </Col>
         </Row>
-      <Slide direction="down">
+      {/* <Slide direction="down"> */}
         {StockList && (
           <Row align="top" >
           {StockList}
           </Row>
         )}
-      </Slide>
+      {/* </Slide> */}
     </StockSection>
   );
 };

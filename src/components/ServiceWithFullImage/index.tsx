@@ -2,17 +2,16 @@ import React from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { ServiceSection, Content, ServiceLogo,ServiceName, PageTitle,CardSection } from "./styles";
+import { ServiceSection,ServiceName, PageTitle,CardSection } from "./styles";
 
 interface Props {
   title: string;
-  content: string;
   services: any;
   id: any;
   t: any;
 }
 
-const Service = ({ title, content, services, id, t }: Props) => {
+const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -21,11 +20,10 @@ const Service = ({ title, content, services, id, t }: Props) => {
   };
 
   const serviceList = services.map((member: any) => (    
-    <Col lg={8} md={8} sm={12} xs={24}>
-      <CardSection>
-        <ServiceLogo src={member.img}></ServiceLogo>
+    <Col lg={12} md={12} sm={24} xs={24}>
+      <CardSection src={member.img}>
         <ServiceName>{member.name}</ServiceName>
-        <Content>{member.description}</Content>      
+        {/* <Content>{member.description}</Content>       */}
       </CardSection>
     </Col>
   ));
@@ -46,4 +44,4 @@ const Service = ({ title, content, services, id, t }: Props) => {
   );
 };
 
-export default withTranslation()(Service);
+export default withTranslation()(ServiceWithFullImage);

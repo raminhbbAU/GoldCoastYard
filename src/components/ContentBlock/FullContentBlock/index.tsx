@@ -34,7 +34,7 @@ const FullBlock = ({
   return (
     <FullBlockContainer id={id} image ={picture}>
       <Fade direction="right">
-        <Row justify="space-between" align="middle">
+        <Row justify="space-between" align="top">
           <Col lg={24} md={24} sm={24} xs={24}>
             <ContentWrapper>
               <Heading>{t(title)}</Heading>

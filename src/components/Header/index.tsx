@@ -82,7 +82,7 @@ const Header = ({ t }: any) => {
           <Span>{t("Contact")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => navigateTo("SellCar")}>
-        <CustomYellowButton>{t("Sell My Car")}</CustomYellowButton>
+          <CustomYellowButton>{t("Sell My Car")}</CustomYellowButton>
         </CustomNavLinkSmall>
 
         
@@ -96,13 +96,13 @@ const Header = ({ t }: any) => {
 
         <Row justify="space-between" align="middle">
 
-            <Col lg={4} md={4} sm={4} xs={14} >
+            <Col lg={2} md={2} sm={4} xs={14} >
               <a>
-                <SvgIcon src="logo-image.svg" width="82px" height="82px" />
+                <SvgIcon src="logo-image.svg" width="96px" height="96px" />
               </a>
             </Col>
 
-            <Col lg={15} md={15} sm={0} xs={0}>
+            <Col lg={20} md={20} sm={0} xs={0}>
               <NotHidden>
                 <MenuItem />
               </NotHidden>

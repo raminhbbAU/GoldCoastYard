@@ -1,30 +1,40 @@
 import styled from "styled-components";
 
 export const ServiceSection = styled("section")`
-  position: relative;
+  display:flex;
   text-align: center;
   justify-content: center;
-  padding: 0 20px;
-
+  align-items: center;
+  margin-top:80px;
+  margin-bottom:80px;
 `;
 
-export const CardSection = styled("div")`
-  background-color:#FFF;
-  margin:10px;
+export const CardSection = styled("div")<any>`
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin:3px;
   border-radius: 5%;
-  padding: 10px;
-  box-shadow: 0px 0px #FAFAFA  ;
+  padding: 1px;
+  background-image: url(${(p) => (p.src ? p.src : "")});
+  background-size: cover;
+  background-repeat:no-repeat;
+  opacity:80%;
+  width: 350px;
+  height: 250px; 
 `;
 
 export const PageTitle = styled("h6")`
   margin-bottom:100px;
 `;
 
-export const ServiceName = styled("p")`
-  font-size: 16px;
+export const ServiceName = styled("a")`
+  font-size: 36px;
   font-weight: 600;
   margin-top:20px;
-  color:#7f7f7f;
+  color:#F0DA13;
+  opacity:100%;
 `;
 
 export const Content = styled("p")`
@@ -33,11 +43,6 @@ export const Content = styled("p")`
   color:#7f7f7f;
 `;
 
-export const ServiceLogo = styled("img")`
-  padding: 2px;
-  width: 64px;
-  height:64px;
-`;
 
 export const ContentWrapper = styled("div")`
   max-width: 570px;

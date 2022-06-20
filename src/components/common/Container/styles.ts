@@ -6,6 +6,8 @@ export const StyledContainer = styled("div")<any>`
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: ${(p) => (p.marginTop ? p.marginTop : "")};
+  margin-bottom: ${(p) => (p.marginBottom ? p.marginBottom : "")};
   border-top: ${(p) => (p.border ? "1px solid #CDD1D4" : "")};
   padding: ${(p) => (p.border ? "5px 20px" : "")};
 

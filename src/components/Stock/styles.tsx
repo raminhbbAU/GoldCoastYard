@@ -17,10 +17,12 @@ export const CardSection = styled("div")`
 `;
 
 export const PageTitle = styled("h6")`
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 800;
   margin-bottom:20px;
+  margin-left:20px;
   color:#616161;
+  text-align:left;
 `;
 
 export const StockName = styled("p")`

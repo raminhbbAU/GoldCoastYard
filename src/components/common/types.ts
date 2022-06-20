@@ -1,6 +1,9 @@
 export interface ContainerProps {
   border?: boolean;
-  children: React.ReactNode;
+  marginTop?:any;
+  marginBottom?:any;
+  children?: React.ReactNode;
+
 }
 
 export interface ButtonProps {

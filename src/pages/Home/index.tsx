@@ -11,7 +11,7 @@ const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Contact = lazy(() => import("../../components/ContactForm"));
 const Service = lazy(() => import("../../components/Service"));
 const Stock = lazy(() => import("../../components/Stock"));
-const Course = lazy(() => import("../../components/Course"));
+const ServiceWithFullImage = lazy(() => import("../../components/ServiceWithFullImage"));
 
 import { loadAvailableCars } from "../../API/api";
 
@@ -51,7 +51,7 @@ function Home({ t }: any) {
         title={t("Intro_Title")}
         content={t("Intro_Description")}
         button={t("Intro_Button", { returnObjects: true })}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner01.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
         id="home"
       />
       
@@ -66,6 +66,13 @@ function Home({ t }: any) {
        title={t("Stock_Title")}
        Stocks={availableCars}
        id="stock"
+      />
+
+
+      <ServiceWithFullImage
+       title={t("ServiceWithImage_Title")}
+       services={t("ServiceWithImage_List", { returnObjects: true })}
+       id="ServiceWithFullImage"
       />
 
     </Container>

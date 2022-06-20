@@ -12,6 +12,7 @@ export const CardSection = styled("section")`
   margin:10px;
   border-radius: 7%;
   padding: 2px;
+  box-shadow: 2px 3px #FAFAFA  ;
 `;
 
 export const Logo = styled.img`
@@ -21,31 +22,25 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled("p")`
-  color: #dcc709;
+  color: #FF9800;
   font-size: 15px;
   font-weight: 700;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
 `;
 
 export const Price = styled("p")`
-  font-size: 13px;
-  color: #7f7f7f;
+  font-size: 15px;
+  color: #212121;
   font-size: 12px;
-  font-weight: 800;
-  text-align:left;
+  font-weight: 600;
 `;
 
 export const FooterTitle = styled("p")`
-  font-size: 6px;
+  font-size: 8px;
   font-weight: 800;
-  color:#424242;
 `;
 
 
 export const FooterContent = styled("p")`
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 500;
-  color: #a8a8a8;
 `;

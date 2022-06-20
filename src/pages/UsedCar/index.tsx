@@ -13,14 +13,16 @@ import { loadAvailableCars } from "../../API/api";
 
 function UsedCar({ t }: any) {
 
-  const [availableCars,setAvailableCars]= useState([]);
+  const [availableCars,setAvailableCars]= useState<any>();
 
   useEffect(() => {  
+
+    setAvailableCars(loadAvailableCars());
 
     // loadAvailableCars()
     // .then( (res) => {
     //     console.log(res);
-    //     //setAvailableCars(res.data);
+    //     setAvailableCars(res);
     // }).catch( (err) => {
     //     console.log(err);
     // })
@@ -35,7 +37,7 @@ function UsedCar({ t }: any) {
         type= "full"
         title={""}
         content={""}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
         id="home"
       />
 
