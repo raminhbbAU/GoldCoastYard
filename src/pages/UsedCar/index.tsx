@@ -9,6 +9,7 @@ const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 import { loadAvailableCars } from "../../API/api";
+import CarSearchBox from '../../components/CarSearchBox';
 
 
 function UsedCar({ t }: any) {
@@ -35,12 +36,16 @@ function UsedCar({ t }: any) {
        
        <ContentBlock
         type= "full"
-        title={""}
-        content={""}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
+        title={t("Intro_Title")}
+        content={t("Intro_Description")}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
         id="home"
       />
 
+      <CarSearchBox
+        id="searchbox"
+        title={t("SearchBoxTitle")}
+      />
 
     </Container>
   );

@@ -19,7 +19,7 @@ import { loadAvailableCars } from "../../API/api";
 function Home({ t }: any) {
 
   const [ipLocationLoading,setIpLocationLoading]= useState(true);
-  const [availableCars,setAvailableCars]= useState<any>();
+  const [availableCars,setAvailableCars]= useState<any>([]);
   const location = useGeoLocation();
 
   useEffect(() => {  
@@ -62,6 +62,7 @@ function Home({ t }: any) {
        id="service"
       />
       
+
       <Stock
        title={t("Stock_Title")}
        Stocks={availableCars}

@@ -1,5 +1,5 @@
 import React,{ lazy, Suspense } from "react";
-import {Route, BrowserRouter, Switch} from 'react-router-dom'
+import {Route, BrowserRouter, Switch,Redirect} from 'react-router-dom'
 
 
 import routes from "./config";
@@ -22,9 +22,15 @@ const Router = () => {
         <Switch>   
           <Route exact path="/home" component={Home} />
           <Route exact path="/UsedCar" component={UsedCar} />
-          <Route exact path="*" component={NotFound} />
+          <Route exact path="/Finance" component={NotFound} />
+          <Route exact path="/Service" component={NotFound} />
+          <Route exact path="/News" component={NotFound} />
+          <Route exact path="/Contact" component={NotFound} />
+          <Route exact path="/SellCar" component={NotFound} />
+          <Route exact path="/404" component={NotFound} />
           <Route exact path="" component={Home} />
           <Route exact path="/" component={Home} />
+          <Redirect from='*' to='/404' />
         </Switch>
         <Footer />
       </BrowserRouter>

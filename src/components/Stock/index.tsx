@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
@@ -12,6 +12,9 @@ interface Props {
 }
 
 const Stock = ({ title, Stocks, id}: Props) => {
+
+  const [stockList,setStockList] = useState<any>();
+
   const scrollTo = (id: string) => {
     const element = document.getElementById(id) as HTMLDivElement;
     element.scrollIntoView({
@@ -19,13 +22,34 @@ const Stock = ({ title, Stocks, id}: Props) => {
     });
   };
 
-  const StockList = Stocks.slice(0, 4).map((member: any) => (    
-    <Col lg={6} md={8} sm={12} xs={24}>
-      <CardSection>
-        <CarThumbnailCard {...member}/>      
-      </CardSection>
-    </Col>
-  ));
+
+  useEffect(()=>{
+    filterStocksList();
+  },[Stocks])
+
+
+  const filterStocksList = () => {
+
+    if (Stocks){
+      
+      setStockList(
+        Stocks.slice(0, 4).map((member: any) => (    
+          <Col lg={6} md={8} sm={12} xs={24}>
+            <CardSection>
+              <CarThumbnailCard {...member}/>      
+            </CardSection>
+          </Col>
+        ))
+      )
+
+    }
+    else
+    {
+      setStockList(null);
+    }
+
+  }
+
 
   return (
     <StockSection id={id}>
@@ -35,9 +59,9 @@ const Stock = ({ title, Stocks, id}: Props) => {
           </Col>
         </Row>
       {/* <Slide direction="down"> */}
-        {StockList && (
+        {stockList && (
           <Row align="top" >
-          {StockList}
+          {stockList}
           </Row>
         )}
       {/* </Slide> */}

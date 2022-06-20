@@ -32,32 +32,34 @@ const FullBlock = ({
   };
   
   return (
+
     <FullBlockContainer id={id} image ={picture}>
-      <Fade direction="right">
-        <Row justify="space-between" align="top">
-          <Col lg={24} md={24} sm={24} xs={24}>
-            <ContentWrapper>
-              <Heading>{t(title)}</Heading>
-              <Content>{t(content)}</Content>
-              <ButtonWrapper>
-                {typeof button === "object" &&
-                  button.map((item: any, id: number) => {
-                    return (
-                      <CustomYellowButton
-                        key={id}
-                        color={item.color}
-                        onClick={() => scrollTo("about")}
-                      >
-                        {t(item.title)}
-                      </CustomYellowButton>
-                    );
-                  })}
-              </ButtonWrapper>
-            </ContentWrapper>
-          </Col>
-        </Row>
-      </Fade>
-    </FullBlockContainer>
+    <Fade direction="right">
+      <Row justify="space-between" align="top">
+        <Col lg={24} md={24} sm={24} xs={24}>
+          <ContentWrapper>
+            <Heading>{t(title)}</Heading>
+            <Content>{t(content)}</Content>
+            <ButtonWrapper>
+              {typeof button === "object" &&
+                button.map((item: any, id: number) => {
+                  return (
+                    <CustomYellowButton
+                      key={id}
+                      color={item.color}
+                      onClick={() => scrollTo("about")}
+                    >
+                      {t(item.title)}
+                    </CustomYellowButton>
+                  );
+                })}
+            </ButtonWrapper>
+          </ContentWrapper>
+        </Col>
+      </Row>
+    </Fade>
+  </FullBlockContainer>
+
   );
 };
 
