@@ -17,14 +17,13 @@ function UsedCar({ t }: any) {
 
   useEffect(() => {  
 
-    loadAvailableCars()
-    .then( (res) => {
-        console.log(res);
-        console.log(res.data);
-        setAvailableCars(res.data);
-    }).catch( (err) => {
-        console.log(err);
-    })
+    // loadAvailableCars()
+    // .then( (res) => {
+    //     console.log(res);
+    //     //setAvailableCars(res.data);
+    // }).catch( (err) => {
+    //     console.log(err);
+    // })
 
   }, []);
 

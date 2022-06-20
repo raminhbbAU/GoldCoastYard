@@ -15,9 +15,9 @@
     "Service_Title":"",
     "Service_Description":"",
     "Service_List":[
-      {"id":1,"name":"Sell My Car","description":"description","img":"img/svg/car-rental.svg"},
-      {"id":2,"name":"Finance","description":"description","img":"img/svg/money.svg"},
-      {"id":3,"name":"Service","description":"description","img":"img/svg/service.svg"}
+      {"id":1,"name":"Sell My Car","description":"description","img":"./img/svg/car-rental.svg"},
+      {"id":2,"name":"Finance","description":"description","img":"./img/svg/money.svg"},
+      {"id":3,"name":"Service","description":"description","img":"./img/svg/service.svg"}
     ],
 
   

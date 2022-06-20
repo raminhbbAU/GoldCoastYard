@@ -19,34 +19,22 @@ import { loadAvailableCars } from "../../API/api";
 function Home({ t }: any) {
 
   const [ipLocationLoading,setIpLocationLoading]= useState(true);
-  const [availableCars,setAvailableCars]= useState([]);
+  const [availableCars,setAvailableCars]= useState<any>();
   const location = useGeoLocation();
 
   useEffect(() => {  
 
-    loadAvailableCars()
-    .then( (res) => {
-        console.log(res);
-        console.log(res.data);
-        setAvailableCars(res.data);
-    }).catch( (err) => {
-        console.log(err);
-    })
 
-    // if (ipLocationLoading)
-    // {
-    //   if (!location.isLoading)
-    //   {
-    //     setIpLocationLoading(false);  
-    //     if (location.country === 'IR'){
-    //       languageChange("fa")
-    //     }
-    //     else{
-    //       languageChange("en")
-    //     }
-       
-    //   }
-    // }
+    setAvailableCars(loadAvailableCars());
+
+    // loadAvailableCars()
+    // .then( (res) => {
+    //     console.log(res);
+    //     setAvailableCars(res);
+    // }).catch( (err) => {
+    //     console.log(err);
+    // })
+
 
   }, []);
 
