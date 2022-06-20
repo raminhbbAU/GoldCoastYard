@@ -30,9 +30,7 @@ const FullBlock = ({
       behavior: "smooth",
     });
   };
-
-  console.log(button);
-
+  
   return (
     <FullBlockContainer id={id} image ={picture}>
       <Fade direction="right">

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface StyleProps {
   image?: string;
+  minimumheight?:any;
 } 
 
 export const FullBlockContainer = styled.section<StyleProps>`
@@ -10,10 +11,10 @@ export const FullBlockContainer = styled.section<StyleProps>`
   text-align: center;
   background-image: url(${props => props.image});
   background-repeat:no-repeat;
-  background-size: 1280px 600px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  border-radius: 50px;
+  background-size: 1280px 100%;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
   @media only screen and (max-width: 1024px) {
     padding: 8rem 0 6rem;
   }

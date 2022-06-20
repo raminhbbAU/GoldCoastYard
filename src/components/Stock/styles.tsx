@@ -5,7 +5,7 @@ export const StockSection = styled("section")`
   text-align: center;
   justify-content: center;
   padding: 0 20px;
-
+  margin-top: 80px;
 `;
 
 export const CardSection = styled("div")`
@@ -17,8 +17,8 @@ export const CardSection = styled("div")`
 `;
 
 export const PageTitle = styled("h6")`
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 25px;
+  font-weight: 800;
   margin-bottom:20px;
   color:#616161;
 `;

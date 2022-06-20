@@ -6,6 +6,9 @@ import Container from "../../components/common/Container";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import { Button } from "../../components/common/Button";
 
+import { useHistory  } from 'react-router-dom';
+
+
 import {
   HeaderSection,
   LogoContainer,
@@ -38,11 +41,9 @@ const Header = ({ t }: any) => {
     i18n.changeLanguage(language);
   };
 
-  const goToCorePanel = () => {
-    window.location.href = "http://www.core.nillteam.ir"
-  }
-
   const MenuItem = () => {
+
+    const history = useHistory();
 
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
@@ -56,28 +57,35 @@ const Header = ({ t }: any) => {
       }
     };
 
+    const navigateTo = (id: string) => {
+      history.push(`/${id}`);
+    };
+
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("home")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("home")}>
           <Span>{t("Home")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("Used Car")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("usedcar")}>
           <Span>{t("UsedCar")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("Finance")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Finance")}>
           <Span>{t("Finance")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("Service")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Service")}>
           <Span>{t("Service")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("News")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("News")}>
           <Span>{t("News")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("contact")}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Contact")}>
           <Span>{t("Contact")}</Span>
         </CustomNavLinkSmall>
-
+        <CustomNavLinkSmall onClick={() => navigateTo("SellCar")}>
         <CustomYellowButton>{t("Sell My Car")}</CustomYellowButton>
+        </CustomNavLinkSmall>
+
+        
       </>
     );
   };
