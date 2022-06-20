@@ -3,38 +3,40 @@
 		"id": 1,
 		"title" : "2015 Audi A5 8T MY15",
 		"Manufacture" :"Audi",
-		"body" :"SUV",
+		"body" :"Wagon",
 		"Model":"MY15",
 		"Cylinders":0,
 		"Horsepower":0,
 		"odometer":154000,
-		"Year":"",
-		"Color":"",
-		"State":"",
-		"Engine":"",
+		"Year":"White",
+		"Color":"White",
+		"State":"QLD",
+		"Engine":"2Lit",
 		"transmission":"manual",
-		"VIN":"",
+		"VIN":"23123123123123123123",
 		"price":23000,
-		"Overview":""
+		"Fuel":"Petrol",
+		"Overview":"Sample Text Sample Text"
 	}
 	,
 	{
 		"id": 2,
-		"title" : "2015 Audi A5 8T MY15",
-		"Manufacture" :"Audi",
-		"body" :"SUV",
+		"title" : "Toyota Crolla 2016",
+		"Manufacture" :"Toyota",
+		"body" :"Sedan",
 		"Model":"MY15",
-		"Cylinders":0,
+		"Cylinders":8,
 		"Horsepower":0,
 		"odometer":154000,
-		"Year":"",
-		"Color":"",
-		"State":"",
-		"Engine":"",
+		"Year":"2016",
+		"Color":"Black",
+		"State":"VIC",
+		"Engine":"xxx",
 		"transmission":"manual",
 		"VIN":"",
 		"price":23000,
-		"Overview":""
+		"Fuel":"Electricity",
+		"Overview":"Sample Text Sample Text"
 	}
 	,
 	{
@@ -53,6 +55,7 @@
 		"transmission":"manual",
 		"VIN":"",
 		"price":23000,
+		"Fuel":"Gasoline",
 		"Overview":""
 	}
 	,
@@ -72,6 +75,7 @@
 		"transmission":"manual",
 		"VIN":"",
 		"price":23000,
+		"Fuel":"Gasoline",
 		"Overview":""
 	}
 	,
@@ -91,6 +95,7 @@
 		"transmission":"manual",
 		"VIN":"",
 		"price":23000,
+		"Fuel":"Gasoline",
 		"Overview":""
 	}
 	,
@@ -110,6 +115,7 @@
 		"transmission":"manual",
 		"VIN":"",
 		"price":23000,
+		"Fuel":"Gasoline",
 		"Overview":""
 	}
 ]
