@@ -13,14 +13,13 @@ const Service = lazy(() => import("../../components/Service"));
 const Stock = lazy(() => import("../../components/Stock"));
 const ServiceWithFullImage = lazy(() => import("../../components/ServiceWithFullImage"));
 
-import { loadAvailableCars } from "../../API/api";
+import { loadAvailableCars,loadModels } from "../../API/api";
 
 
 function Home({ t }: any) {
 
-  const [ipLocationLoading,setIpLocationLoading]= useState(true);
   const [availableCars,setAvailableCars]= useState<any>([]);
-  const location = useGeoLocation();
+
 
   useEffect(() => {  
 

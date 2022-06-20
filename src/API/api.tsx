@@ -4,10 +4,147 @@ import axios from "axios";
 export function loadAvailableCars():any[] {
 
     //let res = await axios.get('./Stock Data.json');
-    console.log(carRepo);
+    //console.log(carRepo);
     return carRepo();
 }
 
+export function loadManufactures():any[] {
+
+    //let res = await axios.get('./Stock Data.json');
+    //console.log(carManufacture);
+    return carManufacture();
+}
+
+export function loadModels():any[] {
+
+    //let res = await axios.get('./Stock Data.json');
+    //console.log(carManufacture);
+    return carModel();
+}
+
+function carModel():any {
+    return (
+        [
+            {
+                "id":1,
+                "manufactureId":1,
+                "title":"A4"
+            }
+            ,
+            {
+                "id":2,
+                "manufactureId":1,
+                "title":"A3"
+            }
+            ,
+            {
+                "id":3,
+                "manufactureId":1,
+                "title":"A5"
+            }
+            ,
+            {
+                "id":4,
+                "manufactureId":1,
+                "title":"Q3"
+            }
+            ,
+            {
+                "id":5,
+                "manufactureId":1,
+                "title":"Q5"
+            }
+            ,
+            {
+                "id":6,
+                "manufactureId":2,
+                "title":"Mustang"
+            }
+            ,
+            {
+                "id":7,
+                "manufactureId":2,
+                "title":"Everest"
+            }
+            ,
+            {
+                "id":8,
+                "manufactureId":2,
+                "title":"Territory"
+            }
+            ,
+            {
+                "id":9,
+                "manufactureId":2,
+                "title":"Falcon"
+            }
+            ,
+            {
+                "id":10,
+                "manufactureId":2,
+                "title":"Ranger"
+            }
+            
+        ]
+    )
+}
+
+function carManufacture():any {
+    return (
+        [
+            {
+                "id":1,
+                "title":"Audi"
+            }
+            ,
+            {
+                "id":2,
+                "title":"Ford"
+            }
+            ,
+            {
+                "id":3,
+                "title":"Holden"
+            }
+            ,
+            {
+                "id":4,
+                "title":"Honda"
+            }
+            ,
+            {
+                "id":5,
+                "title":"Hyundai"
+            }
+            ,
+            {
+                "id":6,
+                "title":"Kia"
+            }
+            ,
+            {
+                "id":7,
+                "title":"Mitsubishi"
+            }
+            ,
+            {
+                "id":8,
+                "title":"Nissan"
+            }
+            ,
+            {
+                "id":9,
+                "title":"Toyota"
+            }
+            ,
+            {
+                "id":10,
+                "title":"Volkswagen"
+            }
+            
+        ]
+    )
+}
 
  function carRepo():any {
     return (

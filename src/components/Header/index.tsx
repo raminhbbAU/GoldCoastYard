@@ -91,7 +91,7 @@ const Header = ({ t }: any) => {
   };
 
   return (
-    <HeaderSection >
+    <HeaderSection id="header" >
       <Container>
 
         <Row justify="space-between" align="middle">

@@ -28,7 +28,7 @@ export const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #ECEFF1        ;
+        background: #ECEFF1;
         overflow-x: hidden;
     }
 
@@ -133,4 +133,12 @@ export const CustomYellowButton = styled("button")<any>`
   vertical-align: middle;
   white-space: nowrap;
   width: ${(p) => (p.width ? p.width : "auto")};
+  opacity: 0.9;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+
 `;

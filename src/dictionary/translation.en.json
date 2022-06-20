@@ -33,6 +33,9 @@
     "Quick Access":"Quick Access",
 
     "SearchBoxTitle":"Tell us What Are You Looking For",
+    "SearchBoxMakeTitle":"Select a make",
+    "SearchBoxModelTitle":"Select a model",
+    "SearchBoxButton":"Let's Go",
 
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",

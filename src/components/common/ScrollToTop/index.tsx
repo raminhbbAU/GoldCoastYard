@@ -25,12 +25,15 @@ const ScrollToTop = () => {
   }, []);
 
   const scrollUp = () => {
-    const element = document.getElementById("intro") as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-      inline: "nearest",
-    });
+    const element = document.getElementById("header") as HTMLDivElement;
+
+    if (element){
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+        inline: "nearest",
+      });
+    }
   };
 
   return (

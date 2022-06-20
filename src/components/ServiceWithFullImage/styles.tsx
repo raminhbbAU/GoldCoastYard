@@ -48,7 +48,7 @@ export const ContentWrapper = styled("div")`
   max-width: 570px;
   display: flex;
   justify-content: center;
-  alignItems: 'center',
+  align-items: 'center',
 
   @media only screen and (max-width: 768px) {
     max-width: 100%;

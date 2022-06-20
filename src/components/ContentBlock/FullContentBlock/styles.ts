@@ -7,7 +7,7 @@ interface StyleProps {
 
 export const FullBlockContainer = styled.section<StyleProps>`
   position: relative;
-  padding: 10rem 40px 8rem;
+  padding: 5px 5px 15px 5px;
   text-align: center;
   background-image: url(${props => props.image});
   background-repeat:no-repeat;

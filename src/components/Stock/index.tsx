@@ -8,10 +8,11 @@ import CarThumbnailCard from "../CarThumbnailCard";
 interface Props {
   title: string;
   Stocks: any;
+  limitationNumber?:any;
   id: any;
 }
 
-const Stock = ({ title, Stocks, id}: Props) => {
+const Stock = ({ title, Stocks,limitationNumber=4, id}: Props) => {
 
   const [stockList,setStockList] = useState<any>();
 
@@ -33,7 +34,7 @@ const Stock = ({ title, Stocks, id}: Props) => {
     if (Stocks){
       
       setStockList(
-        Stocks.slice(0, 4).map((member: any) => (    
+        Stocks.slice(0, limitationNumber).map((member: any) => (    
           <Col lg={6} md={8} sm={12} xs={24}>
             <CardSection>
               <CarThumbnailCard {...member}/>      
