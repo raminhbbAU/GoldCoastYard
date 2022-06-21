@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 export const FooterSection = styled("footer")`
   background: #212121;
-  padding: 2.5rem 20px;
   margin-top: 40px;
+  padding-top:50px;
+  padding-bottom:50px;
 `;
 
 export const Title = styled("h4")`
@@ -30,17 +31,62 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Extra = styled("section")`
+export const Extra = styled("div")`
   background: #212121;
   display: flex;
   justify-content: center;
-  alignItems: 'center',
+  align-items: 'center';
   padding-bottom: 5rem;
 `;
 
+export const SocialAndLogoContainer = styled("div")`
+  background: gray;
+  height:auto;
+  widows:100% ;
+  padding-left:15px;
+  padding-right:15px;
+`;
+
 export const LogoContainer = styled("div")`
-  display: flex;
-  position: relative;
+  background: Green;
+  height:100px;
+  width:100px;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+`;
+
+export const RightContainer = styled("div")`
+  background: blue;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+`;
+
+export const SocialLinkContainer = styled("div")`
+  background: yellow;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+`;
+
+
+export const Right = styled("p")`
+  font-size: 10px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+
+  @media screen and (max-width: 414px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 export const Para = styled("div")<any>`
@@ -135,15 +181,7 @@ export const Language = styled("h4")`
   }
 `;
 
-export const Right = styled("p")`
-  font-size: 10px;
-  text-transform: capitalize;
-  color: #FFFFFF;
 
-  @media screen and (max-width: 414px) {
-    padding: 1.5rem 0;
-  }
-`;
 
 export const Label = styled("label")`
   font-size: 22px;

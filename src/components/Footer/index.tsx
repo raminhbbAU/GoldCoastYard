@@ -20,6 +20,9 @@ import {
   Right,
   SocialLink,
   ChatOnlineLink,
+  SocialAndLogoContainer,
+  RightContainer,
+  SocialLinkContainer
 } from "./styles";
 
 
@@ -83,53 +86,95 @@ const Footer = ({ t }: any) => {
         </Container>
       </FooterSection>
 
+      <SocialAndLogoContainer>
+        <Row>
+          <Col lg={6} md={6} sm={6} xs={24}>
+            <LogoContainer>
+              <PngImage
+                src="logo2.png"
+                aria-label="homepage"
+                width="85px"
+                height="85px"
+              />
+            </LogoContainer>
+          </Col>
+
+          <Col lg={9} md={9} sm={12} xs={24}>
+            <RightContainer>
+              <Right>©2016-2022 The Gold Coast Yard. All Right Reserved.</Right>
+            </RightContainer>
+          </Col>
+
+          <Col lg={9} md={9} sm={6} xs={24}>
+            <SocialLinkContainer>
+              <Language>{t("Social media")}</Language>
+              <SocialIcons
+                        href={t("Instagram")}
+                        src="Instagram2.svg"
+              />
+              <SocialIcons
+                        href={t("Facebook")}
+                        src="Facebook.svg"
+              />
+              <SocialIcons
+                        href={t("WhatsUp")}
+                        src="Facebook.svg"
+              />
+              <SocialIcons
+                        href={t("Email")}
+                        src="Facebook.svg"
+              />
+            </SocialLinkContainer>              
+          </Col>
+
+        </Row>
+
+      </SocialAndLogoContainer>
 
       <Extra>
+      <Container border={true} marginTop={"50px"} marginBottom={"50px"}>    
+        <SocialAndLogoContainer>    
+              <Row>
+                <Col lg={4} md={4} sm={6} xs={24}>
+                    <NavLink to="/">
+                      <LogoContainer>
+                        <PngImage
+                          src="logo2.png"
+                          aria-label="homepage"
+                          width="101px"
+                          height="101px"
+                        />
+                      </LogoContainer>
+                    </NavLink>
+                </Col>
 
-        <Container border={true}>
-          
-          <Row justify="space-between" align="middle">
-           
-            <Col lg={4} md={4} sm={6} xs={24}>
-                <NavLink to="/">
-                  <LogoContainer>
-                    <PngImage
-                      src="logo2.png"
-                      aria-label="homepage"
-                      width="101px"
-                      height="64px"
+                <Col lg={10} md={10} sm={12} xs={24}>
+                  <Right>©2016-2022 The Gold Coast Yard. All Right Reserved.</Right>
+                </Col>
+
+                <Col lg={10} md={10} sm={6} xs={24}>
+                  <Language>{t("Social media")}</Language>
+                      <SocialIcons
+                        href={t("Instagram")}
+                        src="Instagram2.svg"
+                      />
+                      <SocialIcons
+                        href={t("Facebook")}
+                        src="Facebook.svg"
+                      />
+                      <SocialIcons
+                        href={t("WhatsUp")}
+                        src="Facebook.svg"
+                      />
+                      <SocialIcons
+                        href={t("Email")}
+                        src="Facebook.svg"
                     />
-                  </LogoContainer>
-                </NavLink>
-            </Col>
+                </Col>
 
-            <Col lg={10} md={10} sm={12} xs={24}>
-              <Right>©2016-2022 The Gold Coast Yard. All Right Reserved.</Right>
-            </Col>
-
-            <Col lg={10} md={10} sm={6} xs={24}>
-              <Language>{t("Social media")}</Language>
-                  <SocialIcons
-                    href={t("Instagram")}
-                    src="Instagram2.svg"
-                  />
-                  <SocialIcons
-                    href={t("Facebook")}
-                    src="Facebook.svg"
-                  />
-                  <SocialIcons
-                    href={t("WhatsUp")}
-                    src="Facebook.svg"
-                  />
-                  <SocialIcons
-                    href={t("Email")}
-                    src="Facebook.svg"
-                />
-            </Col>
-
-          </Row>
-        </Container>
-
+              </Row>
+        </SocialAndLogoContainer>  
+      </Container>
       </Extra>
 
     </>
