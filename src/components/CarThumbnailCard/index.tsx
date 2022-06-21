@@ -19,16 +19,6 @@ interface Props {
 
 const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: Props) => {
 
-  console.log(id);
-  console.log(title);
-
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   const findThumbnail = (carID:any) => {
     let path = process.env.PUBLIC_URL + `/img/asset/${carID}/thumbnail.jpg`;
     return path;

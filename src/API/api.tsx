@@ -151,6 +151,8 @@ function carManufacture():any {
         [
             {
                 "id": 1,
+                "manufacturId":2,
+                "modelId":6,
                 "title" : "2015 Audi A5 8T MY15",
                 "Manufacture" :"Audi",
                 "body" :"Wagon",
@@ -171,6 +173,8 @@ function carManufacture():any {
             ,
             {
                 "id": 2,
+                "manufacturId":2,
+                "modelId":6,
                 "title" : "Toyota Crolla 2016",
                 "Manufacture" :"Toyota",
                 "body" :"Sedan",
@@ -191,6 +195,8 @@ function carManufacture():any {
             ,
             {
                 "id": 3,
+                "manufacturId":1,
+                "modelId":1,
                 "title" : "2015 Audi A5 8T MY15",
                 "Manufacture" :"Audi",
                 "body" :"SUV",
@@ -211,6 +217,8 @@ function carManufacture():any {
             ,
             {
                 "id": 4,
+                "manufacturId":1,
+                "modelId":2,
                 "title" : "2015 Audi A5 8T MY15",
                 "Manufacture" :"Audi",
                 "body" :"SUV",
@@ -231,6 +239,8 @@ function carManufacture():any {
             ,
             {
                 "id": 5,
+                "manufacturId":1,
+                "modelId":2,
                 "title" : "2015 Audi A5 8T MY15",
                 "Manufacture" :"Audi",
                 "body" :"SUV",
@@ -251,6 +261,8 @@ function carManufacture():any {
             ,
             {
                 "id": 6,
+                "manufacturId":1,
+                "modelId":3,
                 "title" : "2015 Audi A5 8T MY15",
                 "Manufacture" :"Audi",
                 "body" :"SUV",

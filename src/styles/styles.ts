@@ -28,7 +28,7 @@ export const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #ECEFF1;
+        background: #fffef9;
         overflow-x: hidden;
     }
 
@@ -114,7 +114,7 @@ export const Styles = createGlobalStyle`
 
 
 export const CustomYellowButton = styled("button")<any>`
-  background-color: #F0DA13;
+  background-color: #f0da13;
   border: 0px solid rgba(27, 31, 35, .15);
   border-radius: 10px;
   box-sizing: border-box;
@@ -133,11 +133,12 @@ export const CustomYellowButton = styled("button")<any>`
   vertical-align: middle;
   white-space: nowrap;
   width: ${(p) => (p.width ? p.width : "auto")};
-  opacity: 0.9;
+  opacity: 1;
 
   &:hover,
   &:active,
   &:focus {
+    background-color: #dcc709;
     opacity: 1;
   }
 

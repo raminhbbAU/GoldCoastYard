@@ -8,6 +8,8 @@ import Stock from "../Stock";
 import { SectionContainer,CardSection,SearchBoxSection,Title,CustomSelect,FilterSection,CarListSection } from "./styles";
 import {CustomYellowButton} from "../../styles/styles";
 import Container from "../common/Container";
+import { Console } from "console";
+import { SvgIcon } from "../common/SvgIcon";
 
 interface Props {
   id: any,
@@ -17,60 +19,125 @@ interface Props {
 
 const CarSearchBox = ({ id,title,t }: Props) => {
 
+  const [isLoading,setIsLoading]= useState(false);
   const [availableCars,setAvailableCars]= useState<any>([]);
   const [carManufactures,setCarManufatures]= useState<any>([]);
   const [carModels,setCarModels]= useState<any>([]);
 
+  const [filterAvailableCars,setFilterAvailableCars]= useState<any>();
+  const [filterCarModels,setFilterCarModels]= useState<any>();
+
+  const [selectedManufacture,setSelectedManufacture]= useState<any>(0);
+  const [selectedModel,setSelectedModel]= useState<any>(0);
+
   useEffect(()=>{
     setAvailableCars(loadAvailableCars());
+    setFilterAvailableCars(loadAvailableCars());
     setCarManufatures(loadManufactures());
     setCarModels(loadModels());
+    setIsLoading(true);
   },[])
   
-  const renderManufactures = carManufactures.map((item: any) => (    
-    <Option value={item.id}>{item.title}</Option>
-  ));
 
-  const renderModels = carModels.map((item: any) => (    
-    <Option value={item.id}>{item.title}</Option>
-  ));
+  const changeManufactures = (value: any) => {
+    setSelectedManufacture(value);
+    setSelectedModel(0);
+
+    let models = carModels.filter( (i:any) => i.manufactureId == value);
+    setFilterCarModels(models);
+
+    if (models.length>0){
+      setSelectedModel(models[0].id);
+    }   
+
+  }
+
+  const changeModels = (value: any) => {
+    setSelectedModel(value);
+  }
+
+  const SearchClicked = () => {
+
+    console.log("SearchClicked");
+
+    if (selectedManufacture !=0){
+      setFilterCarModels(carModels.filter( (i:any) => i.manufactureId == selectedManufacture));
+    }
+    else
+    {
+      setFilterCarModels([]);
+    }
+
+    if (selectedManufacture ==0){
+      setFilterAvailableCars(availableCars);
+    }
+    else
+    {
+      if (selectedModel ==0){
+        setFilterAvailableCars(availableCars.filter( (i:any) => i.manufacturId == selectedManufacture ))
+      }
+      else
+      {
+        setFilterAvailableCars(availableCars.filter( (i:any) => i.manufacturId == selectedManufacture && i.modelId == selectedModel))
+      }
+    }   
+  }
+
 
   return (
-  <SectionContainer>
-      <CardSection>
-        <SearchBoxSection>
-          <Row>
-            <Col lg={24} md={24} sm={24} xs={24}>
-              <Title>{title}</Title>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={24}>
-              <CustomSelect  placeholder={t("SearchBoxMakeTitle")} size={"large"} style={{ width: '220px' }}>
-                {renderManufactures}
-              </CustomSelect>
-            </Col>
-            <Col lg={8} md={8} sm={12} xs={24}>
-              <CustomSelect placeholder={t("SearchBoxModelTitle")} size={"large"} style={{ width: '220px' }}>
-                {renderModels}
-              </CustomSelect>
-            </Col>
-            <Col lg={8} md={8} sm={24} xs={24}>
-              <CustomYellowButton width={"220px"}>
-                {t("SearchBoxButton")}
-              </CustomYellowButton>
-            </Col>
-          </Row>
-        </SearchBoxSection>
-      </CardSection>
-      <FilterSection>
+     <SectionContainer>
+        {isLoading && (
+          <>
+            <CardSection>
+              <SearchBoxSection>
+                <Row>
+                  <Col lg={24} md={24} sm={24} xs={24}>
+                    <Title>{title}</Title>
+                  </Col>
+                  <Col lg={8} md={8} sm={12} xs={24}>
+                    <CustomSelect  placeholder={t("SearchBoxMakeTitle")} size={"large"} style={{ width: '220px' }}  onChange={changeManufactures}>
+                      {carManufactures && (
+                        carManufactures.map((item: any) => (    
+                          <Option value={item.id}>{item.title}</Option>
+                        ))
+                      )}
+                    </CustomSelect>
+                  </Col>
+                  <Col lg={8} md={8} sm={12} xs={24}>
+                    <CustomSelect placeholder={t("SearchBoxModelTitle")} size={"large"} style={{ width: '220px' }} value={selectedModel !=0 ? selectedModel : t("SearchBoxModelTitle") }  onChange={changeModels}>
+                      {filterCarModels && (
+                        filterCarModels.map((item: any) => (    
+                          <Option value={item.id}>{item.title}</Option>
+                        ))
+                      )}
+                    </CustomSelect>
+                  </Col>
+                  <Col lg={8} md={8} sm={24} xs={24}>
+                    <CustomYellowButton width={"220px"} onClick = {SearchClicked}>
+                      {t("SearchBoxButton")}
+                    </CustomYellowButton>
+                  </Col>
+                </Row>
+              </SearchBoxSection>
+            </CardSection>
 
-      </FilterSection>
-      <CarListSection>
-          <Stock title={""} Stocks={availableCars} id="stock" limitationNumber={20} />
-      </CarListSection>
+            <FilterSection>
 
-  </SectionContainer>
+            </FilterSection>
 
+            <CarListSection>
+              {(filterAvailableCars.length>0 && (      
+                  <Stock title={ filterAvailableCars.length + "+ vehicles are Available"} Stocks={filterAvailableCars} id="stock" limitationNumber={20} />
+              ))}
+              {(filterAvailableCars.length ==0 && (      
+                  <SvgIcon src={'illustration_404.svg'} width="450px" height="450px"/>
+              ))}
+            </CarListSection>
+          </>
+        )}
+     </SectionContainer>
   );
+
 };
 
 export default withTranslation()(CarSearchBox);
