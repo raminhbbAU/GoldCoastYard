@@ -14,7 +14,15 @@ export const CardSection = styled("div")`
   border-radius: 5%;
   padding: 10px;
   box-shadow: 0px 0px #FAFAFA  ;
-`;
+  cursor: pointer;
+  opacity: 1;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.8;
+  }
+ `;
 
 export const PageTitle = styled("h6")`
   margin-bottom:100px;

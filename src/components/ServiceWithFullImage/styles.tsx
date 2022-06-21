@@ -23,13 +23,21 @@ export const CardSection = styled("div")<any>`
   opacity:80%;
   width: 350px;
   height: 250px; 
+  cursor: pointer;
+  opacity: 1;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.8;
+  }
 `;
 
 export const PageTitle = styled("h6")`
   margin-bottom:100px;
 `;
 
-export const ServiceName = styled("a")`
+export const ServiceName = styled("p")`
   font-size: 36px;
   font-weight: 600;
   margin-top:20px;

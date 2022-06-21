@@ -47,6 +47,16 @@ function UsedCar({ t }: any) {
         title={t("SearchBoxTitle")}
       />
 
+      <ContentBlock
+        type= "full"
+        title={t("SearchBoxFinanceTitle")}
+        content={t("SearchBoxFinanceDescription")}
+        picture={process.env.PUBLIC_URL + '/img/gallery/INSURANCE-banner.jpg'}
+        button={t("SearchBoxFinanceButton", { returnObjects: true })}
+        leftToRight={"left"}
+        id="home"
+      />
+
     </Container>
   );
 }

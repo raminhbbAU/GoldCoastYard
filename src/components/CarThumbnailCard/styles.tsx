@@ -7,11 +7,19 @@ interface StyleProps {
 export const CardSection = styled("section")`
   display: flex-row;
   justify-content: center;
-  alignItems: 'center',
-  background-color:#FFF;
+  align-items: 'center',
+  background-color:#FFFFFF;
   margin:10px;
   border-radius: 7%;
   padding: 2px;
+  cursor: pointer;
+  opacity: 1;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 0.8;
+  }
 `;
 
 export const Logo = styled.img`

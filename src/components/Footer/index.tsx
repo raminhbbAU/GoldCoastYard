@@ -6,6 +6,7 @@ import Container from "../../components/common/Container";
 import { PngImage } from "../common/PngImage";
 
 import {
+  MainSection,
   FooterSection,
   Title,
   NavLink,
@@ -42,13 +43,13 @@ const Footer = ({ t }: any) => {
         key={src}
         aria-label={src}
       >
-        <SvgIcon src={src} width="25px" height="25px"/>
+        <SvgIcon src={src} width="35px" height="35px"/>
       </SocialLink>
     );
   };
 
   return (
-    <>
+    <MainSection>
       <FooterSection id={"contact"}>
         <Container>
           <Row justify="space-between">
@@ -84,17 +85,21 @@ const Footer = ({ t }: any) => {
 
           </Row>
         </Container>
+
       </FooterSection>
 
+      <Container border={true} marginTop={"50px"} marginBottom={"10px"}/>
+
       <SocialAndLogoContainer>
+        
         <Row>
           <Col lg={6} md={6} sm={6} xs={24}>
             <LogoContainer>
-              <PngImage
-                src="logo2.png"
+              <SvgIcon
+                src="logo2.svg"
                 aria-label="homepage"
-                width="85px"
-                height="85px"
+                width="159px"
+                height="89px"
               />
             </LogoContainer>
           </Col>
@@ -130,54 +135,7 @@ const Footer = ({ t }: any) => {
         </Row>
 
       </SocialAndLogoContainer>
-
-      <Extra>
-      <Container border={true} marginTop={"50px"} marginBottom={"50px"}>    
-        <SocialAndLogoContainer>    
-              <Row>
-                <Col lg={4} md={4} sm={6} xs={24}>
-                    <NavLink to="/">
-                      <LogoContainer>
-                        <PngImage
-                          src="logo2.png"
-                          aria-label="homepage"
-                          width="101px"
-                          height="101px"
-                        />
-                      </LogoContainer>
-                    </NavLink>
-                </Col>
-
-                <Col lg={10} md={10} sm={12} xs={24}>
-                  <Right>©2016-2022 The Gold Coast Yard. All Right Reserved.</Right>
-                </Col>
-
-                <Col lg={10} md={10} sm={6} xs={24}>
-                  <Language>{t("Social media")}</Language>
-                      <SocialIcons
-                        href={t("Instagram")}
-                        src="Instagram2.svg"
-                      />
-                      <SocialIcons
-                        href={t("Facebook")}
-                        src="Facebook.svg"
-                      />
-                      <SocialIcons
-                        href={t("WhatsUp")}
-                        src="Facebook.svg"
-                      />
-                      <SocialIcons
-                        href={t("Email")}
-                        src="Facebook.svg"
-                    />
-                </Col>
-
-              </Row>
-        </SocialAndLogoContainer>  
-      </Container>
-      </Extra>
-
-    </>
+    </MainSection>
   );
 };
 

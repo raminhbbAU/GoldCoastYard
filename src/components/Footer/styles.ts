@@ -1,11 +1,20 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const FooterSection = styled("footer")`
+
+export const MainSection = styled("div")`
   background: #212121;
   margin-top: 40px;
   padding-top:50px;
   padding-bottom:50px;
+`;
+
+
+export const FooterSection = styled("footer")`
+  /* background: #212121;
+  margin-top: 40px;
+  padding-top:50px;
+  padding-bottom:50px; */
 `;
 
 export const Title = styled("h4")`
@@ -40,15 +49,14 @@ export const Extra = styled("div")`
 `;
 
 export const SocialAndLogoContainer = styled("div")`
-  background: gray;
+  background: #212121;
   height:auto;
   widows:100% ;
-  padding-left:15px;
+  padding-left:55px;
   padding-right:15px;
 `;
 
 export const LogoContainer = styled("div")`
-  background: Green;
   height:100px;
   width:100px;
   display:flex;
@@ -59,7 +67,6 @@ export const LogoContainer = styled("div")`
 `;
 
 export const RightContainer = styled("div")`
-  background: blue;
   display:flex;
   text-align: center;
   justify-content: center;
@@ -69,7 +76,6 @@ export const RightContainer = styled("div")`
 `;
 
 export const SocialLinkContainer = styled("div")`
-  background: yellow;
   display:flex;
   text-align: center;
   justify-content: center;
@@ -80,7 +86,8 @@ export const SocialLinkContainer = styled("div")`
 
 
 export const Right = styled("p")`
-  font-size: 10px;
+  font-size: 12px;
+  font-weight:600;
   text-transform: capitalize;
   color: #FFFFFF;
 

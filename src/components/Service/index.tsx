@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { ServiceSection, Content, ServiceLogo,ServiceName, PageTitle,CardSection } from "./styles";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -13,16 +14,16 @@ interface Props {
 }
 
 const Service = ({ title, content, services, id, t }: Props) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
+
+  const history = useHistory();
+
+  const navigateTo = (id: string) => {
+    history.push(`/${id}`);
   };
 
   const serviceList = services.map((member: any) => (    
     <Col lg={8} md={8} sm={12} xs={24}>
-      <CardSection>
+      <CardSection onClick={() => navigateTo(member.link)}>
         <ServiceLogo src={member.img}></ServiceLogo>
         <ServiceName>{member.name}</ServiceName>
         <Content>{member.description}</Content>      

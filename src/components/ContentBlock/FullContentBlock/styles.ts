@@ -7,7 +7,7 @@ interface StyleProps {
 
 export const FullBlockContainer = styled.section<StyleProps>`
   position: relative;
-  padding: 5px 5px 15px 5px;
+  padding: 10px 5px 15px 5px;
   text-align: center;
   background-image: url(${props => props.image});
   background-repeat:no-repeat;
@@ -22,12 +22,20 @@ export const FullBlockContainer = styled.section<StyleProps>`
     padding: 4rem 0 3rem;
   }
   max-height: 705px;
+  min-height: 350px;
   max-width: 1920px;
+`;
+
+
+export const CustomContainer = styled("div")<any>`
+  width:50%;
+  position: absolute;
+  right: ${props => props.leftToRight =="left" ? "0px": "auto"};
 `;
 
 export const Heading = styled("h6")`
   margin: 1.5rem 0 2rem 0;
-  color:#FFFFFF;
+  color:#f0da13;
 `;
 
 export const Content = styled("p")`
@@ -46,7 +54,7 @@ export const ContentWrapper = styled("div")`
 export const ButtonWrapper = styled("div")`
   display: flex;
   justify-content: center;
-  alignItems: 'center',
+  align-items: 'center',
   @media screen and (min-width: 1024px) {
     max-width: 80%;
   }

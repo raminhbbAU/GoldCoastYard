@@ -10,21 +10,21 @@
 
     "Intro_Title":"Let's Find Your Next Car",
     "Intro_Description":"Search for the best online inventories of used cars from dealers across the country",
-    "Intro_Button":[{"id":1,"color":"#FFF","title":"Read More"}] ,
+    "Intro_Button":[{"id":1,"color":"#FFF","title":"Read More","link":"usedcar"}] ,
 
     "Service_Title":"",
     "Service_Description":"",
     "Service_List":[
-      {"id":1,"name":"Sell My Car","description":"description","img":"./img/svg/car-rental.svg"},
-      {"id":2,"name":"Finance","description":"description","img":"./img/svg/money.svg"},
-      {"id":3,"name":"Service","description":"description","img":"./img/svg/service.svg"}
+      {"id":1,"name":"Sell My Car","description":"description","img":"./img/svg/car-rental.svg","link":"SellCar"},
+      {"id":2,"name":"Finance","description":"description","img":"./img/svg/money.svg","link":"Finance"},
+      {"id":3,"name":"Service","description":"description","img":"./img/svg/service.svg","link":"Service"}
     ],
 
     "ServiceWithImage_Title":"",
     "ServiceWithImage_Description":"",
     "ServiceWithImage_List":[
-      {"id":1,"name":"Finance","description":"","img":"./img/gallery/Finance.jpg"},
-      {"id":2,"name":"Insurance","description":"","img":"./img/gallery/Insurance.jpg"}
+      {"id":1,"name":"Finance","description":"","img":"./img/gallery/Finance.jpg","link":"Finance"},
+      {"id":2,"name":"Insurance","description":"","img":"./img/gallery/Insurance.jpg","link":"Insurance"}
     ],
 
   
@@ -36,6 +36,10 @@
     "SearchBoxMakeTitle":"Select a make",
     "SearchBoxModelTitle":"Select a model",
     "SearchBoxButton":"Let's Go",
+
+    "SearchBoxFinanceTitle":"Finance", 
+    "SearchBoxFinanceDescription":"If you don't have enough money, we are here to help you",
+    "SearchBoxFinanceButton":[{"id":1,"color":"#FFF","title":"Read More","link":"finance"}] ,
 
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
