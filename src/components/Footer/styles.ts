@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ClientRequest } from "http";
 
 
 export const MainSection = styled("div")`
@@ -7,6 +8,8 @@ export const MainSection = styled("div")`
   margin-top: 40px;
   padding-top:50px;
   padding-bottom:50px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 `;
 
 
@@ -15,6 +18,16 @@ export const FooterSection = styled("footer")`
   margin-top: 40px;
   padding-top:50px;
   padding-bottom:50px; */
+`;
+
+export const ThripleFooterContainer = styled("div")<any>`
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: ${(p)=> (p.alignItems ? p.alignItems : "stretch")} ;
+  padding-left:65px;     
+  height:100%;
+  width:100%;
 `;
 
 export const Title = styled("h4")`
@@ -63,7 +76,7 @@ export const LogoContainer = styled("div")`
   text-align: center;
   justify-content: center;
   align-items: center;
-
+  padding-left:65px;
 `;
 
 export const RightContainer = styled("div")`

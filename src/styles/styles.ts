@@ -3,7 +3,31 @@ import styled,{ createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
 
+     @font-face {
+        font-family: "Century Gothic";
+        src: url("/fonts/GOTHIC.TTF") format("truetype");
+        font-style: normal;
+    }
+
     @font-face {
+        font-family: "Century Gothic Bold";
+        src: url("/fonts/GOTHICB.TTF") format("truetype");
+        font-style: bold;
+    }
+
+    @font-face {
+        font-family: "Century Gothic Bold Italic";
+        src: url("/fonts/GOTHICBI.TTF") format("truetype");
+        font-style: bold italic;
+    }
+
+    @font-face {
+        font-family: "Century Gothic Italic";
+        src: url("/fonts/GOTHICI.TTF") format("truetype");
+        font-style: italic;
+    }
+
+    /* @font-face {
         font-family: "Motiva Sans Light";
         src: url("/fonts/Motiva-Sans-Light.ttf") format("truetype");
         font-style: normal;
@@ -13,13 +37,11 @@ export const Styles = createGlobalStyle`
         font-family: "Motiva Sans Bold";
         src: url("/fonts/Motiva-Sans-Bold.ttf") format("truetype");
         font-style: normal;
-    }
+    } */
 
 
-    body,
-    html,
-    a {
-        font-family: 'Motiva Sans Light', sans-serif;
+    * {
+        font-family: 'Century Gothic';
     }
 
 
@@ -30,6 +52,7 @@ export const Styles = createGlobalStyle`
         outline: 0;
         background: #fffef9;
         overflow-x: hidden;
+        font-family: 'Century Gothic';
     }
 
     a:hover {
@@ -58,7 +81,6 @@ export const Styles = createGlobalStyle`
     h4,
     h5,
     h6 {
-        font-family: 'Motiva Sans Bold', serif;
         color: #18216d;
         font-size: 56px;
         line-height: 1.18;
@@ -124,7 +146,7 @@ export const CustomYellowButton = styled("button")<any>`
   font-size: 13px;
   font-weight: 700;
   line-height: 20px;
-  padding: 6px 26px;
+  padding: 12px 40px;
   position: relative;
   text-align: center;
   user-select: none;

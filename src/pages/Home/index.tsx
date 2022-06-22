@@ -14,12 +14,24 @@ const Stock = lazy(() => import("../../components/Stock"));
 const ServiceWithFullImage = lazy(() => import("../../components/ServiceWithFullImage"));
 
 import { loadAvailableCars,loadModels } from "../../API/api";
+import { BannerHolder } from '../../components/common/BannerHolder';
+import { Button } from 'antd';
 
 
 function Home({ t }: any) {
 
   const [availableCars,setAvailableCars]= useState<any>([]);
 
+  const [height,setHeight] = useState(705);
+  const [width,setwidth] = useState(1920);
+
+
+  const setSize = (percentage:any) => {
+
+    setHeight(height + (height * (percentage/100)));
+    setwidth(width + (width * (percentage/100)));
+    
+  }
 
   useEffect(() => {  
 
@@ -37,9 +49,6 @@ function Home({ t }: any) {
 
   }, []);
 
-  const languageChange = (language: string) => {
-    i18n.changeLanguage(language);
-  };
 
   return (
     <Container>
@@ -52,8 +61,22 @@ function Home({ t }: any) {
         button={t("Intro_Button", { returnObjects: true })}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
         id="home"
-      />
+       />
+
+
+       {/* <br></br>
+      <Button onClick={() => setSize(10) }>+ 10%</Button>
+      <Button onClick={() => setSize(-10)}>- 10%</Button>
+      <div> width: {width} | height: {height}</div>
+
+      <BannerHolder
+        width={ width + "px"}
+        height={ height + "px"}
+        background={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
+      /> */}
       
+
+
       <Service
        title={t("Service_Title")}
        content={t("Service_Description")} 

@@ -5,8 +5,8 @@ export const ServiceSection = styled("section")`
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin-top:80px;
-  margin-bottom:80px;
+  margin-top:50px;
+  margin-bottom:50px;
 `;
 
 export const CardSection = styled("div")<any>`
@@ -21,8 +21,8 @@ export const CardSection = styled("div")<any>`
   background-size: cover;
   background-repeat:no-repeat;
   opacity:80%;
-  width: 350px;
-  height: 250px; 
+  width: 591px;
+  height: 419px; 
   cursor: pointer;
   opacity: 1;
 
@@ -38,8 +38,9 @@ export const PageTitle = styled("h6")`
 `;
 
 export const ServiceName = styled("p")`
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 52px;
+  font-weight: 900;
+  font-style:bold;
   margin-top:20px;
   color:#F0DA13;
   opacity:100%;

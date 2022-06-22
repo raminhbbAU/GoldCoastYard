@@ -36,6 +36,8 @@ export const CustomContainer = styled("div")<any>`
 export const Heading = styled("h6")`
   margin: 1.5rem 0 2rem 0;
   color:#f0da13;
+  font-family: 'Century Gothic Bold';
+  font-style:bold
 `;
 
 export const Content = styled("p")`

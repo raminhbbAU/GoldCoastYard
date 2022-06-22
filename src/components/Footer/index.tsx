@@ -8,6 +8,7 @@ import { PngImage } from "../common/PngImage";
 import {
   MainSection,
   FooterSection,
+  ThripleFooterContainer,
   Title,
   NavLink,
   Extra,
@@ -51,40 +52,46 @@ const Footer = ({ t }: any) => {
   return (
     <MainSection>
       <FooterSection id={"contact"}>
-        <Container>
+        <SocialAndLogoContainer>
           <Row justify="space-between">
 
-            <Col lg={10} md={10} sm={12} xs={24}>
-              <Language>{t("Online Chat")}</Language>
-              <Para marginbottom={"15px"}>
-                {t(`Do you have any question? Feel free to reach out.`)}
-              </Para>
-              <ChatOnlineLink href="https://wa.me/989381424797">
-                {/* <Chat>{t(`Let's Chat`)}</Chat> */}
-                <SvgIcon src={'chat.svg'} width="64px" height="64px"/>
-              </ChatOnlineLink>
+            <Col lg={8} md={8} sm={8} xs={24}>
+              <ThripleFooterContainer>
+                <Language>{t("Address")}</Language>
+                <Para>{t("Address_Line1")}</Para>
+                <Para>{t("Address_Line2")}</Para>
+                <Para marginbottom={"5px"}>{t("Address_Line3")}</Para>
+                <Language>{t("Tel")}</Language>
+                <Para>{t("Phone")}</Para>
+              </ThripleFooterContainer>
+            </Col>
+
+            <Col lg={8} md={8} sm={8} xs={24}>
+              <ThripleFooterContainer>
+                <Language>{t("Quick Access")}</Language>
+                <Para>Value My Car</Para>
+                <Para>Book a Service</Para>
+                <Para>Finance</Para>
+                <Para>Insurance</Para>
+              </ThripleFooterContainer>
+            </Col>
+
+            <Col lg={8} md={8} sm={8} xs={24}>
+              <ThripleFooterContainer alignItems={"center"}>
+                {/* <Language>{t("Online Chat")}</Language> */}
+                {/* <Para marginbottom={"15px"}>
+                  {t(`Do you have any question? Feel free to reach out.`)}
+                </Para> */}
+                <ChatOnlineLink href="https://wa.me/989381424797">
+                  {/* <Chat>{t(`Let's Chat`)}</Chat> */}
+                  <SvgIcon src={'chat.svg'} width="96px" height="96px"/>
+                </ChatOnlineLink>
+              </ThripleFooterContainer>
               
             </Col>
 
-            <Col lg={8} md={8} sm={12} xs={24}>
-              <Language>{t("Address")}</Language>
-              <Para>{t("Address_Line1")}</Para>
-              <Para>{t("Address_Line2")}</Para>
-              <Para marginbottom={"5px"}>{t("Address_Line3")}</Para>
-              <Language>{t("Tel")}</Language>
-              <Para>{t("Phone")}</Para>
-            </Col>
-
-            <Col lg={6} md={6} sm={0} xs={0}>
-              <Language>{t("Quick Access")}</Language>
-              <Para>Value My Car</Para>
-              <Para>Book a Service</Para>
-              <Para>Finance</Para>
-              <Para>Insurance</Para>
-            </Col>
-
           </Row>
-        </Container>
+        </SocialAndLogoContainer>
 
       </FooterSection>
 
@@ -98,8 +105,8 @@ const Footer = ({ t }: any) => {
               <SvgIcon
                 src="logo2.svg"
                 aria-label="homepage"
-                width="159px"
-                height="89px"
+                width="96px"
+                height="96px"
               />
             </LogoContainer>
           </Col>

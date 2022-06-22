@@ -23,8 +23,8 @@
     "ServiceWithImage_Title":"",
     "ServiceWithImage_Description":"",
     "ServiceWithImage_List":[
-      {"id":1,"name":"Finance","description":"","img":"./img/gallery/Finance.jpg","link":"Finance"},
-      {"id":2,"name":"Insurance","description":"","img":"./img/gallery/Insurance.jpg","link":"Insurance"}
+      {"id":1,"name":"FINANCE","description":"","img":"./img/gallery/Finance.jpg","link":"Finance"},
+      {"id":2,"name":"INSURANCE","description":"","img":"./img/gallery/Insurance.jpg","link":"Insurance"}
     ],
 
   

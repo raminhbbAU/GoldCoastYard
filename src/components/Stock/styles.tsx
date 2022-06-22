@@ -5,7 +5,7 @@ export const StockSection = styled("section")`
   text-align: center;
   justify-content: center;
   padding: 0 20px;
-  margin-top: 80px;
+  margin-top: 50px;
 `;
 
 export const CardSection = styled("div")`

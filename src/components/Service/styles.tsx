@@ -9,13 +9,18 @@ export const ServiceSection = styled("section")`
 `;
 
 export const CardSection = styled("div")`
+  display: flex;           /* establish flex container */
+  flex-direction: column;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: center;     /* center items horizontally, in this case */
   background-color:#FFF;
   margin:10px;
-  border-radius: 5%;
-  padding: 10px;
-  box-shadow: 0px 0px #FAFAFA  ;
+  border-radius: 8%;
+  box-shadow: 3px 3px 3px 3px #f5f4f4  ;
   cursor: pointer;
   opacity: 1;
+  height:250px;
+  height:250px;
 
   &:hover,
   &:active,
@@ -25,19 +30,20 @@ export const CardSection = styled("div")`
  `;
 
 export const PageTitle = styled("h6")`
-  margin-bottom:100px;
+  margin-bottom:50px;
 `;
 
 export const ServiceName = styled("p")`
-  font-size: 16px;
-  font-weight: 600;
-  margin-top:20px;
+  font-size: 17px;
+  font-weight: 900;
+  font-style:bold;
+  margin-top:5px;
   color:#7f7f7f;
 `;
 
 export const Content = styled("p")`
   font-size: 15px;
-  margin-bottom:50px;
+  margin-top:5px;
   color:#7f7f7f;
 `;
 
@@ -51,7 +57,7 @@ export const ContentWrapper = styled("div")`
   max-width: 570px;
   display: flex;
   justify-content: center;
-  alignItems: 'center',
+  align-items: 'center';
 
   @media only screen and (max-width: 768px) {
     max-width: 100%;
