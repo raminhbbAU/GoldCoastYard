@@ -5,6 +5,7 @@ import { CardSection, Logo  ,Title, Price,FooterTitle,FooterContent } from "./st
 import {CustomYellowButton} from "../../styles/styles";
 import { SvgIcon } from "../common/SvgIcon";
 import Container from "../common/Container";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   id: any,
@@ -13,16 +14,22 @@ interface Props {
   transmission: string;
   odometer: any;
   body: string;
-  fuel: string;
+  Fuel: string;
   t: any;
 }
 
-const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: Props) => {
+const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,Fuel,t }: Props) => {
+
+  const history = useHistory();
 
   const findThumbnail = (carID:any) => {
     let path = process.env.PUBLIC_URL + `/img/asset/${carID}/thumbnail.jpg`;
     return path;
   }
+
+  const navigateTo = (id: string) => {
+    history.push(`/CarDetails/${id}`);
+  };
 
   return (
   <CardSection>
@@ -54,13 +61,13 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: 
         <Col lg={6} md={6} sm={6} xs={6}>
           <SvgIcon src="fuel.svg" aria-label="Fuel" width="25px" height="25px" />
           <FooterTitle>Fuel</FooterTitle>
-          <FooterContent>{fuel}</FooterContent>
+          <FooterContent>{Fuel}</FooterContent>
         </Col>
     </Row>
 
     <Container border={true} marginBottom={"10px"} marginTop={"10px"}/>
 
-    <CustomYellowButton width={"100%"}>
+    <CustomYellowButton width={"100%"} onClick={() => navigateTo(id)}>
         {t("MoreInfo")}
     </CustomYellowButton>
 
