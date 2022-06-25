@@ -12,6 +12,7 @@ import Home from "../pages/Home";
 import UsedCar from "../pages/UsedCar";
 import NotFound from "../pages/NotFound";
 import CarDetails from "../pages/CarDetails";
+import SellCar from "../pages/SellCar";
 
 
 const Router = () => {
@@ -27,7 +28,7 @@ const Router = () => {
           <Route exact path="/Service" component={NotFound} />
           <Route exact path="/News" component={NotFound} />
           <Route exact path="/Contact" component={NotFound} />
-          <Route exact path="/SellCar" component={NotFound} />
+          <Route exact path="/SellCar" component={SellCar} />
           <Route exact path="/Insurance" component={NotFound} />
           <Route exact path="/CarDetails/:id" component={CarDetails} />
           <Route exact path="/404" component={NotFound} />

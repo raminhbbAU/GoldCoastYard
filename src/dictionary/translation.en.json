@@ -69,6 +69,9 @@
     "CarDetails_Finance2BoxButton":"Apply Now", 
     "CarDetails_Finance2BoxLogo":"applyfinance.png", 
 
+    "SellCar_Title":"We Buy Your Car",
+    "SellCar_SubTitle":"Simply give your vehicle registration and mileage along with a way to receive your valuation.", 
+    "SellCar_Description" : "Considering selling your current car quickly but unsure of what to expect? We can guide you through the process. Car buying services often prove to be the fastest way to sell your car. Simply enter a few details online and they will offer you an estimated price for your vehicle. However, your valuation can change depending on the condition of your car. When you take your vehicle to the premises of a car buying service, your car will be inspected before the final price is agreed.",
 
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
