@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import Home from "../pages/Home";
 import UsedCar from "../pages/UsedCar";
 import NotFound from "../pages/NotFound";
+import CarDetails from "../pages/CarDetails";
 
 
 const Router = () => {
@@ -28,6 +29,7 @@ const Router = () => {
           <Route exact path="/Contact" component={NotFound} />
           <Route exact path="/SellCar" component={NotFound} />
           <Route exact path="/Insurance" component={NotFound} />
+          <Route exact path="/CarDetails/:id" component={CarDetails} />
           <Route exact path="/404" component={NotFound} />
           <Route exact path="" component={Home} />
           <Route exact path="/" component={Home} />
