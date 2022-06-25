@@ -13,6 +13,14 @@ export function loadCarInfo(id:any):any {
     //let res = await axios.get('./Stock Data.json');
     //console.log(carRepo);
     let res = carRepo().filter(item => item.id == id).at(0);
+    return res;
+}
+
+export function loadCarPictures(id:any):any {
+
+    //let res = await axios.get('./Stock Data.json');
+
+    let res = carPictures().filter(item => item.id == id).at(0).images;
     console.log(res);
     return res;
 }
@@ -32,6 +40,99 @@ export function loadModels():any[] {
 }
 
 
+function carPictures():any[] {
+    return (
+        [
+            {
+                "id":1,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${3}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${4}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${5}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${6}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${7}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${8}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${9}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${10}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${11}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${12}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${1}/gallery${13}.jpg`,
+                ]
+            }
+            ,
+            {
+                "id":2,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${3}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${4}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${5}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${6}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${2}/gallery${7}.jpg`,
+                ]
+            }
+            ,
+            {
+                "id":3,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${3}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${4}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${5}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${6}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${7}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${3}/gallery${8}.jpg`,
+                ]
+            }
+            ,  
+            {
+                "id":4,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${3}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${4}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${5}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${6}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${4}/gallery${7}.jpg`,
+                ]
+            }
+            ,  
+            {
+                "id":5,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${3}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${4}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${5}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${6}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${7}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${8}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${9}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${10}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${11}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${5}/gallery${12}.jpg`,
+                ]
+            }
+            ,  
+            {
+                "id":6,
+                "images":[
+                        process.env.PUBLIC_URL + `/img/asset/${6}/gallery${1}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${6}/gallery${2}.jpg`,
+                        process.env.PUBLIC_URL + `/img/asset/${6}/gallery${3}.jpg`,
+                ]
+            }
+            ,  
+
+        ]
+    )
+}
 
 
 function carModel():any[] {

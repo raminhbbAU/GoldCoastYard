@@ -4,10 +4,12 @@ import { withTranslation } from "react-i18next";
 import { useRouteMatch } from "react-router-dom";
 import { loadCarInfo } from "../../API/api";
 import Container from "../../components/common/Container";
+import OfferBox from "../../components/OfferBox";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import Gallery from "../../components/Gallery";
 
 import { MainContainer,GalleryLeftContainer,GalleryContainer,OfferRightContainer, CarDetailIconContainer, CarDetailIconText, CarTitle, CarDetailListContainer, CarDetailListTitle, CarDetailListValue, CarDetailListSectionTitle } from "./styles";
+import OptionBox from "../../components/OptionBox";
 
 
 function CarDetails ({t,vehicleInfo}:any) {
@@ -41,6 +43,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                 <MainContainer>
                     
                     <CarTitle>{carInfo.title}</CarTitle>
+                    
                     <Row justify="space-between">
                         <Col lg={18} md={18} sm={24} xs={24}>
                             <GalleryLeftContainer>
@@ -52,7 +55,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col lg={20} md={20} sm={20} xs={20}>
+                                    <Col lg={20} md={24} sm={24} xs={24}>
                                         <CarDetailIconContainer>
                                             <Row align="top" >
                                                 <Col lg={6} md={6} sm={6} xs={6}>
@@ -76,9 +79,9 @@ function CarDetails ({t,vehicleInfo}:any) {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col lg={20} md={20} sm={20} xs={20}>
+                                    <Col lg={20} md={24} sm={24} xs={24}>
                                         <CarDetailListSectionTitle>
-                                            Details
+                                            {t("CarDetails_DetailTitle")}
                                         </CarDetailListSectionTitle>
                                         <CarDetailListContainer>
                                             <Container>
@@ -223,9 +226,9 @@ function CarDetails ({t,vehicleInfo}:any) {
                                             </Container>
                                         </CarDetailListContainer>
                                     </Col>
-                                    <Col lg={20} md={20} sm={20} xs={20}>
+                                    <Col lg={20} md={24} sm={24} xs={24}>
                                         <CarDetailListSectionTitle>
-                                            Overview
+                                            {t("CarDetails_OverviewTitle")}
                                         </CarDetailListSectionTitle>
                                         <CarDetailListValue>
                                             {carInfo.Overview}
@@ -236,24 +239,14 @@ function CarDetails ({t,vehicleInfo}:any) {
                         </Col>
                         <Col lg={6} md={6} sm={24} xs={24}>
                             <OfferRightContainer>
-                                Right Panel for Insurance 
-                                Right Panel for Test Drive
-                                ...
-                            </OfferRightContainer>
-                            <OfferRightContainer>
-                                Right Panel for Insurance 
-                                Right Panel for Test Drive
-                                ...
-                            </OfferRightContainer>
-                            <OfferRightContainer>
-                                Right Panel for Insurance 
-                                Right Panel for Test Drive
-                                ...
-                            </OfferRightContainer>
-                            <OfferRightContainer>
-                                Right Panel for Insurance 
-                                Right Panel for Test Drive
-                                ...
+                                <OfferBox title ={t("CarDetails_PriceBoxTitle")} price={'$ ' + carInfo.price} priceDetail= {""} buttonText={t("CarDetails_PriceBoxEnquireTitle")} color={"#dd4117"} onClick={ () => console.log("Click!")} />
+                                <OfferBox title ={t("CarDetails_FinanceBoxTitle")} price={'$ ' + (carInfo.price/60).toFixed(1)} priceDetail= {t("CarDetails_FinanceBoxDetail")} buttonText={t("CarDetails_FinanceBoxApplyTitle")} color={"#005cc8"} onClick={ () => console.log("Click!")} />
+                               
+                                <OptionBox title ={t("CarDetails_AvailabilityBoxTitle")} subTitle= {t("CarDetails_AvailabilityBoxDesc")} logo={t("CarDetails_AvailabilityBoxLogo")} buttonText={t("CarDetails_AvailabilityBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} />
+                                <OptionBox title ={t("CarDetails_TestDriveBoxTitle")} subTitle= {t("CarDetails_TestDriveBoxDesc")} logo={t("CarDetails_TestDriveBoxLogo")} buttonText={t("CarDetails_TestDriveBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} />
+                                <OptionBox title ={t("CarDetails_OfferPriceBoxTitle")} subTitle= {t("CarDetails_OfferPriceBoxDesc")} logo={t("CarDetails_OfferPriceBoxLogo")} buttonText={t("CarDetails_OfferPriceBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} />
+                                <OptionBox title ={t("CarDetails_Finance2BoxTitle")} subTitle= {t("CarDetails_Finance2BoxDesc")} logo={t("CarDetails_Finance2BoxLogo")} buttonText={t("CarDetails_Finance2BoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} />
+
                             </OfferRightContainer>
                         </Col>
                     </Row>

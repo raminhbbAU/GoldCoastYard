@@ -73,6 +73,7 @@ const Footer = ({ t }: any) => {
                 <Para>Book a Service</Para>
                 <Para>Finance</Para>
                 <Para>Insurance</Para>
+                <Para>Terms & Conditions</Para>
               </ThripleFooterContainer>
             </Col>
 

@@ -20,7 +20,7 @@ export const MainImage = styled("img")<any>`
 
 export const ImageSelector = styled("section")<any>` 
   display: flex;           /* establish flex container */
-  flex-direction: column;  /* make main axis vertical */
+  flex-direction: ${(p) => (p.direction ? p.direction : "column")};  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items:center;
 `;
@@ -48,8 +48,10 @@ export const ImageSelectorArrow = styled("div")<any>`
 export const ImageSelectorThumbnail = styled("img")<any>`
   height: ${(p) => (p.height ? p.height : "100px")};
   width: ${(p) => (p.width ? p.width : "100px")};
-  border: ${(p) => (p.border ? "4px solid #f0da13" : "")};
+  border: ${(p) => (p.border ? "2px solid #f0da13" : "")};
   margin-top:5px;
   margin-bottom:5px;
+  margin-right:5px;
+  margin-left:5px;
   border-radius:5px;
 `;

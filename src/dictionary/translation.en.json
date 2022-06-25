@@ -41,6 +41,35 @@
     "SearchBoxFinanceDescription":"If you don't have enough money, we are here to help you",
     "SearchBoxFinanceButton":[{"id":1,"color":"#FFF","title":"Read More","link":"finance"}] ,
 
+    "CarDetails_DetailTitle":"Details", 
+    "CarDetails_OverviewTitle":"OverView", 
+    "CarDetails_PriceBoxTitle":"Today Price", 
+    "CarDetails_PriceBoxEnquireTitle":"Enquire Now", 
+    "CarDetails_FinanceBoxTitle":"Get finance from", 
+    "CarDetails_FinanceBoxDetail":"per week ( 60-month term )", 
+    "CarDetails_FinanceBoxApplyTitle":"Apply Now", 
+
+    "CarDetails_AvailabilityBoxTitle":"Check Availability", 
+    "CarDetails_AvailabilityBoxDesc":"Find out if this car is still available", 
+    "CarDetails_AvailabilityBoxButton":"Message", 
+    "CarDetails_AvailabilityBoxLogo":"checkavailability.png", 
+
+    "CarDetails_TestDriveBoxTitle":"Test Drive", 
+    "CarDetails_TestDriveBoxDesc":"Book a test drive", 
+    "CarDetails_TestDriveBoxButton":"Book", 
+    "CarDetails_TestDriveBoxLogo":"testdrive.png", 
+
+    "CarDetails_OfferPriceBoxTitle":"Offer A Price", 
+    "CarDetails_OfferPriceBoxDesc":"Let us what you offer for this vehicle", 
+    "CarDetails_OfferPriceBoxButton":"Enquire", 
+    "CarDetails_OfferPriceBoxLogo":"negotiateprice.png", 
+
+    "CarDetails_Finance2BoxTitle":"Finance Options", 
+    "CarDetails_Finance2BoxDesc":"Fast financing options available", 
+    "CarDetails_Finance2BoxButton":"Apply Now", 
+    "CarDetails_Finance2BoxLogo":"applyfinance.png", 
+
+
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
     "Let's Chat": "Let's Online Chat",

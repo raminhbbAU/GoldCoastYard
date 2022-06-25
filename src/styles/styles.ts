@@ -136,11 +136,11 @@ export const Styles = createGlobalStyle`
 
 
 export const CustomYellowButton = styled("button")<any>`
-  background-color: #f0da13;
-  border: 0px solid rgba(27, 31, 35, .15);
+  background-color: ${(p) => (p.backgroundColor ? p.backgroundColor : "#f0da13")};
+  border: ${(p) => (p.border ? p.border : "0px solid transparent")};
   border-radius: 10px;
   box-sizing: border-box;
-  color: #212121;
+  color: ${(p) => (p.color ? p.color : "#212121")};
   cursor: pointer;
   display: inline-block;
   font-size: 13px;
@@ -160,8 +160,8 @@ export const CustomYellowButton = styled("button")<any>`
   &:hover,
   &:active,
   &:focus {
-    background-color: #dcc709;
-    opacity: 1;
+    //background-color: #dcc709;
+    opacity: 0.8;
   }
 
 `;

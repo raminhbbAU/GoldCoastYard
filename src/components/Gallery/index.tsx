@@ -4,31 +4,63 @@ import { withTranslation } from "react-i18next";
 
 import { ImageSelector, MainContainer, MainImage, MainImageHolder,ImageSelectorArrow, ImageSelectorThumbnail } from './styles';
 import { UpCircleFilled,DownCircleFilled} from '@ant-design/icons';
+import { loadCarPictures } from '../../API/api';
 
 
 const Gallery = ({t,carInfo}:any) => {
 
 
     const [isloading,setIsLoading] = useState(false);
-    const [carImages,setCarImages] = useState([1,2,3,4,5,6,7,8,9,10,11,12,13]);
-    const [imageId,setImageId] = useState(1);
-
+    const [carImages,setCarImages] = useState<any>([]);
+    const [curImage,setCurImage] = useState('');
+    const [sliderFirstIndex,setSliderFirstIndex] = useState(0);
+    const [sliderMaxCount,setSliderMaxCount] = useState(0);
 
     useEffect( () => {
-        setIsLoading(true);       
-    },[])
+
+        if (carImages.length==0){
+            setCarImages(loadCarPictures(carInfo.id));
+        }
+        else
+        {
+            setCurImage(carImages[0]);
+            setSliderFirstIndex(0);
+
+            if (carImages.length < 4)
+            {
+                setSliderMaxCount(carImages.length);
+            }
+            else
+            {
+                setSliderMaxCount(4);
+            }
+
+            setIsLoading(true);       
+        }
+       
+    },[carImages])
 
 
 
-    const findImage = (carID:any,imageID:any) => {
-        let path = process.env.PUBLIC_URL + `/img/asset/${carID}/gallery${imageID}.jpg`;
-        console.log(path);
-        return path;
+    const thumbnailClick = (item:any) => {
+        setCurImage(item);
     }
 
-    const thumbnailImages = carImages.slice(0,4).map((id:any) => {
+    const sliderUpClick = () => {
+        if (sliderFirstIndex >0){
+            setSliderFirstIndex(sliderFirstIndex-1);
+        }
+    }
+
+    const sliderDownClick = () => {
+        if (sliderFirstIndex + sliderMaxCount <= carImages.length -1){
+            setSliderFirstIndex(sliderFirstIndex+1);
+        }
+    }
+
+    const thumbnailImages = carImages.slice(sliderFirstIndex,sliderFirstIndex + sliderMaxCount).map((item:any) => {
         return (
-            <ImageSelectorThumbnail src={findImage(carInfo.id,id)} border={id == imageId ? true : false} onClick={()=> setImageId(id)} />
+            <ImageSelectorThumbnail src={item} border={item == curImage ? true : false} onClick={()=> thumbnailClick(item)} />
         )
     });
 
@@ -39,21 +71,37 @@ const Gallery = ({t,carInfo}:any) => {
                 <>
 
                     <Row justify="space-between">
-                        <Col lg={20} md={20} sm={20} xs={20}>
+                        <Col lg={20} md={24} sm={24} xs={24}>
                             <MainImageHolder>
-                                <MainImage src={findImage(carInfo.id,imageId)} />
+                                <MainImage src={curImage} />
                             </MainImageHolder>
                         </Col>
-                        <Col lg={4} md={4} sm={4} xs={4}>
-                            <ImageSelector>
+                        <Col lg={4} md={0} sm={0} xs={0}>
+                            <ImageSelector direction="column">
                                 <ImageSelectorArrow>
-                                    <UpCircleFilled style={{ fontSize: '20px', color: '#f0da13' }}/>
+                                    <UpCircleFilled style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> sliderUpClick()}/>
                                 </ImageSelectorArrow>
 
                                 {thumbnailImages}
 
                                 <ImageSelectorArrow>
-                                    <DownCircleFilled style={{ fontSize: '20px', color: '#f0da13' }}/>
+                                    <DownCircleFilled style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> sliderDownClick()}/>
+                                </ImageSelectorArrow>
+                    
+                            </ImageSelector>
+                        </Col>
+                    </Row>
+                    <Row justify="space-between">
+                        <Col lg={0} md={24} sm={24} xs={24}>
+                            <ImageSelector direction="row">
+                                <ImageSelectorArrow>
+                                    <UpCircleFilled style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> sliderUpClick()}/>
+                                </ImageSelectorArrow>
+
+                                {thumbnailImages}
+
+                                <ImageSelectorArrow>
+                                    <DownCircleFilled style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> sliderDownClick()}/>
                                 </ImageSelectorArrow>
                     
                             </ImageSelector>

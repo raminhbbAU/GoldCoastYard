@@ -9,6 +9,7 @@ export const CarTitle = styled("p")`
   font-style:bold;
   font-weight: 700;
   color: black;
+  margin-left:5px;
 `;
 
 export const GalleryLeftContainer = styled("div")` 
@@ -24,6 +25,8 @@ export const CarDetailIconContainer = styled("section")`
     height: auto;
     margin-top: 15px;
     margin-bottom:30px;
+    margin-right:5px;
+    margin-left:5px;
     border-top:1px solid #e6e6ec;
     border-bottom:1px solid #e6e6ec;
     border-right:5px solid #f0da13;
@@ -77,5 +80,5 @@ export const CarDetailListValue = styled("p")`
 
 
 export const OfferRightContainer = styled("div")` 
-    background-color:green;
+    
 `;
