@@ -4,20 +4,22 @@ import { withTranslation } from "react-i18next";
 import { Slide, Zoom } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
 import { useForm } from "../../components/common/utils/useForm";
-import validate from "../../components/common/utils/validationRules";
+import {validateEvaluationForm} from "../../components/common/utils/validationRules";
 import { Button } from "../../components/common/Button";
 import Block from "../Block";
 import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
-import { ContactContainer, FormGroup, Span, ButtonContainer, Title, Detail } from "./styles";
+import { EvaluationFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
+import { CustomYellowButton } from "../../styles/styles";
 
-const EvaluationForm = ({ title, content, id, t }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit } = useForm(
-    validate
+const EvaluationForm = ({ title, content, id, t,submitOnClick }: ContactProps) => {
+  const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
+    validateEvaluationForm
   ) as any;
 
   const ValidationType = ({ type }: ValidationTypeProps) => {
     const ErrorMessage = errors[type];
+
     return (
       <Zoom direction="left">
         <Span erros={errors[type]}>{ErrorMessage}</Span>
@@ -25,9 +27,25 @@ const EvaluationForm = ({ title, content, id, t }: ContactProps) => {
     );
   };
 
-  return (
-    <ContactContainer id={id}>
+  const evaluationFormSubmit = (e:any) => {
+    e.preventDefault();
+    
+    let error= validateEvaluationForm(values);
+    if (Object.keys(error).length == 0)
+    {
+      submitOnClick(values);
+    }
+    else
+    {
+      setErrors(error);
+    }
+    
+    
+  }
 
+  return (
+    <EvaluationFormContainer id={id}>
+      
       <Row>
         <Title>
           {title}
@@ -38,47 +56,53 @@ const EvaluationForm = ({ title, content, id, t }: ContactProps) => {
           {content}
         </Detail>
       </Row>
-      <FormGroup autoComplete="off" onSubmit={handleSubmit}>
-        <Row >
-          <Col lg={6} md={8} sm={12} xs={24}>
-                <Input
-                  type="text"
-                  name="rego"
-                  placeholder="Enter Rego"
-                  value={values.rego || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="rego" />
-          </Col>
-          <Col lg={6} md={8} sm={12} xs={24}>
-              <Input
-                  type="text"
-                  name="state"
-                  placeholder="Enter State"
-                  value={values.state || ""}
-                  onChange={handleChange}
-                />
-                <ValidationType type="rego" />
-          </Col>
-          <Col lg={6} md={8} sm={12} xs={24}>
-            <Input
+
+      <FormGroup autoComplete="off" onSubmit={evaluationFormSubmit}>
+        <FormContainer>
+          <Row >
+            <Col lg={6} md={8} sm={12} xs={24}>
+                  <Input
                     type="text"
-                    name="odometer"
-                    placeholder="Enter Odometer"
-                    value={values.odometer || ""}
+                    name="rego"
+                    placeholder={t("EvaluationForm_RegoPlaceHolder")} 
+                    value={values.rego || ""}
                     onChange={handleChange}
                   />
                   <ValidationType type="rego" />
             </Col>
-          <Col lg={6} md={8} sm={12} xs={24}>
-              <ButtonContainer>
-                <Button name="submit">{t("Submit")}</Button>
-              </ButtonContainer>
-          </Col>       
+            <Col lg={6} md={8} sm={12} xs={24}>
+                <Input
+                    type="text"
+                    name="state"
+                    placeholder={t("EvaluationForm_StatePlaceHolder")} 
+                    value={values.state || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="state" />
+            </Col>
+            <Col lg={6} md={8} sm={12} xs={24}>
+              <Input
+                      type="text"
+                      name="odometer"
+                      placeholder={t("EvaluationForm_OdometerPlaceHolder")} 
+                      value={values.odometer || ""}
+                      onChange={handleChange}
+                    />
+                    <ValidationType type="odometer" />
+              </Col>
+            <Col lg={6} md={8} sm={12} xs={24}>
+                <ButtonContainer>
+                    <CustomYellowButton width={"220px"} type="submit">
+                      {t("EvaluationForm_EvaluateButton")}
+                    </CustomYellowButton>
+                </ButtonContainer>
+            </Col>       
           </Row>
-        </FormGroup>
+        </FormContainer>
+      </FormGroup>
 
-    </ContactContainer>
+
+    </EvaluationFormContainer>
   );
 };
 

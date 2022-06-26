@@ -8,4 +8,5 @@ export const Container = styled("div")`
 
 export const StyledInput = styled("input")`
   font-size: 0.875rem;
+  background-color:#e6e6e6;
 `;

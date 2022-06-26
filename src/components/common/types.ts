@@ -27,6 +27,7 @@ export interface InputProps {
   t: any;
   type?: string;
   value?: string;
+  withTitle?: boolean;
   onChange: (
     event:
       | React.ChangeEvent<HTMLInputElement>
@@ -38,4 +39,17 @@ export interface validateProps {
   name: string;
   message: string;
   email: string;
+}
+
+export interface evaluationValidateProps {
+  rego: string;
+  state: string;
+  odometer: string;
+}
+
+export interface SellCarRequestValidateProps {
+  fullName: string;
+  email: string;
+  phone: string;
+  condition: string;
 }

@@ -50,7 +50,7 @@ export const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #fffef9;
+        background: #f0f0ed;// #fffef9;
         overflow-x: hidden;
         font-family: 'Century Gothic';
     }
@@ -161,7 +161,7 @@ export const CustomYellowButton = styled("button")<any>`
   &:active,
   &:focus {
     //background-color: #dcc709;
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
 `;

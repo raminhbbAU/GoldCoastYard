@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const ContactContainer = styled("div")`
+export const EvaluationFormContainer = styled("div")`
   margin-top:20px;
   padding: 5px;
   background-color:white;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 3px 3px 3px 3px #f5f4f4;
 
   @media only screen and (max-width: 1024px) {
@@ -14,7 +14,6 @@ export const ContactContainer = styled("div")`
 
 export const FormGroup = styled("form")`
   width: 100%;
-  max-width: 520px;
 
   @media only screen and (max-width: 1045px) {
     max-width: 100%;
@@ -31,12 +30,12 @@ export const Span = styled("span")<any>`
 `;
 
 export const ButtonContainer = styled("div")`
-  text-align: end;
-  position: relative;
-
-  @media only screen and (max-width: 414px) {
-    padding-top: 0.75rem;
-  }
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
 `;
 
 
@@ -52,4 +51,10 @@ export const Detail = styled("p")`
   font-size: 18px;
   font-weight: 500;
   color: #a8a8a8;
+`;
+
+
+export const FormContainer = styled("div")`
+  height:auto;
+  width:100% ;
 `;

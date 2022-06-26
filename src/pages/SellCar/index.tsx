@@ -1,6 +1,8 @@
 import React,{ lazy,useEffect,useState } from 'react';
 import { withTranslation } from "react-i18next";
 import EvaluationForm from '../../components/EvaluationForm';
+import FormSubmitResponse from '../../components/FormSubmitResponse';
+import SellCarRequestForm from '../../components/SellCarRequestForm';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -9,9 +11,24 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 function SellCar({ t }: any) {
 
-  useEffect(() => {  
+  const [FormState,SetFormState] = useState(0);
+  const [requestValues,setRequestValues] = useState();
+  const [contactRequestValues,setContactRequestValues] = useState();
 
+  useEffect(() => {  
+ 
   }, []);
+
+
+  const onSubmitEvaluation = (data:any) => {
+    setRequestValues(data);
+    SetFormState(1);
+  }
+
+  const onSubmitRequestForm = (data:any) => {
+    setContactRequestValues(data);
+    SetFormState(2);
+  }
 
   return (
     <Container>
@@ -24,11 +41,19 @@ function SellCar({ t }: any) {
         content={t("SellCar_SubTitle")}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
         id="sellcar"
-      />
+      />     
 
-      <EvaluationForm id="evaluationForm" title='Buy Your Car in two Simple Steps' content='Simply give your vehicle registration and mileage along with a way to receive your valuation.'>
+      { FormState == 0 && (
+        <EvaluationForm id="evaluationForm" title={t("EvaluationForm_Title")} content={t("EvaluationForm_Detail")} submitOnClick ={ (data:any) => onSubmitEvaluation(data)}/>
+      )}
 
-      </EvaluationForm>
+      { FormState == 1 && (
+        <SellCarRequestForm id="CarRequestForm" title={""} content={""} requestValues= {requestValues} submitOnClick ={ (data:any) => onSubmitRequestForm(data)}/>
+      )}
+
+      { FormState == 2 && (
+        <FormSubmitResponse id="submitResult" status={true} title={t("SellCarRequestForm_ResultTitle")} subtile={t("SellCarRequestForm_ResultDescription")} buttonText={t("SellCarRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+      )}
 
     </Container>
   );

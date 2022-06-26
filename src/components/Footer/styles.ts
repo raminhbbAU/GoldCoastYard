@@ -64,7 +64,7 @@ export const Extra = styled("div")`
 export const SocialAndLogoContainer = styled("div")`
   background: #212121;
   height:auto;
-  widows:100% ;
+  width:100% ;
   padding-left:55px;
   padding-right:15px;
 `;

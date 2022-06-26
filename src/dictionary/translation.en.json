@@ -73,6 +73,39 @@
     "SellCar_SubTitle":"Simply give your vehicle registration and mileage along with a way to receive your valuation.", 
     "SellCar_Description" : "Considering selling your current car quickly but unsure of what to expect? We can guide you through the process. Car buying services often prove to be the fastest way to sell your car. Simply enter a few details online and they will offer you an estimated price for your vehicle. However, your valuation can change depending on the condition of your car. When you take your vehicle to the premises of a car buying service, your car will be inspected before the final price is agreed.",
 
+    "EvaluationForm_Title":"Buy Your Car in two Simple Steps",
+    "EvaluationForm_Detail":"Simply give your vehicle registration and mileage along with a way to receive your valuation.",
+    "EvaluationForm_RegoPlaceHolder":"Enter Rego",
+    "EvaluationForm_StatePlaceHolder":"Enter State",
+    "EvaluationForm_OdometerPlaceHolder":"Enter Odometer",
+    "EvaluationForm_EvaluateButton":"Check Value",
+
+
+    "SellCarRequestForm_VehicleTitle":"Your Vehicle",
+    "SellCarRequestForm_VehicleDesc":"Please see your vehicle details below",
+    "SellCarRequestForm_ModelTitle":"Model",
+    "SellCarRequestForm_RegoTitle":"Rego",
+    "SellCarRequestForm_ValueTitle":"Estimated Value",
+    "SellCarRequestForm_ImageSubTitle":"representative only",
+    "SellCarRequestForm_WarningTitle":"What You Need To Know:",
+    "SellCarRequestForm_WarningList":[
+      {"id":1,"title":"You will receive a free no obligation quote based on your vehicle’s registration and km’s travelled."},
+      {"id":2,"title":"An instant valuation with multiple values to base on your vehicles physical condition."},
+      {"id":3,"title":"A copy of your valuation will be sent to your email address for reference."}
+    ],
+    "SellCarRequestForm_FormTitle":"Your Details",
+    "SellCarRequestForm_FormDesc":"To receive your valuation, please enter your details below",
+    "SellCarRequestForm_FormFullName":"Full Name",
+    "SellCarRequestForm_FormEmail":"Email",
+    "SellCarRequestForm_FormPhone":"Phone or Mobile",
+    "SellCarRequestForm_FormCondition":"Condition",
+    "SellCarRequestForm_SubmitButton":"Request Evaluation Now",
+    "SellCarRequestForm_ResultTitle":"Your evaluation request has been registered sucessfully!",
+    "SellCarRequestForm_ResultDescription":"We have received your enquiry. Someone from our team will get back to you as soon as possible.",
+    "SellCarRequestForm_ButtonText":"Home Page",
+
+
+
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
     "Let's Chat": "Let's Online Chat",

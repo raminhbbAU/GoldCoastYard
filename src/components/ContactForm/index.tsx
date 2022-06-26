@@ -4,12 +4,13 @@ import { withTranslation } from "react-i18next";
 import { Slide, Zoom } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
 import { useForm } from "../../components/common/utils/useForm";
-import validate from "../../components/common/utils/validationRules";
+import {validate} from "../../components/common/utils/validationRules";
 import { Button } from "../../components/common/Button";
 import Block from "../Block";
 import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
 import { ContactContainer, FormGroup, Span, ButtonContainer } from "./styles";
+import { convertToObject } from "typescript";
 
 const Contact = ({ title, content, id, t }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit } = useForm(
@@ -24,6 +25,8 @@ const Contact = ({ title, content, id, t }: ContactProps) => {
       </Zoom>
     );
   };
+
+
 
   return (
     <ContactContainer id={id}>

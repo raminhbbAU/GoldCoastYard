@@ -1,9 +1,10 @@
-export interface ContactProps {
+export interface Props {
+  id: string;
   title: string;
   content: string;
-  id: string;
-  t: any;
+  requestValues:any;
   submitOnClick:any;
+  t: any;
 }
 
 export interface ValidationTypeProps {
