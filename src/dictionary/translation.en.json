@@ -105,6 +105,26 @@
     "SellCarRequestForm_ButtonText":"Home Page",
 
 
+    "FinancePage_BannerTitle":"",
+    "FinancePage_BannerDescription":"",
+    "FinancePage_BannerButtonText":"Request Now",
+    "FinancePage_ServiceDescription":"",
+
+    "InsurancePage_BannerTitle":"",
+    "InsurancePage_BannerDescription":"",
+    "InsurancePage_BannerButtonText":"Request Now",
+    "InsurancePage_ServiceDescription":"",
+
+    "ServicePage_BannerTitle":"",
+    "ServicePage_BannerDescription":"",
+    "ServicePage_BannerButtonText":"Request Now",
+    "ServicePage_ServiceDescription":"",
+
+    "NewsPage_BannerTitle":"",
+    "NewsPage_BannerDescription":"",
+    "NewsPage_BannerButtonText":"Request Now",
+    "NewsPage_ServiceDescription":"",
+
 
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",
