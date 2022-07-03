@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import Container from "../../components/common/Container";
 import { PngImage } from "../common/PngImage";
+import { useHistory } from "react-router-dom";
 
 import {
   MainSection,
@@ -24,8 +25,10 @@ import {
   ChatOnlineLink,
   SocialAndLogoContainer,
   RightContainer,
-  SocialLinkContainer
+  SocialLinkContainer,
+  ParaLink
 } from "./styles";
+
 
 
 interface SocialLinkProps {
@@ -34,6 +37,12 @@ interface SocialLinkProps {
 }
 
 const Footer = ({ t }: any) => {
+
+  const history = useHistory();
+
+  const navigateTo = (id: string) => {
+    history.push(`/${id}`);
+  };
 
   const SocialIcons = ({ href, src }: SocialLinkProps) => {
     return (
@@ -69,13 +78,13 @@ const Footer = ({ t }: any) => {
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer>
                 <Language>{t("Quick Access")}</Language>
-                <Para>Value My Car</Para>
-                <Para>Book a Service</Para>
-                <Para>Finance</Para>
-                <Para>Insurance</Para>
-                <Para>Terms & Conditions</Para>
-                <Para>Privacy Notice</Para>
-                <Para>Cookie Policies</Para>
+                <ParaLink onClick={() => navigateTo('SellCar')}>Value My Car</ParaLink>
+                <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
+                <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
+                <ParaLink onClick={() => navigateTo('Insurance')}>Insurance</ParaLink>
+                <ParaLink onClick={() => navigateTo('Terms')}>Terms & Conditions</ParaLink>
+                <ParaLink onClick={() => navigateTo('Privacy')}>Privacy Notice</ParaLink>
+                <ParaLink onClick={() => navigateTo('Cookie')}>Cookie Policies</ParaLink>
               </ThripleFooterContainer>
             </Col>
 

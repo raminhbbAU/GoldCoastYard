@@ -53,3 +53,32 @@ export interface SellCarRequestValidateProps {
   phone: string;
   condition: string;
 }
+
+
+export interface financeValidateProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  state: string;
+  description: string;
+}
+
+
+export interface insuranceValidateProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  state: string;
+  description: string;
+}
+
+export interface serviceValidateProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  state: string;
+  description: string;
+}

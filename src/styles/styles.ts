@@ -110,7 +110,7 @@ export const Styles = createGlobalStyle`
         color: #2E186A;
 
         :hover {
-            color: #2e186a;
+            color: #f0da13;
         }
     }
     

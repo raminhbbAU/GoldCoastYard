@@ -102,7 +102,7 @@ const Header = ({ t }: any) => {
               </a>
             </Col>
 
-            <Col lg={20} md={20} sm={0} xs={0}>
+            <Col lg={22} md={22} sm={0} xs={0}>
               <NotHidden>
                 <MenuItem />
               </NotHidden>
@@ -115,38 +115,13 @@ const Header = ({ t }: any) => {
         </Row>
         
         <Drawer closable={false} visible={visible} onClose={onClose}>
-          <Col style={{ marginBottom: "2.5rem" }}>
+          {/* <Col style={{ marginBottom: "2.5rem" }}>
             <Label onClick={onClose}>
               <Col span={9} offset={9}>
                 <Menu>{t("Menu")}</Menu>
-
-              </Col>
-              <Col span={2}>
-                <LanguageSwitchContainer>
-                  <LanguageSwitch onClick={() => languageChange("en")}>
-                      <SvgIcon
-                        src="united-states.svg"
-                        aria-label="homepage"
-                        width="25px"
-                        height="25px"
-                      />
-                  </LanguageSwitch>
-                </LanguageSwitchContainer>
-              </Col>
-              <Col span={2}>
-                <LanguageSwitchContainer>
-                  <LanguageSwitch onClick={() => languageChange("fa")}>
-                      <SvgIcon
-                        src="iran.svg"
-                        aria-label="homepage"
-                        width="25px"
-                        height="25px"
-                      />
-                  </LanguageSwitch>
-                </LanguageSwitchContainer>
               </Col>
             </Label>
-          </Col>
+          </Col> */}
           <MenuItem />
         </Drawer>
       </Container>

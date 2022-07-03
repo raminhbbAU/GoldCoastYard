@@ -1,5 +1,7 @@
+import { Row } from "antd";
 import React, { lazy } from "react";
 import { withTranslation } from "react-i18next";
+import { Detail, MainFormContainer, Title } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
@@ -10,19 +12,27 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 function Cookie({ t }: any) {
 
     return (
-        <Container>
-    
-           <ScrollToTop />
-           
-           <ContentBlock
-            type= "full"
-            title={t("SellCar_Title")}
-            content={t("SellCar_SubTitle")}
-            picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
-            id="cookie"
-          />    
-        </Container>
-      );
+      <Container>
+
+        <ScrollToTop />
+
+        <MainFormContainer id={""}>
+          
+          <Row>
+            <Title>
+              {t("Cookie_Title")}
+            </Title>
+          </Row>
+          <Row>
+            <Detail>
+              {t("Cookie_Description")}
+            </Detail>
+          </Row>
+
+        </MainFormContainer>
+                  
+      </Container>
+    );
 
 }
 

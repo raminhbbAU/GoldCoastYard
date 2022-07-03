@@ -116,6 +116,13 @@ export const Para = styled("div")<any>`
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "0px")};
 `;
 
+export const ParaLink = styled("a")<any>`
+  color: #FFFFFF;
+  font-size: 14px;
+  width: 70%;
+  margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "0px")};
+`;
+
 export const Large = styled(Link)<any>`
   font-size: 16px;
   color: #000;
