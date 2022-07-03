@@ -24,8 +24,8 @@ export const CardSection = styled("section")`
 
 export const Logo = styled.img`
   border-radius: 2%;
-  height : 128px;
-  width : 128px;
+  height : 185px;
+  width : 185px;
 `;
 
 export const Title = styled("p")`
@@ -38,22 +38,22 @@ export const Title = styled("p")`
 `;
 
 export const Price = styled("p")`
-  font-size: 13px;
-  color: #7f7f7f;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 15px;
+  font-style:bold;
+  color: #424242;
+  font-weight: 900;
   text-align:left;
 `;
 
 export const FooterTitle = styled("p")`
-  font-size: 6px;
+  font-size: 8px;
   font-weight: 800;
   color:#424242;
 `;
 
 
 export const FooterContent = styled("p")`
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 500;
   color: #a8a8a8;
 `;

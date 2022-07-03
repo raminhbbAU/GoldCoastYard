@@ -68,10 +68,23 @@ export const Styles = createGlobalStyle`
         outline: none;
         width: 100%;  
         padding: 1rem 1.25rem;
-
+        
         :focus-within {
             background: none;
-            box-shadow: #2e186a 0px 0px 0px 1px;
+            box-shadow: #f0da13 0px 0px 0px 1px;
+        }
+
+        ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #5a5959;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #5a5959;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #5a5959;
         }
     }
 

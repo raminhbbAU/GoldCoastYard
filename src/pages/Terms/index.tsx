@@ -1,5 +1,6 @@
 import { Row } from "antd";
-import React, { lazy } from "react";
+import { Console } from "console";
+import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { Detail, MainFormContainer, Title } from "./styles";
 
@@ -11,7 +12,18 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 function Terms({ t }: any) {
 
+    const [data,setData] = useState<any>("");
 
+    useEffect( () => {
+      const realData:String =  t("Terms_Description");
+      //console.log(realData);
+
+      //console.log(realData.replaceAll("***","\n")); 
+
+      //setData(realData.replaceAll("***"," <br> "));
+      setData(realData);
+    },[])
+    
 
     return (
         <Container>
@@ -27,7 +39,8 @@ function Terms({ t }: any) {
             </Row>
             <Row>
               <Detail>
-                {t("Terms_Description")}
+                {/* {t("Terms_Description")} */}
+                {data}
               </Detail>
             </Row>
 

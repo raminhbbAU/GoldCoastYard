@@ -40,7 +40,7 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,Fuel,t }: 
 
     <Price>{'$' + price}</Price>
 
-    <Container border={true}/>
+    <Container border={true} marginBottom={"10px"}/>
 
     <Row align="top" justify="space-between">
         <Col lg={6} md={6} sm={6} xs={6}>
