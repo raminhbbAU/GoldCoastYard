@@ -3,8 +3,9 @@ import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import Container from "../../components/common/Container";
-import { PngImage } from "../common/PngImage";
+// import { PngImage } from "../common/PngImage";
 import { useHistory } from "react-router-dom";
+ import {PhoneFilled,HomeFilled,MailFilled,TagFilled   } from '@ant-design/icons';
 
 import {
   MainSection,
@@ -26,7 +27,9 @@ import {
   SocialAndLogoContainer,
   RightContainer,
   SocialLinkContainer,
-  ParaLink
+  ParaLink,
+  RightSmall,
+  ParaLinkSmall
 } from "./styles";
 
 
@@ -53,7 +56,7 @@ const Footer = ({ t }: any) => {
         key={src}
         aria-label={src}
       >
-        <SvgIcon src={src} width="35px" height="35px"/>
+        <SvgIcon src={src} width="35px" height="35px" className="socialIcons"/>
       </SocialLink>
     );
   };
@@ -66,18 +69,21 @@ const Footer = ({ t }: any) => {
 
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer>
-                <Language>{t("Address")}</Language>
+                
+                <Language><HomeFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Address")}</Language>
                 <Para>{t("Address_Line1")}</Para>
                 <Para>{t("Address_Line2")}</Para>
                 <Para marginbottom={"5px"}>{t("Address_Line3")}</Para>
-                <Language>{t("Tel")}</Language>
-                <Para>{t("Phone")}</Para>
+                <Language><PhoneFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "}{t("Tel")}</Language>
+                <ParaLink marginbottom={"5px"} href={"tel:" + t("Phone")}>{t("Phone")}</ParaLink>
+                <Language><MailFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "}{"Email"}</Language>
+                <ParaLink href={"mailto:" + t("Email")}>{t("Email")}</ParaLink>
               </ThripleFooterContainer>
             </Col>
 
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer>
-                <Language>{t("Quick Access")}</Language>
+                <Language><TagFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Quick Access")}</Language>
                 <ParaLink onClick={() => navigateTo('SellCar')}>Value My Car</ParaLink>
                 <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
                 <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
@@ -125,13 +131,21 @@ const Footer = ({ t }: any) => {
 
           <Col lg={9} md={9} sm={12} xs={24}>
             <RightContainer>
-              <Right>©2016-2022 The Gold Coast Yard. All Right Reserved.</Right>
+              <Right>{"©2016-"} {new Date().getFullYear()} {" The Gold Coast Car Yard. All Right Reserved."}</Right>
+              <RightSmall>{"Powered by "} <ParaLinkSmall href="mailto:raminhbb.au@gmail.com">RaminHbb</ParaLinkSmall></RightSmall>
+              
             </RightContainer>
           </Col>
 
           <Col lg={9} md={9} sm={6} xs={24}>
             <SocialLinkContainer>
               <Language>{t("Social media")}</Language>
+              {/* <InstagramFilled style={{ fontSize: '35px', color: '#ffffff' }}/>
+              <FacebookFilled style={{ fontSize: '35px', color: '#ffffff' }}/>
+              <MailFilled style={{ fontSize: '35px', color: '#ffffff' }}/>
+              <MessageFilled style={{ fontSize: '35px', color: '#ffffff' }}/>
+              <LinkedinFilled style={{ fontSize: '35px', color: '#ffffff' }}/> */}
+
               <SocialIcons
                         href={t("Instagram")}
                         src="Instagram2.svg"
@@ -142,12 +156,12 @@ const Footer = ({ t }: any) => {
               />
               <SocialIcons
                         href={t("WhatsUp")}
-                        src="Facebook.svg"
+                        src="whatsapp.svg"
               />
-              <SocialIcons
+              {/* <SocialIcons
                         href={t("Email")}
-                        src="Facebook.svg"
-              />
+                        src="email.svg"
+              /> */}
             </SocialLinkContainer>              
           </Col>
 

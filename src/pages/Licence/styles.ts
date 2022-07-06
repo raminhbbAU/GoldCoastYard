@@ -19,9 +19,8 @@ export const Title = styled("p")`
   color: black;
 `;
 
-export const Detail = styled("div")`
+export const Detail = styled("p")`
   font-size: 18px;
   font-weight: 500;
   color: #a8a8a8;
-  white-space:pre-line;
 `;

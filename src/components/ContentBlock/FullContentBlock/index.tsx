@@ -51,7 +51,7 @@ const FullBlock = ({
                     return (
                       <CustomYellowButton
                         key={id}
-                        color={item.color}
+                        color={"#212121"}
                         onClick={() => navigateTo(item.link)}
                       >
                         {t(item.title)}

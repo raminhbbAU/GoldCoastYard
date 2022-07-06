@@ -98,12 +98,30 @@ export const Styles = createGlobalStyle`
         font-size: 56px;
         line-height: 1.18;
 
-        @media only screen and (max-width: 890px) {
-          font-size: 47px;
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) 
+        {
+            font-size: 28px;
         }
-      
-        @media only screen and (max-width: 414px) {
-          font-size: 32px;
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) 
+        {
+            font-size: 32px;
+        }
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) 
+        {
+            font-size: 46px;
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) 
+        {
+            font-size: 56px;
+        }
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) 
+        {
+            font-size: 56px;
         }
     }
 
@@ -111,6 +129,32 @@ export const Styles = createGlobalStyle`
         color: #18216d;
         font-size: 21px;        
         line-height: 1.41;
+
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) 
+        {
+            font-size: 13px;
+        }
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) 
+        {
+            font-size: 16px;
+        }
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) 
+        {
+            font-size: 18px;
+        }
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) 
+        {
+            font-size: 21px;
+        }
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) 
+        {
+            font-size: 21px;
+        }
     }
 
     h1 {

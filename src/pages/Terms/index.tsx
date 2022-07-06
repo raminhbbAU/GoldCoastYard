@@ -12,16 +12,7 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 function Terms({ t }: any) {
 
-    const [data,setData] = useState<any>("");
-
     useEffect( () => {
-      const realData:String =  t("Terms_Description");
-      //console.log(realData);
-
-      //console.log(realData.replaceAll("***","\n")); 
-
-      //setData(realData.replaceAll("***"," <br> "));
-      setData(realData);
     },[])
     
 
@@ -38,12 +29,11 @@ function Terms({ t }: any) {
               </Title>
             </Row>
             <Row>
-              <Detail>
+              <Detail> 
                 {/* {t("Terms_Description")} */}
-                {data}
+                {t("Terms_Description").replaceAll("***","\n")}
               </Detail>
             </Row>
-
           </MainFormContainer>
                      
         </Container>

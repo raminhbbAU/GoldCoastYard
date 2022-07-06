@@ -1,4 +1,4 @@
-import React,{ lazy, Suspense } from "react";
+import React,{ lazy, Suspense, useState } from "react";
 import {Route, BrowserRouter, Switch,Redirect} from 'react-router-dom'
 
 
@@ -27,6 +27,7 @@ import Cookie from "../pages/Cookie";
 
 
 const Router = () => {
+
   return (
     <Suspense fallback={null}>
       <BrowserRouter>

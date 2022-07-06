@@ -25,7 +25,7 @@ function Privacy({ t }: any) {
         </Row>
         <Row>
           <Detail>
-            {t("Privacy_Description")}
+            {t("Privacy_Description").replaceAll("***","\n")}
           </Detail>
         </Row>
 

@@ -1,6 +1,7 @@
 import { Row } from "antd";
 import React, { lazy } from "react";
 import { withTranslation } from "react-i18next";
+import { SvgIcon } from "../../components/common/SvgIcon";
 import { Detail, MainFormContainer, Title } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -9,7 +10,7 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 
 
-function Cookie({ t }: any) {
+function Licence() {
 
     return (
       <Container>
@@ -20,13 +21,30 @@ function Cookie({ t }: any) {
           
           <Row>
             <Title>
-              {t("Cookie_Title")}
+              <SvgIcon src="logo-image.svg" width="96px" height="96px" />
+            </Title>
+          </Row>  
+          <Row>
+            <Title>
+              {"Technical issue"}
             </Title>
           </Row>
           <Row>
             <Detail>
-              {t("Cookie_Description").replaceAll("***","\n")}
+              {"Something wrong was happend, please feel free to contact the site administrator."}
             </Detail>
+          </Row>
+          <Row>
+            <Title>
+              {"Email Address"}
+            </Title>
+          </Row>
+          <Row>
+            <a href="mailto:Raminhbb.au@gmail.com">
+              <Detail>
+                {"RaminHbb.au@gmail.com"}
+              </Detail>
+            </a>
           </Row>
 
         </MainFormContainer>
@@ -36,4 +54,4 @@ function Cookie({ t }: any) {
 
 }
 
-export default withTranslation()(Cookie);
+export default Licence;

@@ -28,6 +28,18 @@ export const ThripleFooterContainer = styled("div")<any>`
   padding-left:65px;     
   height:100%;
   width:100%;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding:0px;
+    height:100%;
+    width:100%;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
 `;
 
 export const Title = styled("h4")`
@@ -67,6 +79,13 @@ export const SocialAndLogoContainer = styled("div")`
   width:100% ;
   padding-left:55px;
   padding-right:15px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding:0px;
+  }
+
+
 `;
 
 export const LogoContainer = styled("div")`
@@ -77,10 +96,19 @@ export const LogoContainer = styled("div")`
   justify-content: center;
   align-items: center;
   padding-left:65px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding:0px;
+    height:100%;
+    width:100%;
+  }
+
 `;
 
 export const RightContainer = styled("div")`
   display:flex;
+  flex-direction:column;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -109,6 +137,16 @@ export const Right = styled("p")`
   }
 `;
 
+export const RightSmall = styled("p")`
+  font-size: 10px;
+  font-weight:300;
+  color: #dbd9d9;
+
+  @media screen and (max-width: 414px) {
+    padding: 1.5rem 0;
+  }
+`;
+
 export const Para = styled("div")<any>`
   color: #FFFFFF;
   font-size: 14px;
@@ -119,6 +157,14 @@ export const Para = styled("div")<any>`
 export const ParaLink = styled("a")<any>`
   color: #FFFFFF;
   font-size: 14px;
+  width: 70%;
+  margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "0px")};
+`;
+
+export const ParaLinkSmall = styled("a")<any>`
+  font-size: 10px;
+  font-weight:300;
+  color: #dbd9d9;
   width: 70%;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "0px")};
 `;
@@ -227,7 +273,23 @@ export const Label = styled("label")`
 
 export const SocialLink = styled("a")`
   padding:3px;
+  cursor: pointer;
+  opacity: 0.8;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+
 `;
 
 export const ChatOnlineLink = styled("a")`
+  opacity: 0.9;
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
 `;
