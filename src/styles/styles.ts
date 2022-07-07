@@ -50,7 +50,7 @@ export const Styles = createGlobalStyle`
         padding:0;
         border: 0;
         outline: 0;
-        background: #f0f0ed;// #fffef9;
+        background: #f1f2f2; //#f0f0ed;// #fffef9;
         overflow-x: hidden;
         font-family: 'Century Gothic';
     }

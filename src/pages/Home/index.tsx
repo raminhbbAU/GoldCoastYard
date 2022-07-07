@@ -22,8 +22,8 @@ function Home({ t }: any) {
 
   const [availableCars,setAvailableCars]= useState<any>([]);
 
-  const [height,setHeight] = useState(705);
-  const [width,setwidth] = useState(1920);
+  const [height,setHeight] = useState(416);
+  const [width,setwidth] = useState(1200);
 
 
   const setSize = (percentage:any) => {
@@ -59,12 +59,12 @@ function Home({ t }: any) {
         title={t("Intro_Title")}
         content={t("Intro_Description")}
         button={t("Intro_Button", { returnObjects: true })}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner04.jpg'}
         id="home"
        />
 
 
-       {/* <br></br>
+      {/* <br></br>
       <Button onClick={() => setSize(10) }>+ 10%</Button>
       <Button onClick={() => setSize(-10)}>- 10%</Button>
       <div> width: {width} | height: {height}</div>
@@ -72,8 +72,8 @@ function Home({ t }: any) {
       <BannerHolder
         width={ width + "px"}
         height={ height + "px"}
-        background={process.env.PUBLIC_URL + '/img/gallery/banner03.jpg'}
-      /> */}
+        background={process.env.PUBLIC_URL + '/img/gallery/banner04.jpg'}
+      />  */}
       
 
 
@@ -96,7 +96,7 @@ function Home({ t }: any) {
        title={t("ServiceWithImage_Title")}
        services={t("ServiceWithImage_List", { returnObjects: true })}
        id="ServiceWithFullImage"
-      />
+      /> 
 
     </Container>
   );

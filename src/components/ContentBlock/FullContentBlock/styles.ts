@@ -11,15 +11,15 @@ export const FullBlockContainer = styled.section<StyleProps>`
   text-align: center;
   background-image: url(${props => props.image});
   background-repeat:no-repeat;
-  background-size: 1280px 100%;
+  background-size: 1200px 100%;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  max-height: 705px;
-  min-height: 350px;
-  max-width: 1920px;
+  max-height: 416px;
+  min-height: 416px;
+  max-width: 1200px;
 
-  /* Extra small devices (phones, 600px and down) */
+  /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
   {
       background-image:none;
