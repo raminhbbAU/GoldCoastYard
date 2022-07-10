@@ -52,7 +52,7 @@ function Home({ t }: any) {
 
   return (
     <Container>
-       <ScrollToTop />
+       {/* <ScrollToTop /> */}
        
        <ContentBlock
         type= "full"

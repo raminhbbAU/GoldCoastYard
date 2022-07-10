@@ -14,7 +14,7 @@ function Privacy({ t }: any) {
   return (
     <Container>
 
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
 
       <MainFormContainer id={""}>
         

@@ -19,7 +19,7 @@ function Terms({ t }: any) {
     return (
         <Container>
 
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
     
           <MainFormContainer id={""}>
             

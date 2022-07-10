@@ -76,6 +76,7 @@ export const CarDetailListValue = styled("p")`
   font-size: 16px;
   font-weight: 500;
   color: #a8a8a8;
+  white-space:pre-line;
 `;
 
 

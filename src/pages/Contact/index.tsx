@@ -12,7 +12,7 @@ function Contact({ t }: any) {
     return (
         <Container>
     
-           <ScrollToTop />
+           {/* <ScrollToTop /> */}
            
            <ContentBlock
             type= "full"

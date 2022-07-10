@@ -15,7 +15,7 @@ const App = () => {
   useEffect( () => {
 
     const date1:any = new Date();
-    const date2:any = new Date('2022/07/10');
+    const date2:any = new Date('2022/07/29');
     const diffTime:any = date2 - date1;
     //const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
