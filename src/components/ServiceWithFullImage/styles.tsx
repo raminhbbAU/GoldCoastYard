@@ -7,6 +7,8 @@ export const ServiceSection = styled("section")`
   align-items: center;
   margin-top:50px;
   margin-bottom:50px;
+  margin-right:8px;
+  margin-left:8px;
 `;
 
 export const CardSection = styled("div")<any>`
@@ -14,9 +16,8 @@ export const CardSection = styled("div")<any>`
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin:3px;
-  border-radius: 5%;
-  padding: 1px;
+  border-radius: 2%;
+  padding: 4px;
   background-image: url(${(p) => (p.src ? p.src : "")});
   background-size: cover;
   background-repeat:no-repeat;
@@ -25,12 +26,31 @@ export const CardSection = styled("div")<any>`
   height: 419px; 
   cursor: pointer;
   opacity: 1;
+  margin-bottom:15px;
 
   &:hover,
   &:active,
   &:focus {
     opacity: 0.8;
   }
+
+        @media only screen and (max-width: 768px) 
+        {
+            margin-right:8px;
+            margin-left:8px;
+            margin-bottom:15px;
+            width: 472px;
+            height: 335px; 
+        }
+
+        @media only screen and (max-width: 992px) 
+        {
+            margin-right:8px;
+            margin-left:8px;
+            margin-bottom:15px;
+            width: 531px;
+            height: 377px;
+        }
 `;
 
 export const PageTitle = styled("h6")`

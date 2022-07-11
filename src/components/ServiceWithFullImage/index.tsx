@@ -21,7 +21,7 @@ const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
   };
 
   const serviceList = services.map((member: any) => (    
-    <Col lg={12} md={12} sm={24} xs={24}>
+    <Col lg={12} md={24} sm={24} xs={24}>
       <CardSection src={member.img} onClick={() => navigateTo(member.link)}>
         <ServiceName>{member.name}</ServiceName>
         {/* <Content>{member.description}</Content>       */}
@@ -37,7 +37,7 @@ const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
             <PageTitle>{title}</PageTitle>
           </Col>
         </Row>
-        <Row align="top" justify="space-between">
+        <Row>
           {serviceList}
         </Row>
       {/* </Slide> */}

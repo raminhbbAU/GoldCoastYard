@@ -4,16 +4,43 @@ import { MenuOutlined } from "@ant-design/icons";
 import { Button } from "antd";
 
 export const HeaderSection = styled("header")`
-  .ant-row-space-between {
+  /* .ant-row-space-between {
     align-items: center;
     text-align: center;
-  }
+  } */
+
+  height:auto;
+  width:100% ;
 `;
 
-export const LogoContainer = styled(Link)`
-  alignContent: 'left',
-  display: flex;
-  justify-content: space-between;
+export const LogoContainer = styled("div")`
+  height:100px;
+  width:100px;
+  display:flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  padding-left:10px;
+`;
+
+export const MenuContainer = styled("div")`
+  display:flex;
+  text-align: right;
+  justify-content: right;
+  align-items: center;
+  height:100%;
+  width:100%;
+  padding-right:1px;
+`;
+
+export const DrawerContainer = styled("div")`
+  display:flex;
+  text-align: right;
+  justify-content: right;
+  align-items: center;
+  height:100%;
+  width:100%;
+  padding-right:10px;
 `;
 
 export const NavLink = styled("div")`
@@ -44,11 +71,11 @@ export const ContactWrapper = styled("div")<any>`
 `;
 
 export const Burger = styled("div")`
-  @media only screen and (max-width: 890px) {
+  /* @media only screen and (max-width: 890px) {
     display: block;
-  }
+  } */
 
-  display: none;
+  display: block;
 
   svg {
     fill: #2e186a;
@@ -121,5 +148,5 @@ export const LanguageSwitchContainer = styled("div")`
   display: flex;
   justify-content: space-between;
   width: 85px;
-  alignContent: 'right';
+  align-content: 'right';
 `;
