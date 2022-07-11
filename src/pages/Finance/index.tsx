@@ -23,7 +23,7 @@ function Finance({ t }: any) {
     return (
         <Container>
     
-           <ScrollToTop />
+           {/* <ScrollToTop /> */}
            
            <ContentBlock
             type= "full"

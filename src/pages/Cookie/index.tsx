@@ -14,7 +14,7 @@ function Cookie({ t }: any) {
     return (
       <Container>
 
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
 
         <MainFormContainer id={""}>
           

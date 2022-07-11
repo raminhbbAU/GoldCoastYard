@@ -15,7 +15,7 @@ function Licence() {
     return (
       <Container>
 
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
 
         <MainFormContainer id={""}>
           

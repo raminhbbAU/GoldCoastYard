@@ -7,7 +7,7 @@ interface StyleProps {
 export const CardSection = styled("section")`
   display: flex-row;
   justify-content: center;
-  align-items: 'center',
+  align-items: 'center';
   background-color:#FFFFFF;
   margin:10px;
   border-radius: 7%;
@@ -24,8 +24,10 @@ export const CardSection = styled("section")`
 
 export const Logo = styled.img`
   border-radius: 2%;
-  height : 185px;
-  width : 185px;
+  /* height : 160px; */
+  /* width : 240px; */
+  height : 100%;
+  width : 100%;
 `;
 
 export const Title = styled("p")`

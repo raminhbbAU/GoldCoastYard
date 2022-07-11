@@ -5,7 +5,10 @@ import { SvgIcon } from "../../components/common/SvgIcon";
 import Container from "../../components/common/Container";
 // import { PngImage } from "../common/PngImage";
 import { useHistory } from "react-router-dom";
- import {PhoneFilled,HomeFilled,MailFilled,TagFilled   } from '@ant-design/icons';
+import {PhoneFilled,HomeFilled,MailFilled,TagFilled   } from '@ant-design/icons';
+
+import { MessengerChat } from "react-messenger-chat-plugin";
+// import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 import {
   MainSection,
@@ -63,6 +66,36 @@ const Footer = ({ t }: any) => {
 
   return (
     <MainSection>
+
+      <MessengerChat
+                  pageId="101507375914843"
+                  // language="en_US"
+                  themeColor={"#f0da13"}
+                  bottomSpacing={50}
+                  loggedInGreeting="Hey mate! we are here to help you, please feel free if you have any question or need information"
+                  loggedOutGreeting="Thank you for your contact, see you soon!"
+                  greetingDialogDisplay={"fade"}
+                  debugMode={false}
+                  onMessengerShow={() => {
+                    console.log("onMessengerShow");
+                  }}
+                  onMessengerHide={() => {
+                    console.log("onMessengerHide");
+                  }}
+                  onMessengerDialogShow={() => {
+                    console.log("onMessengerDialogShow");
+                  }}
+                  onMessengerDialogHide={() => {
+                    console.log("onMessengerDialogHide");
+                  }}
+                  onMessengerMounted={() => {
+                    console.log("onMessengerMounted");
+                  }}
+                  onMessengerLoad={() => {
+                    console.log("onMessengerLoad");
+                  }}
+        />
+
       <FooterSection id={"contact"}>
         <SocialAndLogoContainer>
           <Row justify="space-between">
@@ -70,20 +103,24 @@ const Footer = ({ t }: any) => {
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer>
                 
-                <Language><HomeFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Address")}</Language>
-                <Para>{t("Address_Line1")}</Para>
-                <Para>{t("Address_Line2")}</Para>
-                <Para marginbottom={"5px"}>{t("Address_Line3")}</Para>
-                <Language><PhoneFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "}{t("Tel")}</Language>
+                {/* <Language><HomeFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Address")}</Language> */}
+                <Language>{t("Address")}</Language>
+                <ParaLink href={ t("GoogleDirection")} target="_blank">{t("Address_Line1")}</ParaLink>
+                <ParaLink href={ t("GoogleDirection")} target="_blank">{t("Address_Line2")}</ParaLink>
+                <ParaLink href={ t("GoogleDirection")} target="_blank" marginbottom={"5px"}>{t("Address_Line3")}</ParaLink>
+                {/* <Language><PhoneFilled  style={{ fontSize: '15px', color: '#888' }}/> {" "}{t("Tel")}</Language> */}
+                <Language>{t("Tel")}</Language>
                 <ParaLink marginbottom={"5px"} href={"tel:" + t("Phone")}>{t("Phone")}</ParaLink>
-                <Language><MailFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "}{"Email"}</Language>
+                {/* <Language><MailFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "}{"Email"}</Language> */}
+                <Language>{"E-mail"}</Language>
                 <ParaLink href={"mailto:" + t("Email")}>{t("Email")}</ParaLink>
               </ThripleFooterContainer>
             </Col>
 
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer>
-                <Language><TagFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Quick Access")}</Language>
+                {/* <Language><TagFilled   style={{ fontSize: '15px', color: '#888' }}/> {" "} {t("Quick Access")}</Language> */}
+                <Language>{t("Quick Access")}</Language>
                 <ParaLink onClick={() => navigateTo('SellCar')}>Value My Car</ParaLink>
                 <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
                 <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
@@ -100,11 +137,17 @@ const Footer = ({ t }: any) => {
                 {/* <Para marginbottom={"15px"}>
                   {t(`Do you have any question? Feel free to reach out.`)}
                 </Para> */}
-                <ChatOnlineLink href="https://wa.me/989381424797">
-                  {/* <Chat>{t(`Let's Chat`)}</Chat> */}
+                
+                {/* <ChatOnlineLink href="https://wa.me/989381424797">
+                  <Chat>{t(`Let's Chat`)}</Chat>
                   <SvgIcon src={'chat.svg'} width="96px" height="96px"/>
-                </ChatOnlineLink>
-              </ThripleFooterContainer>
+                </ChatOnlineLink> */}
+
+                {/* <Wrapper apiKey={"YOUR_API_KEY"} render={render}>
+                  <YourComponent/>
+                </Wrapper> */}
+
+           </ThripleFooterContainer>
               
             </Col>
 
