@@ -98,7 +98,7 @@ const Header = ({ t }: any) => {
 
         <Row>
           <Col lg={2} md={12} sm={12} xs={12}>
-            <LogoContainer>
+            <LogoContainer onClick={() => navigateTo("home")}> 
               <SvgIcon src="logo-image.svg" width="96px" height="96px" />
             </LogoContainer>
           </Col>
