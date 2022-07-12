@@ -28,6 +28,8 @@ import {
 import {CustomYellowButton} from "../../styles/styles";
 
 const Header = ({ t }: any) => {
+
+  const history = useHistory();
   const [visible, setVisibility] = useState(false);
 
   const showDrawer = () => {
@@ -43,10 +45,14 @@ const Header = ({ t }: any) => {
     i18n.changeLanguage(language);
   };
 
+  
+  const navigateTo = (id: string) => {
+    history.push(`/${id}`);
+  };
+
   const MenuItem = () => {
 
-    const history = useHistory();
-
+    
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
       
@@ -57,10 +63,6 @@ const Header = ({ t }: any) => {
         });
         setVisibility(false);
       }
-    };
-
-    const navigateTo = (id: string) => {
-      history.push(`/${id}`);
     };
 
     return (
