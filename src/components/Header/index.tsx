@@ -20,7 +20,9 @@ import {
   Outline,
   Span,
   LanguageSwitchContainer,
-  LanguageSwitch
+  LanguageSwitch,
+  DrawerContainer,
+  MenuContainer
 } from "./styles";
 
 import {CustomYellowButton} from "../../styles/styles";
@@ -94,24 +96,24 @@ const Header = ({ t }: any) => {
     <HeaderSection id="header" >
       <Container>
 
-        <Row justify="space-between" align="middle">
-
-            <Col lg={2} md={2} sm={4} xs={14} >
-              <a href="/home">
-                <SvgIcon src="logo-image.svg" width="96px" height="96px" />
-              </a>
-            </Col>
-
-            <Col lg={22} md={22} sm={0} xs={0}>
-              <NotHidden>
-                <MenuItem />
-              </NotHidden>
-            </Col>
-
-            <Burger onClick={showDrawer} >
-              <Outline />
-            </Burger>
-
+        <Row>
+          <Col lg={2} md={12} sm={12} xs={12}>
+            <LogoContainer>
+              <SvgIcon src="logo-image.svg" width="96px" height="96px" />
+            </LogoContainer>
+          </Col>
+          <Col lg={22} md={0} sm={0} xs={0}>
+            <MenuContainer>
+              <MenuItem />
+            </MenuContainer>
+          </Col>
+          <Col lg={0} md={12} sm={12} xs={12}>
+            <DrawerContainer>
+              <Burger onClick={showDrawer} >
+                <Outline />
+              </Burger>
+            </DrawerContainer>
+          </Col>
         </Row>
         
         <Drawer closable={false} visible={visible} onClose={onClose}>
@@ -124,6 +126,7 @@ const Header = ({ t }: any) => {
           </Col> */}
           <MenuItem />
         </Drawer>
+
       </Container>
     </HeaderSection>
   );
