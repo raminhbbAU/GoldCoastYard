@@ -421,7 +421,7 @@ function carManufacture():any[] {
             ,
             {
                 "id":2,
-                "title":"jeep"
+                "title":"Jeep"
             }
             ,
             {
@@ -431,7 +431,7 @@ function carManufacture():any[] {
             ,
             {
                 "id":4,
-                "title":"Volekswagen"
+                "title":"Volkswagen"
             }
             ,
             {

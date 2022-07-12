@@ -97,7 +97,7 @@ const Header = ({ t }: any) => {
         <Row justify="space-between" align="middle">
 
             <Col lg={2} md={2} sm={4} xs={14} >
-              <a>
+              <a href="/home">
                 <SvgIcon src="logo-image.svg" width="96px" height="96px" />
               </a>
             </Col>

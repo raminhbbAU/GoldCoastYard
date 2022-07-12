@@ -10,7 +10,7 @@ export const CardSection = styled("section")`
   align-items: 'center';
   background-color:#FFFFFF;
   margin:10px;
-  border-radius: 7%;
+  border-radius: 3%;
   padding: 2px;
   cursor: pointer;
   opacity: 1;

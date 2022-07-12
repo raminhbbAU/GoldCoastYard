@@ -95,7 +95,7 @@ export const LogoContainer = styled("div")`
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding-left:65px;
+  padding-left:120px;
 
   @media only screen and (max-width: 768px) 
   {

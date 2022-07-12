@@ -15,7 +15,7 @@ export const CardSection = styled("div")`
   align-items: center;     /* center items horizontally, in this case */
   background-color:#FFF;
   margin:10px;
-  border-radius: 8%;
+  border-radius: 5%;
   box-shadow: 3px 3px 3px 3px #f5f4f4  ;
   cursor: pointer;
   opacity: 1;

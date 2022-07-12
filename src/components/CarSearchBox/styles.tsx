@@ -3,6 +3,8 @@ import { Select } from 'antd';
 
 
 export const CustomSelect = styled(Select)`
+    border-radius: 10px;
+    
     .ant-select-arrow{
       color: #F0DA13 !important;
       font-size: 15px !important;

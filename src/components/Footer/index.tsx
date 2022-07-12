@@ -59,7 +59,7 @@ const Footer = ({ t }: any) => {
         key={src}
         aria-label={src}
       >
-        <SvgIcon src={src} width="35px" height="35px" className="socialIcons"/>
+        <SvgIcon src={src} width="20px" height="20px" className="socialIcons"/>
       </SocialLink>
     );
   };
@@ -162,7 +162,7 @@ const Footer = ({ t }: any) => {
         
         <Row>
           <Col lg={6} md={6} sm={6} xs={24}>
-            <LogoContainer>
+            <LogoContainer onClick={() => navigateTo('home')}>
               <SvgIcon
                 src="logo2.svg"
                 aria-label="homepage"
