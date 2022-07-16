@@ -38,7 +38,7 @@ function UsedCar({ t }: any) {
         type= "full"
         title={t("Intro_Title")}
         content={t("Intro_Description")}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner07.jpg'}
         id="home"
       />
 

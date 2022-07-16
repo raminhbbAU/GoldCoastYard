@@ -218,7 +218,7 @@ export const CustomYellowButton = styled("button")<any>`
   &:active,
   &:focus {
     //background-color: #dcc709;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 
 `;

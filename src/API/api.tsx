@@ -515,6 +515,7 @@ function carManufacture():any[] {
                "VIN":"JTJHA31UX00050632",
                "price":8990,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"Sunroof\nReverse camera\nBuilt in navigation system\n3 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nMechanical Service Done"
             },
             {
@@ -536,6 +537,7 @@ function carManufacture():any[] {
                "VIN":"6U9000BGZ11669282",
                "price":8990,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"3 Months Registration\n1 year warranty\nRoadworthy Certificate\nClear title (no accident history)\nMechanical service done"
             },
             {
@@ -557,6 +559,7 @@ function carManufacture():any[] {
                "VIN":"KNAJE552397567011",
                "price":9990,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"3 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done\n"
             },
             {
@@ -578,6 +581,7 @@ function carManufacture():any[] {
                "VIN":"6U900AHR207016707",
                "price":16995,
                "Fuel":"Hybrid",
+               "Finance":50,
                "Overview":"3 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -599,6 +603,7 @@ function carManufacture():any[] {
                "VIN":"JM0DE10Y1A0143455",
                "price":8900,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"3 Months Registration\n1 year warranty\nRoadworthy certificate\nClear title (no accident history)\nMechanical service done"
             },
             {
@@ -620,6 +625,7 @@ function carManufacture():any[] {
                "price":10990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -641,6 +647,7 @@ function carManufacture():any[] {
                "price":8990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\n Roadworthy Certificate\n Clear Title (no accident history)\nCruise Control\n Mechanical Service Done"
             },
             {
@@ -662,6 +669,7 @@ function carManufacture():any[] {
                "price":11990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -683,6 +691,7 @@ function carManufacture():any[] {
                "price":8490,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)Cruise Control\nMechanical Service Done"
             },
             {
@@ -704,6 +713,7 @@ function carManufacture():any[] {
                "price":8490,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -725,6 +735,7 @@ function carManufacture():any[] {
                "price":13990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"Log Books\n6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nMechanical Service Done"
             },
             {
@@ -746,6 +757,7 @@ function carManufacture():any[] {
                "price":11990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -767,6 +779,7 @@ function carManufacture():any[] {
                "price":7990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             },
             {
@@ -788,6 +801,7 @@ function carManufacture():any[] {
                "price":16990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":""
             },
             {
@@ -809,6 +823,7 @@ function carManufacture():any[] {
                "price":12990,
                "Horsepower":0,
                "Fuel":"Petrol",
+               "Finance":50,
                "Overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control\nMechanical Service Done"
             }
          ]

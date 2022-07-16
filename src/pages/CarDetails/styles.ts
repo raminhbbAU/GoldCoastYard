@@ -4,12 +4,21 @@ export const MainContainer = styled("section")`
     margin-top: 50px;
 `;
 
+
+export const PageMapLinkTitle = styled("a")`
+  font-size: 13px;
+  font-weight: 500;
+  color: #a8a8a8;
+  margin-left:5px;
+`;
+
 export const CarTitle = styled("p")`
   font-size: 25px;
   font-style:bold;
   font-weight: 700;
   color: black;
   margin-left:5px;
+  margin-top:15px;
 `;
 
 export const GalleryLeftContainer = styled("div")` 
@@ -37,11 +46,19 @@ export const CarDetailIconContainer = styled("section")`
 
 `;
 
+export const CarDetailIconContainerDetail = styled("section")` 
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    align-content:center;
+`;
+
 export const CarDetailIconText = styled("p")`
-  font-size: 16px;
+  font-size: 14px;
   font-style: bold;
-  font-weight: 900;
-  color: black;
+  font-weight: 700;
+  color: #a8a8a8;
+  margin-top:5px;
 `;
 
 
@@ -82,4 +99,21 @@ export const CarDetailListValue = styled("p")`
 
 export const OfferRightContainer = styled("div")` 
     
+`;
+
+
+export const MoreItemsContainer = styled("div")`
+  display:flex;
+  flex-direction:column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const MoreItemsText = styled("p")`
+  font-size: 13px;
+  font-weight: 500;
+  color: #a8a8a8;
+  margin-top:5px;
+  margin-top:5px;
 `;

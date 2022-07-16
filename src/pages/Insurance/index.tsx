@@ -29,7 +29,7 @@ function Insurance({ t }: any) {
         type= "full"
         title={t("InsurancePage_BannerTitle")}
         content={t("InsurancePage_BannerDescription")}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner06.jpg'}
         button={t("InsurancePage_BannerButton", { returnObjects: true })}
         id="Insurance"
       />    

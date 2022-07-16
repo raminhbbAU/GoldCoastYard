@@ -8,27 +8,38 @@ const OfferBox = ({t,title,price,priceDetail,buttonText,color,onClick}:any) => {
  
     return (
         <MainContainer>
-            <Row align='middle'>
+            <Row>
                 <Col lg={24} md={24} sm={24} xs={24}>
-                    <Title color={"black"}>
+                    <Title >
                         {title}
                     </Title>
                 </Col>
-                <Col lg={24} md={24} sm={24} xs={24}>
-                    <Price color={color}>
-                        {price}
-                    </Price>
-                </Col>
-                {priceDetail && (
+            </Row>
+
+            {price && (
+                <Row>
+                    <Col lg={24} md={24} sm={24} xs={24}>
+                        <Price color={color}>
+                            {price}
+                        </Price> 
+                    </Col>
+                </Row>
+            )}
+
+            {priceDetail && (
+                <Row>
                     <Col lg={24} md={24} sm={24} xs={24}>
                         <PriceDetail>
                             {priceDetail}
                         </PriceDetail>
-                        
+                            
                     </Col>
-                )}
+                </Row>
+            )}
+
+            <Row>
                 <Col lg={24} md={24} sm={24} xs={24}>
-                    <CustomYellowButton backgroundColor={color} color={"white"} width={"100%"}>
+                    <CustomYellowButton backgroundColor={"#f0da13"} width={"100%"}>
                         {buttonText}
                     </CustomYellowButton>           
                 </Col>

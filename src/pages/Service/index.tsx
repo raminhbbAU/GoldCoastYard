@@ -29,7 +29,7 @@ function Service({ t }: any) {
         type= "full"
         title={t("ServicePage_BannerTitle")}
         content={t("ServicePage_BannerDescription")}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner05.jpg'}
         button={t("ServicePage_BannerButton", { returnObjects: true })}
         id="service"
       />    

@@ -34,7 +34,7 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,Fuel,t }: 
   return (
   <CardSection>
 
-    <Logo src={findThumbnail(id)}></Logo>
+    <Logo src={findThumbnail(id)} onClick={() => navigateTo(id)}></Logo>
 
     <Title>{title}</Title>
 

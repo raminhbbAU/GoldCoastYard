@@ -29,7 +29,7 @@ function Finance({ t }: any) {
             type= "full"
             title={t("FinancePage_BannerTitle")}
             content={t("FinancePage_BannerDescription")}
-            picture={process.env.PUBLIC_URL + '/img/gallery/banner02.jpg'}
+            picture={process.env.PUBLIC_URL + '/img/gallery/banner06.jpg'}
             button={t("FinancePage_BannerButton", { returnObjects: true })}
             id="finance"
           />    
