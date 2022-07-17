@@ -22,8 +22,8 @@ export const CardSection = styled("div")<any>`
   background-size: cover;
   background-repeat:no-repeat;
   opacity:80%;
-  width: 591px;
-  height: 419px; 
+  width: 531px; //591px;
+  height: 377px; //419px; 
   cursor: pointer;
   opacity: 1;
   margin-bottom:15px;
@@ -31,7 +31,7 @@ export const CardSection = styled("div")<any>`
   &:hover,
   &:active,
   &:focus {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 
         @media only screen and (max-width: 768px) 
@@ -39,8 +39,8 @@ export const CardSection = styled("div")<any>`
             margin-right:8px;
             margin-left:8px;
             margin-bottom:15px;
-            width: 472px;
-            height: 335px; 
+            width: 443px;
+            height: 314px; 
         }
 
         @media only screen and (max-width: 992px) 

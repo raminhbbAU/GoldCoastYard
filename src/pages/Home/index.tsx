@@ -91,7 +91,6 @@ function Home({ t }: any) {
        id="stock"
       />
 
-
       <ServiceWithFullImage
        title={t("ServiceWithImage_Title")}
        services={t("ServiceWithImage_List", { returnObjects: true })}

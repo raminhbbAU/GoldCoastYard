@@ -25,11 +25,11 @@ const FormSubmitResponse = ({ id,status,title,subtile,buttonText,buttonLink,t }:
 
         <Container marginBottom={"15px"} />
 
-        <Title>{title}</Title>
+        <Title>{status ? title : "Something wrong was happend!"}</Title>
 
         <Container marginBottom={"10px"} />
 
-        <Subtitle>{subtile}</Subtitle>
+        <Subtitle>{status ? subtile : "Please try again a bit later"}</Subtitle>
 
         <Container marginBottom={"20px"} />
 

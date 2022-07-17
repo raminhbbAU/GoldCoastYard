@@ -1,4 +1,5 @@
 import axios from "axios";
+import emailjs from '@emailjs/browser';
 
 
 export function loadAvailableCars():any[] {
@@ -39,6 +40,31 @@ export function loadModels():any[] {
     return carModel();
 }
 
+export async function SendEmail(formName:any,rego:any,state:any,odometer:any,fullName:any,email:any,phone:any,condition:any,messagecontent:any) {
+
+    console.table({rego,state,odometer,fullName,email,phone,condition,messagecontent})
+
+    let res =  await emailjs.send('gccaryard', 'template_rqo9zdb', {
+        subject: formName || "New Message from www.gccy.com.au",
+        from_name: formName || "Web administrator",
+        to_name: "GCCY Manager",
+        rego_value:rego,
+        state_value:state,
+        odometer_value:odometer,
+        fullName_value:fullName,
+        email_value:email,
+        phone_value:phone,
+        condition_value:condition,
+        message: messagecontent || "This message has generated automatically from www.gccy.com.au",
+        Send_To: "info@gccy.com.au",
+        }
+        , '_w2WCmWQNWtKQCDvE');
+
+    return res;
+}
+
+
+// repositories
 
 function carPictures():any[] {
     return (
@@ -271,7 +297,6 @@ function carPictures():any[] {
         
     )
 }
-
 
 function carModel():any[] {
     return (

@@ -1,5 +1,6 @@
 import React,{ lazy,useEffect,useState } from 'react';
 import { withTranslation } from "react-i18next";
+import { SendEmail } from '../../API/api';
 import EvaluationForm from '../../components/EvaluationForm';
 import FormSubmitResponse from '../../components/FormSubmitResponse';
 import SellCarRequestForm from '../../components/SellCarRequestForm';
@@ -12,7 +13,7 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 function SellCar({ t }: any) {
 
   const [FormState,SetFormState] = useState(0);
-  const [requestValues,setRequestValues] = useState();
+  const [requestValues,setRequestValues] = useState<any>({});
   const [contactRequestValues,setContactRequestValues] = useState();
 
   useEffect(() => {  
@@ -27,7 +28,20 @@ function SellCar({ t }: any) {
 
   const onSubmitRequestForm = (data:any) => {
     setContactRequestValues(data);
-    SetFormState(2);
+
+    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"")
+    .then ((res) => {
+      console.log(res);
+      SetFormState(2);
+    }).catch ((err) => {
+      console.log(err);
+      SetFormState(3);
+    })
+ 
+  }
+
+  const prepareFormData = (requestValue:any,contactValue:any) => {
+      return `rego:${requestValue.rego} *** state:${requestValue.state} *** odometer:${requestValue.odometer} *** fullName:${contactValue.fullName} *** email:${contactValue.email} *** phone:${contactValue.phone} *** condition:${contactValue.condition}`
   }
 
   return (
@@ -51,8 +65,8 @@ function SellCar({ t }: any) {
         <SellCarRequestForm id="CarRequestForm" title={""} content={""} requestValues= {requestValues} submitOnClick ={ (data:any) => onSubmitRequestForm(data)}/>
       )}
 
-      { FormState == 2 && (
-        <FormSubmitResponse id="submitResult" status={true} title={t("SellCarRequestForm_ResultTitle")} subtile={t("SellCarRequestForm_ResultDescription")} buttonText={t("SellCarRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+      { (FormState == 2 || FormState == 3) && (
+        <FormSubmitResponse id="submitResult" status={FormState ==2 ? true : false} title={t("SellCarRequestForm_ResultTitle")} subtile={t("SellCarRequestForm_ResultDescription")} buttonText={t("SellCarRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
       )}
 
     </Container>
