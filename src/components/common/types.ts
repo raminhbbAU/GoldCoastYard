@@ -36,6 +36,16 @@ export interface InputProps {
   ) => void;
 }
 
+export interface testDriveValidateProps {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  date: string;
+  time: string;
+}
+
+
 export interface validateProps {
   name: string;
   message: string;
@@ -54,7 +64,6 @@ export interface SellCarRequestValidateProps {
   phone: string;
   condition: string;
 }
-
 
 export interface financeValidateProps {
   firstName: string;

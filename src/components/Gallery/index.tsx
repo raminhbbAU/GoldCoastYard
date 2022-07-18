@@ -25,8 +25,7 @@ const Gallery = ({t,carInfo}:any) => {
     useEffect( () => {
 
         window.addEventListener("resize", handleResize)
-        handleResize();
-
+        
         if (carImages.length==0){
             setCarImages(loadCarPictures(carInfo.id));
         }
@@ -42,7 +41,13 @@ const Gallery = ({t,carInfo}:any) => {
             }
             else
             {
-                setSliderMaxCount(4);
+                if (window.innerWidth <= 768) {
+                    setSliderMaxCount(3);
+                }
+                else {
+                    setSliderMaxCount(4);
+                }
+                
             }
 
             setIsLoading(true);       

@@ -40,7 +40,7 @@ export function loadModels():any[] {
     return carModel();
 }
 
-export async function SendEmail(formName:any,rego:any,state:any,odometer:any,fullName:any,email:any,phone:any,condition:any,messagecontent:any) {
+export async function SendEmail(formName:any,rego:any,state:any,odometer:any,fullName:any,email:any,phone:any,condition:any,description:any,carID:any,carTitle:any,testDriveDate:any,testDriveTime:any,messagecontent:any) {
 
     console.table({rego,state,odometer,fullName,email,phone,condition,messagecontent})
 
@@ -55,6 +55,11 @@ export async function SendEmail(formName:any,rego:any,state:any,odometer:any,ful
         email_value:email,
         phone_value:phone,
         condition_value:condition,
+        description_value: description,
+        carid_value: carID,
+        cartitle_value: carTitle,
+        testdrivedate_value:testDriveDate,
+        testdrivetime_value: testDriveTime,
         message: messagecontent || "This message has generated automatically from www.gccy.com.au",
         Send_To: "info@gccy.com.au",
         }

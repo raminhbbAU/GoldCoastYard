@@ -24,6 +24,10 @@ export const FullBlockContainer = styled.section<StyleProps>`
   {
       background-image:none;
       background-color:black;
+      display:flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
   }
 
 
@@ -38,6 +42,7 @@ export const CustomContainer = styled("div")<any>`
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 768px) 
   {
+    position: inherit;
     width:100%;
   }
 

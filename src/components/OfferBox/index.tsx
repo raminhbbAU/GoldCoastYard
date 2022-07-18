@@ -39,7 +39,7 @@ const OfferBox = ({t,title,price,priceDetail,buttonText,color,onClick}:any) => {
 
             <Row>
                 <Col lg={24} md={24} sm={24} xs={24}>
-                    <CustomYellowButton backgroundColor={"#f0da13"} width={"100%"}>
+                    <CustomYellowButton backgroundColor={"#f0da13"} width={"100%"} onClick ={() => onClick()}>
                         {buttonText}
                     </CustomYellowButton>           
                 </Col>

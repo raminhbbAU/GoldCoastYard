@@ -40,7 +40,7 @@ export const Title = styled("p")`
 `;
 
 export const Price = styled("p")`
-  font-size: 15px;
+  font-size: 22px;
   font-style:bold;
   color: #424242;
   font-weight: 900;

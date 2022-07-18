@@ -52,5 +52,6 @@ export const useForm = (validate: any) => {
     values,
     errors,
     setErrors,
+    setValues,
   };
 };

@@ -1,20 +1,22 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row, Col,DatePicker,TimePicker } from "antd";
+import type { Moment } from 'moment';
 import { withTranslation } from "react-i18next";
 import { Slide, Zoom } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
 import { useForm } from "../../components/common/utils/useForm";
-import {validateFinanceRequestForm} from "../../components/common/utils/validationRules";
+import {validateTestDriveRequestForm} from "../../components/common/utils/validationRules";
 import { Button } from "../../components/common/Button";
 import Block from "../Block";
 import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
 import { MainFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
+import { setConstantValue } from "typescript";
 
-const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
-  const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
-    validateFinanceRequestForm
+const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
+  const { values, errors, handleChange, handleSubmit,setErrors,setValues } = useForm(
+    validateTestDriveRequestForm
   ) as any;
 
   const ValidationType = ({ type }: ValidationTypeProps) => {
@@ -30,7 +32,7 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
   const FormSubmit = (e:any) => {
     e.preventDefault();
     
-    let error= validateFinanceRequestForm(values);
+    let error= validateTestDriveRequestForm(values);
     if (Object.keys(error).length == 0)
     {
       submitOnClick(values);
@@ -42,6 +44,17 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
     
     
   }
+
+  const onChangeTime = (e: any) => {
+    let selectedTime = e.format('HH:mm:ss')
+    console.log(selectedTime);
+
+    setValues((values:any) => ({
+      ...values,
+      ['time']: selectedTime,
+    }));
+
+  };
 
   return (
     <MainFormContainer id={id}>
@@ -105,24 +118,22 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
                   <ValidationType type="phoneNumber" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                  <Input
-                    type="text"
-                    name="state"
-                    placeholder={t("FinanceRequestForm_StatePlaceHolder")} 
-                    value={values.state || ""}
+                  <DatePicker 
+                    name="date"
+                    placeholder="Date"
+                    value={values.date || ""}
                     onChange={handleChange}
                   />
-                  <ValidationType type="state" />
+                  <ValidationType type="date" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                <Input
-                    type="text"
-                    name="description"
-                    placeholder={t("FinanceRequestForm_DescriptionPlaceHolder")} 
-                    value={values.description || ""}
-                    onChange={handleChange}
+                  <TimePicker 
+                    name="time"
+                    placeholder="Time"
+                    value={values.time || ""}
+                    onChange={onChangeTime}
                   />
-                  <ValidationType type="description" />
+                  <ValidationType type="time" />
             </Col>
           </Row>
           <Row>
@@ -144,4 +155,4 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
   );
 };
 
-export default withTranslation()(FinanceRquestForm);
+export default withTranslation()(TestDriveRequestForm);

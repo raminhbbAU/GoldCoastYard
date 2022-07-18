@@ -1,8 +1,8 @@
-import { Col, Row } from "antd";
+import { Col, Row,Modal } from "antd";
 import React, { useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { useRouteMatch } from "react-router-dom";
-import { loadCarInfo } from "../../API/api";
+import { loadCarInfo, SendEmail } from "../../API/api";
 import Container from "../../components/common/Container";
 import OfferBox from "../../components/OfferBox";
 import { SvgIcon } from "../../components/common/SvgIcon";
@@ -12,6 +12,16 @@ import { MainContainer,GalleryLeftContainer,GalleryContainer,OfferRightContainer
 import OptionBox from "../../components/OptionBox";
 import { CaretUpOutlined,CaretDownOutlined} from '@ant-design/icons';
 import { CustomYellowButton } from "../../styles/styles";
+import FinanceRequestForm from "../../components/FinanceRequestForm";
+import Block from "../../components/Block";
+import TestDriveRequestForm from "../../components/TestDriveRequestForm";
+
+
+interface FormProps {
+    visible: boolean;
+    onSubmit: (values: any) => void;
+    onCancel: () => void;
+  }
 
 
 function CarDetails ({t,vehicleInfo}:any) {
@@ -23,6 +33,10 @@ function CarDetails ({t,vehicleInfo}:any) {
     const [carId,setCarId] = useState<any>();
     const [carInfo,setCarInfo] = useState<any>();
     const [fullCarDetails,setFullCarDetail] = useState(false);
+
+    const [financeDialog, setFinanceDialog] = useState(false);
+    const [enquireDialog, setEnquireDialog] = useState(false);
+    const [testDriveDialog, setTestDriveDialog] = useState(false);
 
     useEffect( () => {
 
@@ -42,6 +56,108 @@ function CarDetails ({t,vehicleInfo}:any) {
 
     const changeFullCarDetails = () => {
         setFullCarDetail(!fullCarDetails);
+    }
+
+    const FinanceRequestdialog: React.FC<FormProps> = ({visible,onSubmit,onCancel}) => {
+
+        const [FormState,SetFormState] = useState(0);
+
+        const onSubmitForm = (values:any) => {
+            
+            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","")
+            .then ((res) => {
+              console.log(res);
+              SetFormState(2);
+              onCancel()
+            }).catch ((err) => {
+              console.log(err);
+              SetFormState(3);
+              onCancel()
+            })
+
+        }
+
+        return (
+            <Modal
+                visible={visible}
+                onCancel={onCancel}
+                cancelButtonProps={{ style: { display: 'none' } }}
+                okButtonProps={{ style: { display: 'none' } }}
+            >
+                { FormState == 0 && (
+                    <FinanceRequestForm id="FinanceRequestForm" title={t("FinanceRequestForm_Title")} content={t("FinanceRequestForm_Description")} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
+                )}
+                
+            </Modal>
+        )
+    }
+
+    const EnquireRequestdialog: React.FC<FormProps> = ({visible,onSubmit,onCancel}) => {
+
+        const [FormState,SetFormState] = useState(0);
+
+        const onSubmitForm = (values:any) => {
+            
+            SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","")
+            .then ((res) => {
+              console.log(res);
+              SetFormState(2);
+              onCancel()
+            }).catch ((err) => {
+              console.log(err);
+              SetFormState(3);
+              onCancel()
+            })
+
+        }
+
+        return (
+            <Modal
+                visible={visible}
+                onCancel={onCancel}
+                cancelButtonProps={{ style: { display: 'none' } }}
+                okButtonProps={{ style: { display: 'none' } }}
+            >
+                { FormState == 0 && (
+                    <FinanceRequestForm id="EnquireRequestForm" title={"Enquire Request"} content={t("FinanceRequestForm_Description")} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
+                )}
+                
+            </Modal>
+        )
+    }
+
+    const TestDriveRequestdialog: React.FC<FormProps> = ({visible,onSubmit,onCancel}) => {
+
+        const [FormState,SetFormState] = useState(0);
+
+        const onSubmitForm = (values:any) => {
+            
+            SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"")
+            .then ((res) => {
+              console.log(res);
+              SetFormState(2);
+              onCancel()
+            }).catch ((err) => {
+              console.log(err);
+              SetFormState(3);
+              onCancel()
+            })
+
+        }
+
+        return (
+            <Modal
+                visible={visible}
+                onCancel={onCancel}
+                cancelButtonProps={{ style: { display: 'none' } }}
+                okButtonProps={{ style: { display: 'none' } }}
+            >
+                { FormState == 0 && (
+                    <TestDriveRequestForm id="TestDriveRequestForm" title={"Test Drive Request"} content={t("FinanceRequestForm_Description")} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
+                )}
+                
+            </Modal>
+        )
     }
 
 
@@ -262,9 +378,9 @@ function CarDetails ({t,vehicleInfo}:any) {
                         </Col>
                         <Col lg={6} md={6} sm={24} xs={24}>
                             <OfferRightContainer>
-                                <OfferBox title ={t("CarDetails_PriceBoxTitle")} price={'$ ' + carInfo.price} priceDetail= {""} buttonText={t("CarDetails_PriceBoxEnquireTitle")} color={"black"} onClick={ () => console.log("Click!")} />
-                                <OfferBox title ={t("CarDetails_FinanceBoxTitle")} price={'$ ' + carInfo.Finance} priceDetail= {t("CarDetails_FinanceBoxDetail")} buttonText={t("CarDetails_FinanceBoxApplyTitle")} color={"black"} onClick={ () => console.log("Click!")} />
-                                <OfferBox title ={t("CarDetails_TestDriveBoxTitle")} price={""} priceDetail= {""} buttonText={t("CarDetails_TestDriveBoxButton")} color={"black"} onClick={ () => console.log("Click!")} />
+                                <OfferBox title ={t("CarDetails_PriceBoxTitle")} price={'$ ' + carInfo.price} priceDetail= {""} buttonText={t("CarDetails_PriceBoxEnquireTitle")} color={"black"} onClick={ () => setEnquireDialog(true)} />
+                                <OfferBox title ={t("CarDetails_FinanceBoxTitle")} price={'$ ' + carInfo.Finance} priceDetail= {t("CarDetails_FinanceBoxDetail")} buttonText={t("CarDetails_FinanceBoxApplyTitle")} color={"black"} onClick={ () => setFinanceDialog(true)} />
+                                <OfferBox title ={t("CarDetails_TestDriveBoxTitle")} price={""} priceDetail= {""} buttonText={t("CarDetails_TestDriveBoxButton")} color={"black"} onClick={ () => setTestDriveDialog(true)} />
                                
                                 {/* <OptionBox title ={t("CarDetails_AvailabilityBoxTitle")} subTitle= {t("CarDetails_AvailabilityBoxDesc")} logo={t("CarDetails_AvailabilityBoxLogo")} buttonText={t("CarDetails_AvailabilityBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} /> */}
                                 {/* <OptionBox title ={t("CarDetails_TestDriveBoxTitle")} subTitle= {t("CarDetails_TestDriveBoxDesc")} logo={t("CarDetails_TestDriveBoxLogo")} buttonText={t("CarDetails_TestDriveBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} /> */}
@@ -277,6 +393,21 @@ function CarDetails ({t,vehicleInfo}:any) {
 
                 </MainContainer>
             )}
+            <FinanceRequestdialog
+                visible = {financeDialog}
+                onSubmit={(values) => console.table(values)}
+                onCancel={() => setFinanceDialog(false)}
+            />
+            <EnquireRequestdialog
+                visible = {enquireDialog}
+                onSubmit={(values) => console.table(values)}
+                onCancel={() => setEnquireDialog(false)}
+            />
+            {/* <TestDriveRequestdialog
+                visible = {testDriveDialog}
+                onSubmit={(values) => console.table(values)}
+                onCancel={() => setTestDriveDialog(false)}
+            /> */}
         </Container>
     )
 

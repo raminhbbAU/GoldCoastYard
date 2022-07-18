@@ -94,6 +94,8 @@ const CarSearchBox = ({ id,title,t }: Props) => {
                   <Col lg={24} md={24} sm={24} xs={24}>
                     <Title>{title}</Title>
                   </Col>
+                </Row>
+                <Row>
                   <Col lg={8} md={8} sm={12} xs={24}>
                     <CustomSelect  placeholder={t("SearchBoxMakeTitle")} size={"large"} style={{ width: '220px' }}  onChange={changeManufactures}>
                       {carManufactures && (
