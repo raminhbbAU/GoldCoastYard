@@ -2,7 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { ServiceSection,ServiceName, PageTitle,CardSection } from "./styles";
+import { ServiceSection,ServiceName, PageTitle,CardSection, CardHolder, CardsHolder, ImageHolder } from "./styles";
 import { useHistory } from "react-router-dom";
 
 interface Props {
@@ -21,38 +21,25 @@ const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
   };
 
   const serviceList = services.map((member: any) => (    
-    <Col lg={12} md={24} sm={24} xs={24}>
-      <CardSection src={member.img} onClick={() => navigateTo(member.link)}>
+    <Col lg={12} md={12} sm={24} xs={24}>
+      <CardsHolder>         
+        <ImageHolder src={member.img} alt={member.name}></ImageHolder>
         <ServiceName>{member.name}</ServiceName>
-        {/* <Content>{member.description}</Content>       */}
-      </CardSection>
+      </CardsHolder>
     </Col>
   ));
 
   return (
     <ServiceSection id={id}>
       {/* <Slide direction="down"> */}
-        <Row>
+        {/* <Row>
           <Col lg={24} md={24} sm={24} xs={24}>
             <PageTitle>{title}</PageTitle>
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           {serviceList}
-          <Col lg={24} md={0} sm={0} xs={0}>
-             <p>lg mode</p>
-          </Col>
-          <Col lg={0} md={24} sm={0} xs={0}>
-             <p>md mode</p>
-          </Col>
-          <Col lg={0} md={0} sm={24} xs={0}>
-             <p>sm mode</p>
-          </Col>
-          <Col lg={0} md={0} sm={0} xs={24}>
-             <p>xs mode</p>
-          </Col>
         </Row>
-      {/* </Slide> */}
     </ServiceSection>
   );
 };
