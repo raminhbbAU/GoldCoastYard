@@ -10,7 +10,7 @@ import Gallery from "../../components/Gallery";
 
 import { MainContainer,GalleryLeftContainer,GalleryContainer,OfferRightContainer, CarDetailIconContainer, CarDetailIconText, CarTitle, CarDetailListContainer, CarDetailListTitle, CarDetailListValue, CarDetailListSectionTitle, PageMapLinkTitle, MoreItemsText, MoreItemsContainer, CarDetailIconContainerDetail } from "./styles";
 import OptionBox from "../../components/OptionBox";
-import { CaretUpOutlined,CaretDownOutlined} from '@ant-design/icons';
+import { CaretUpOutlined,CaretDownOutlined,LeftOutlined} from '@ant-design/icons';
 import { CustomYellowButton } from "../../styles/styles";
 import FinanceRequestForm from "../../components/FinanceRequestForm";
 import Block from "../../components/Block";
@@ -166,7 +166,7 @@ function CarDetails ({t,vehicleInfo}:any) {
             {carInfo && (
                 <MainContainer>
                     
-                    <PageMapLinkTitle href="/usedcar">{t("CarDetails_BackToSearchResultTitle")}</PageMapLinkTitle>
+                    <PageMapLinkTitle href="/usedcar"><LeftOutlined style={{ fontSize: '14px', color: '#f0da13' }} /> {t("CarDetails_BackToSearchResultTitle")}</PageMapLinkTitle>
                     
                     <CarTitle>{carInfo.title}</CarTitle>
                     
@@ -403,11 +403,11 @@ function CarDetails ({t,vehicleInfo}:any) {
                 onSubmit={(values) => console.table(values)}
                 onCancel={() => setEnquireDialog(false)}
             />
-            {/* <TestDriveRequestdialog
+            <TestDriveRequestdialog
                 visible = {testDriveDialog}
                 onSubmit={(values) => console.table(values)}
                 onCancel={() => setTestDriveDialog(false)}
-            /> */}
+            />
         </Container>
     )
 

@@ -39,6 +39,18 @@ const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
         </Row>
         <Row>
           {serviceList}
+          <Col lg={24} md={0} sm={0} xs={0}>
+             <p>lg mode</p>
+          </Col>
+          <Col lg={0} md={24} sm={0} xs={0}>
+             <p>md mode</p>
+          </Col>
+          <Col lg={0} md={0} sm={24} xs={0}>
+             <p>sm mode</p>
+          </Col>
+          <Col lg={0} md={0} sm={0} xs={24}>
+             <p>xs mode</p>
+          </Col>
         </Row>
       {/* </Slide> */}
     </ServiceSection>

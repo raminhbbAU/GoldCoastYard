@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col,DatePicker,TimePicker } from "antd";
-import type { Moment } from 'moment';
+import moment from 'moment'
 import { withTranslation } from "react-i18next";
 import { Slide, Zoom } from "react-awesome-reveal";
 import { ContactProps, ValidationTypeProps } from "./types";
@@ -15,6 +15,10 @@ import { CustomYellowButton } from "../../styles/styles";
 import { setConstantValue } from "typescript";
 
 const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
+
+  const dateFormat = 'HH:mm:ss';
+  const selectedStartDate = moment('2000-11-11 23:15:14', dateFormat);
+
   const { values, errors, handleChange, handleSubmit,setErrors,setValues } = useForm(
     validateTestDriveRequestForm
   ) as any;
@@ -46,13 +50,22 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
   }
 
   const onChangeTime = (e: any) => {
-    let selectedTime = e.format('HH:mm:ss')
-    console.log(selectedTime);
+    console.log(typeof e);
+    console.log(e);
+    //let selectedTime = e.format('HH:mm:ss')
+    //console.log(selectedTime);
 
-    setValues((values:any) => ({
-      ...values,
-      ['time']: selectedTime,
-    }));
+    // let customEvent: HTMLInputElement;
+    // e.target.name = "time";
+
+    //console.log(values);
+    //console.log(typeof selectedTime);
+    //console.log(selectedTime.toString());
+    // console.log(e.target.name);
+
+    //setValues({...values,time:selectedTime.toString()})
+
+    console.log(values);
 
   };
 
@@ -118,7 +131,8 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
                   <ValidationType type="phoneNumber" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                  <DatePicker 
+                  <Input 
+                    type="date"
                     name="date"
                     placeholder="Date"
                     value={values.date || ""}
@@ -127,12 +141,19 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
                   <ValidationType type="date" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                  <TimePicker 
+                  <Input
+                    type="time"
                     name="time"
                     placeholder="Time"
                     value={values.time || ""}
-                    onChange={onChangeTime}
+                    onChange={handleChange}
                   />
+                  {/* <TimePicker 
+                    name="time"
+                    placeholder="Time"
+                    value={moment(selectedStartDate)}
+                    onChange={(date) => onChangeTime(date)}
+                  /> */}
                   <ValidationType type="time" />
             </Col>
           </Row>

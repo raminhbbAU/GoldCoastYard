@@ -22,11 +22,11 @@ export const CardSection = styled("div")<any>`
   background-size: cover;
   background-repeat:no-repeat;
   opacity:80%;
-  width: 531px; //591px;
-  height: 377px; //419px; 
+  width: 562px;// 375px; 
+  height: 225px; //150px;
   cursor: pointer;
-  opacity: 1;
-  margin-bottom:15px;
+  opacity: 0.6;
+  margin:15px;
 
   &:hover,
   &:active,
@@ -34,7 +34,12 @@ export const CardSection = styled("div")<any>`
     opacity: 0.9;
   }
 
-        @media only screen and (max-width: 768px) 
+  @media only screen and (min-width: 768px) 
+  {
+    width: 375px;
+    height: 150px; 
+  }
+        /* @media only screen and (max-width: 768px) 
         {
             margin-right:8px;
             margin-left:8px;
@@ -50,7 +55,7 @@ export const CardSection = styled("div")<any>`
             margin-bottom:15px;
             width: 531px;
             height: 377px;
-        }
+        } */
 `;
 
 export const PageTitle = styled("h6")`

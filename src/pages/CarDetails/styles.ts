@@ -7,7 +7,8 @@ export const MainContainer = styled("section")`
 
 export const PageMapLinkTitle = styled("a")`
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 700;
+  font-style:bold;
   color: #a8a8a8;
   margin-left:5px;
 `;
@@ -32,6 +33,7 @@ export const GalleryContainer = styled("div")`
 export const CarDetailIconContainer = styled("section")` 
     width:"auto";
     height: auto;
+    background-color:#f2f2f2;
     margin-top: 15px;
     margin-bottom:30px;
     margin-right:5px;
@@ -57,7 +59,7 @@ export const CarDetailIconText = styled("p")`
   font-size: 14px;
   font-style: bold;
   font-weight: 700;
-  color: #a8a8a8;
+  color: #5a5a5a;
   margin-top:5px;
 `;
 

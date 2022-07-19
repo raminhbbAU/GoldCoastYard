@@ -41,7 +41,7 @@
     "SearchBoxFinanceDescription":"If you don't have enough money, we are here to help you",
     "SearchBoxFinanceButton":[{"id":1,"color":"#FFF","title":"Read More","link":"finance"}] ,
 
-    "CarDetails_BackToSearchResultTitle":"< Back To search result", 
+    "CarDetails_BackToSearchResultTitle":"Back To search result", 
     "CarDetails_DetailTitle":"Details", 
     "CarDetails_OverviewTitle":"OverView", 
     "CarDetails_PriceBoxTitle":"Today Price", 
@@ -175,7 +175,7 @@
     "OnlineChat":"Online Chat",
     "Address": "Address",
     "Tel": "Tel",
-    "Address_Line1": "QLD 4216\nBiggera Waters\n49 Brisbane Rd",
+    "Address_Line1": "49 Brisbane Rd, Biggera waters, QLD 4216",
     "Address_Line2": "",
     "Address_Line3": "",
     "Social media": "",
