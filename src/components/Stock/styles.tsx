@@ -16,13 +16,23 @@ export const CardSection = styled("div")`
   box-shadow: 2px 3px #FAFAFA  ;
 `;
 
+
+export const TitleSection = styled("div")`
+  display:flex;
+  align-items: center;     /* center items horizontally, in this case */
+  margin-bottom:20px;
+  margin-left:20px;
+`;
+
+
+
 export const PageTitle = styled("h6")`
   font-size: 20px;
   font-weight: 800;
-  margin-bottom:20px;
-  margin-left:20px;
+  margin-right:20px;
   color:#616161;
-  text-align:left;
+  text-align:center;
+
 `;
 
 export const StockName = styled("p")`

@@ -203,7 +203,7 @@ export const CustomYellowButton = styled("button")<any>`
   font-size: 13px;
   font-weight: 700;
   line-height: 20px;
-  padding: 12px 40px;
+  padding:${(p) => (p.padding ? p.padding : "12px 40px")};
   position: relative;
   text-align: center;
   user-select: none;

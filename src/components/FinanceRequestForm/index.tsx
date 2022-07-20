@@ -115,8 +115,7 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
                   <ValidationType type="state" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                <Input
-                    type="text"
+                  <TextArea
                     name="description"
                     placeholder={t("FinanceRequestForm_DescriptionPlaceHolder")} 
                     value={values.description || ""}

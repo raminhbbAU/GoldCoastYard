@@ -11,7 +11,3 @@ export const Overview = styled("p")`
   color: #a8a8a8;
   white-space:pre-line;
 `;
-
-export const FormContainer = styled("section")` 
-  padding: 20px;
-`;

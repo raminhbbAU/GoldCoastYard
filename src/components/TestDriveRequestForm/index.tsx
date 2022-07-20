@@ -13,6 +13,7 @@ import TextArea from "../../components/common/TextArea";
 import { MainFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
 import { setConstantValue } from "typescript";
+import SpanInput from "../common/SpanInput";
 
 const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
 
@@ -148,12 +149,6 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
                     value={values.time || ""}
                     onChange={handleChange}
                   />
-                  {/* <TimePicker 
-                    name="time"
-                    placeholder="Time"
-                    value={moment(selectedStartDate)}
-                    onChange={(date) => onChangeTime(date)}
-                  /> */}
                   <ValidationType type="time" />
             </Col>
           </Row>

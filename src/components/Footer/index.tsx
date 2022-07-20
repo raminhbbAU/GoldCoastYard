@@ -72,8 +72,8 @@ const Footer = ({ t }: any) => {
                   // language="en_US"
                   themeColor={"#f0da13"}
                   bottomSpacing={50}
-                  loggedInGreeting="Hey mate! we are here to help you, please feel free if you have any question or need information"
-                  loggedOutGreeting="Thank you for your contact, see you soon!"
+                  loggedInGreeting={t("FaceBookChatloggedInGreeting")}
+                  loggedOutGreeting={t("FaceBookChatloggedOutGreeting")}
                   greetingDialogDisplay={"fade"}
                   debugMode={false}
                   onMessengerShow={() => {

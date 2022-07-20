@@ -89,6 +89,7 @@ function Home({ t }: any) {
        title={t("Stock_Title")}
        Stocks={availableCars}
        id="stock"
+       exploreButton={true}
       />
 
       <ServiceWithFullImage

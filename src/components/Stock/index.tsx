@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
-import { StockSection, Content, StockLogo,StockName, PageTitle,CardSection } from "./styles";
+import { StockSection, Content, StockLogo,StockName, PageTitle,CardSection, TitleSection } from "./styles";
 import CarThumbnailCard from "../CarThumbnailCard";
+import { CustomYellowButton } from "../../styles/styles";
+import { useHistory } from "react-router-dom";
 
 interface Props {
   title: string;
   Stocks: any;
   limitationNumber?:any;
   id: any;
+  exploreButton?:Boolean
+  t:any;
 }
 
-const Stock = ({ title, Stocks,limitationNumber=4, id}: Props) => {
+const Stock = ({ title, Stocks,limitationNumber=4, id,exploreButton,t}: Props) => {
 
+  const history = useHistory();
   const [stockList,setStockList] = useState<any>();
 
   const scrollTo = (id: string) => {
@@ -21,6 +26,10 @@ const Stock = ({ title, Stocks,limitationNumber=4, id}: Props) => {
     element.scrollIntoView({
       behavior: "smooth",
     });
+  };
+
+  const navigateTo = (route: string) => {
+    history.push(`/${route}`);
   };
 
 
@@ -56,7 +65,16 @@ const Stock = ({ title, Stocks,limitationNumber=4, id}: Props) => {
     <StockSection id={id}>
         <Row>
           <Col lg={24} md={24} sm={24} xs={24}>
-            <PageTitle>{title}</PageTitle>
+            <TitleSection>
+              <PageTitle>
+                {title} 
+              </PageTitle>
+              {exploreButton && (
+                <CustomYellowButton width={"auto"} type="submit" backgroundColor={"#212121"} color={"#f0da13"} padding={"7px"} onClick = { () => navigateTo("usedcar")}>
+                  {t("Stock_MoreCarsButtonText")}
+                </CustomYellowButton> 
+              )}
+            </TitleSection>            
           </Col>
         </Row>
       {/* <Slide direction="down"> */}

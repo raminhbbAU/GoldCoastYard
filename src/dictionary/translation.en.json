@@ -29,6 +29,7 @@
 
   
     "Stock_Title":"200+ Available Vehicles",
+    "Stock_MoreCarsButtonText":"Explore More",
     "MoreInfo":"More Info",
     "Quick Access":"Quick Access",
 
@@ -72,9 +73,9 @@
     "CarDetails_Finance2BoxButton":"Apply Now", 
     "CarDetails_Finance2BoxLogo":"applyfinance.png", 
 
-    "SellCar_Title":"We Buy Your Car",
-    "SellCar_SubTitle":"Simply give your vehicle registration and mileage along with a way to receive your valuation.", 
-    "SellCar_Description" : "Considering selling your current car quickly but unsure of what to expect? We can guide you through the process. Car buying services often prove to be the fastest way to sell your car. Simply enter a few details online and they will offer you an estimated price for your vehicle. However, your valuation can change depending on the condition of your car. When you take your vehicle to the premises of a car buying service, your car will be inspected before the final price is agreed.",
+    "SellCar_Title":"Thinking about selling your car?",
+    "SellCar_SubTitle":"FREE best price no obligation quote", 
+    "SellCar_Description" : "Fill in the information below to help us find your car and get a FREE no obligation quote!",
 
     "EvaluationForm_Title":"Buy Your Car in two Simple Steps",
     "EvaluationForm_Detail":"Simply give your vehicle registration and mileage along with a way to receive your valuation.",
@@ -108,12 +109,12 @@
     "SellCarRequestForm_ButtonText":"Home Page",
 
 
-    "FinancePage_BannerTitle":"Fast Financing Options",
-    "FinancePage_BannerDescription":"you can apply in few simple steps",
+    "FinancePage_BannerTitle":"Finance Options",
+    "FinancePage_BannerDescription":"Get Fast and Easy Approval!",
     "FinancePage_BannerButton":[{"id":1,"color":"#111","title":"Apply Now","link":"Home"}] ,
-    "FinancePage_Overview":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "FinancePage_Overview":"Wanting to purchase a new car but you need that little bit of extra help?\n\nWe've got you covered, with over 40+ lenders and fast easy approvals.\n\nFrom as little as $50 A WEEK you could be driving away happy today.",
     "FinanceRequestForm_Title":"Finance Request Form",
-    "FinanceRequestForm_Description":"please fill your information here. Someone from our team will get back to you as soon as possible.",
+    "FinanceRequestForm_Description":"Fill the form below and get your finance.",
     "FinanceRequestForm_FirstNamePlaceHolder":"Enter Firstname",
     "FinanceRequestForm_LastNamePlaceHolder":"Enter Lastname",
     "FinanceRequestForm_EmailPlaceHolder":"Enter Email",
@@ -129,9 +130,17 @@
     "InsurancePage_BannerTitle":"Diverse Insurance Options",
     "InsurancePage_BannerDescription":"you can apply in few simple steps",
     "InsurancePage_BannerButton":[{"id":1,"color":"#111","title":"Request Now","link":"Home"}] ,
-    "InsurancePage_Overview":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "InsurancePage_Overview_Headline":"We provide the following services complimentary to you",
+    "InsurancePage_Overview_Title1":"Transport Insurance",
+    "InsurancePage_Overview_Description1":"Purchased a car from us and need to get it transported interstate?  We provide free insurance for your car while it’s traveling from us to you, so you can rest easy knowing your car is covered.",
+    "InsurancePage_Overview_Title2":"Basic Insurance",
+    "InsurancePage_Overview_Description2":"Purchased a car from us and now need insurance? We have partnered with some of the biggest competitors in Australia for insurance to provide our customers with only the best competitive rate for you to purchase. You won’t find it anywhere else. Whether you’re after full comprehensive or 3rd Party Insurance, we’ve got you covered.",
+    "InsurancePage_Overview_Title3":"Warranty",
+    "InsurancePage_Overview_Description3":"We offer 1 Years FREE warranty, with any vehicle purchase from Gold Coast Car Yard. We have partnered with a national industry leading company to give our customers only the best coverage for their car.",
+    
+    
     "InsuranceRequestForm_Title":"Insurance Request Form",
-    "InsuranceRequestForm_Description":"please fill your information here. Someone from our team will get back to you as soon as possible.",
+    "InsuranceRequestForm_Description":"Please fill your information here.",
     "InsuranceRequestForm_FirstNamePlaceHolder":"Enter Firstname",
     "InsuranceRequestForm_LastNamePlaceHolder":"Enter Lastname",
     "InsuranceRequestForm_EmailPlaceHolder":"Enter Email",
@@ -148,9 +157,9 @@
     "ServicePage_BannerTitle":"Book Your Next Service",
     "ServicePage_BannerDescription":"you can apply in few simple steps",
     "ServicePage_BannerButton":[{"id":1,"color":"#111","title":"Book Now","link":""}] ,
-    "ServicePage_Overview":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
+    "ServicePage_Overview":"Need your car serviced?\n\nWhen you purchase your car from Gold Coast Car Yards get your 1st service half price, with all other services starting from as little as $99.\n\nPartnering with OZ Auto Care to bring our customers some amazing deals you won't find anywhere else.",
     "ServiceRequestForm_Title":"Service Request Form",
-    "ServiceRequestForm_Description":"please fill your information here. Someone from our team will get back to you as soon as possible.",
+    "ServiceRequestForm_Description":"Simply fill out the service request below and our team will get back to you as soon as possible.",
     "ServiceRequestForm_FirstNamePlaceHolder":"Enter Firstname",
     "ServiceRequestForm_LastNamePlaceHolder":"Enter Lastname",
     "ServiceRequestForm_EmailPlaceHolder":"Enter Email",
@@ -168,6 +177,8 @@
     "NewsPage_BannerButtonText":"Request Now",
     "NewsPage_ServiceDescription":"",
 
+    "FaceBookChatloggedInGreeting":"Hello and thanks for getting in touch with us! What can we help you with today?",
+    "FaceBookChatloggedOutGreeting":"Thank you!",
 
     "Tell us everything":"Tell us everything",
     "Do you have any question? Feel free to reach out.": "Do you have any question? Feel free to reach out.",

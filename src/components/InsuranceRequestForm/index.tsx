@@ -115,8 +115,7 @@ const InsuranceRquestForm = ({ title, content, id, t,submitOnClick }: ContactPro
                   <ValidationType type="state" />
             </Col>
             <Col lg={8} md={8} sm={24} xs={24}>
-                <Input
-                    type="text"
+                  <TextArea
                     name="description"
                     placeholder={t("InsuranceRequestForm_DescriptionPlaceHolder")} 
                     value={values.description || ""}
