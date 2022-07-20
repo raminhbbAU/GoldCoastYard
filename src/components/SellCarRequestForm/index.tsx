@@ -17,7 +17,7 @@ import {WarningFilled} from '@ant-design/icons';
 const SellCarRequestForm = ({ id,title,content,requestValues,submitOnClick,t }: Props) => {
 
   const { values, errors, handleChange, handleSubmit,setErrors } = useForm(validateSellCarRequestForm) as any;
-  const [carImage,setCarImage] = useState(process.env.PUBLIC_URL + `/img/asset/1/thumbnail.jpg`);
+  const [carImage,setCarImage] = useState(process.env.PUBLIC_URL + `/img/gallery/placeholderCar.png`);
   const [carModel,setCarModel] = useState("Unknown");
   const [carEstimatedValue,setCarEstimatedValue] = useState("Not Available");
 
@@ -77,18 +77,18 @@ const SellCarRequestForm = ({ id,title,content,requestValues,submitOnClick,t }: 
               <Col lg={18} md={18} sm={18} xs={18}>
                   <Row>
                     <Col lg={6} md={6} sm={6} xs={6}>
-                       <VehicleDetailTitle>{t("SellCarRequestForm_ModelTitle")}</VehicleDetailTitle>
-                    </Col>
-                    <Col lg={18} md={18} sm={17} xs={18}>
-                      <VehicleDetailValue textAlign="left">{carModel}</VehicleDetailValue>
-                    </Col>          
-                  </Row>
-                  <Row>
-                    <Col lg={6} md={6} sm={6} xs={6}>
                        <VehicleDetailTitle>{t("SellCarRequestForm_RegoTitle")}</VehicleDetailTitle>
                     </Col>
                     <Col lg={18} md={18} sm={17} xs={18}>
                       <VehicleDetailValue textAlign="left">{requestValues.rego}</VehicleDetailValue>
+                    </Col>          
+                  </Row>
+                  <Row>
+                    <Col lg={6} md={6} sm={6} xs={6}>
+                       <VehicleDetailTitle>{t("SellCarRequestForm_ModelTitle")}</VehicleDetailTitle>
+                    </Col>
+                    <Col lg={18} md={18} sm={17} xs={18}>
+                      <VehicleDetailValue textAlign="left">{carModel}</VehicleDetailValue>
                     </Col>          
                   </Row>
                   <Row>
@@ -116,7 +116,7 @@ const SellCarRequestForm = ({ id,title,content,requestValues,submitOnClick,t }: 
             <Subtitle>{t("SellCarRequestForm_FormDesc")}</Subtitle>
             <Container border={true} marginBottom={"15px"} />
             <Row>
-              <FormGroup autoComplete="off" onSubmit={sellCarRequestFormSubmit}>
+              <FormGroup onSubmit={sellCarRequestFormSubmit}>
                   <Row>
                     <Col lg={24} md={24} sm={24} xs={24}>
                       <Input

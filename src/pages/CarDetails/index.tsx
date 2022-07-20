@@ -15,6 +15,7 @@ import { CustomYellowButton } from "../../styles/styles";
 import FinanceRequestForm from "../../components/FinanceRequestForm";
 import Block from "../../components/Block";
 import TestDriveRequestForm from "../../components/TestDriveRequestForm";
+import { errorNotify, sucessNotify } from "../../service/toast.notification";
 
 
 interface FormProps {
@@ -64,7 +65,7 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
-            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","")
+            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
               console.log(res);
               SetFormState(2);
@@ -98,7 +99,7 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
-            SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","")
+            SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
               console.log(res);
               SetFormState(2);
@@ -132,14 +133,16 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
-            SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"")
+            SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","")
             .then ((res) => {
+              sucessNotify("We have received your enquiry. Someone from our team will get back to you as soon as possible.")
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
+              errorNotify("something wrong was happened!");
               console.log(err);
-              SetFormState(3);
+              SetFormState(3);  
               onCancel()
             })
 

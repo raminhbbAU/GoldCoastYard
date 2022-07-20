@@ -1,5 +1,6 @@
 import React, { lazy, useState } from "react";
 import { withTranslation } from "react-i18next";
+import { SendEmail } from "../../API/api";
 import { MainContainer, Overview } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -16,9 +17,18 @@ function Finance({ t }: any) {
 
     const onSubmitForm = (data:any) => {
       setFormItems(data);
-      SetFormState(1);
+      console.log(data);
+
+      SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","","","","","")
+      .then ((res) => {
+        console.log(res);
+        SetFormState(1);
+      }).catch ((err) => {
+        console.log(err);
+        SetFormState(2);
+      })
+
     }
-  
 
     return (
         <Container>
@@ -45,8 +55,8 @@ function Finance({ t }: any) {
               <FinanceRquestForm id="FinanceRequestForm" title={t("FinanceRequestForm_Title")} content={t("FinanceRequestForm_Description")} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
             )}
 
-            { FormState == 1 && (
-              <FormSubmitResponse id="submitResult" status={true} title={t("FinanceRequestForm_ResultTitle")} subtile={t("FinanceRequestForm_ResultDescription")} buttonText={t("FinanceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+            { (FormState == 1 || FormState == 2) && (
+              <FormSubmitResponse id="submitResult" status={FormState ==1 ? true : false} title={t("FinanceRequestForm_ResultTitle")} subtile={t("FinanceRequestForm_ResultDescription")} buttonText={t("FinanceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
             )}
 
           </MainContainer>

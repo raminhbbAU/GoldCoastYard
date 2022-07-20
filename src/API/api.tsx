@@ -40,11 +40,11 @@ export function loadModels():any[] {
     return carModel();
 }
 
-export async function SendEmail(formName:any,rego:any,state:any,odometer:any,fullName:any,email:any,phone:any,condition:any,description:any,carID:any,carTitle:any,testDriveDate:any,testDriveTime:any,messagecontent:any) {
+export async function SendEmail(formName:any,rego:any,state:any,odometer:any,fullName:any,email:any,phone:any,condition:any,description:any,carID:any,carTitle:any,testDriveDate:any,testDriveTime:any,make:any,model:any,year:any,messagecontent:any) {
 
-    console.table({rego,state,odometer,fullName,email,phone,condition,messagecontent})
+    console.log({rego,state,odometer,fullName,email,phone,condition,description,messagecontent})
 
-    let res =  await emailjs.send('gccaryard', 'template_rqo9zdb', {
+    let res =  await emailjs.send('gccaryard222', 'template_rqo9zdb', {
         subject: formName || "New Message from www.gccy.com.au",
         from_name: formName || "Web administrator",
         to_name: "GCCY Manager",
@@ -60,10 +60,13 @@ export async function SendEmail(formName:any,rego:any,state:any,odometer:any,ful
         cartitle_value: carTitle,
         testdrivedate_value:testDriveDate,
         testdrivetime_value: testDriveTime,
+        make_value: make,
+        model_value:model,
+        year_value:year,
         message: messagecontent || "This message has generated automatically from www.gccy.com.au",
         Send_To: "info@gccy.com.au",
         }
-        , '_w2WCmWQNWtKQCDvE');
+        , '_w2WCmWQNWtKQCDvE2');
 
     return res;
 }

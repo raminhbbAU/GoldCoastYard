@@ -30,7 +30,7 @@ function SellCar({ t }: any) {
   const onSubmitRequestForm = (data:any) => {
     setContactRequestValues(data);
 
-    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","")
+    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","","","","")
     .then ((res) => {
       console.log(res);
       SetFormState(2);
@@ -39,10 +39,6 @@ function SellCar({ t }: any) {
       SetFormState(3);
     })
  
-  }
-
-  const prepareFormData = (requestValue:any,contactValue:any) => {
-      return `rego:${requestValue.rego} *** state:${requestValue.state} *** odometer:${requestValue.odometer} *** fullName:${contactValue.fullName} *** email:${contactValue.email} *** phone:${contactValue.phone} *** condition:${contactValue.condition}`
   }
 
   return (

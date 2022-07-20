@@ -1,5 +1,6 @@
 import React, { lazy, useState } from "react";
 import { withTranslation } from "react-i18next";
+import { SendEmail } from "../../API/api";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
 import ServiceRequestForm from "../../components/ServiceRequestForm";
 import { MainContainer, Overview } from "./styles";
@@ -17,7 +18,16 @@ function Service({ t }: any) {
 
   const onSubmitForm = (data:any) => {
     setFormItems(data);
-    SetFormState(1);
+
+    SendEmail("Service Request","",data.state,data.odometer,data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","",data.make,data.model,data.year,"")
+    .then ((res) => {
+      console.log(res);
+      SetFormState(1);
+    }).catch ((err) => {
+      console.log(err);
+      SetFormState(2);
+    })
+
   }
 
   return (
@@ -44,8 +54,8 @@ function Service({ t }: any) {
           <ServiceRequestForm id="ServiceRequestForm" title={t("ServiceRequestForm_Title")} content={t("ServiceRequestForm_Description")} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
         )}
 
-        { FormState == 1 && (
-          <FormSubmitResponse id="submitResult" status={true} title={t("ServiceRequestForm_ResultTitle")} subtile={t("ServiceRequestForm_ResultDescription")} buttonText={t("ServiceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+        { (FormState == 1 || FormState == 2) && (
+          <FormSubmitResponse id="submitResult" status={FormState ==1 ? true : false} title={t("ServiceRequestForm_ResultTitle")} subtile={t("ServiceRequestForm_ResultDescription")} buttonText={t("ServiceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
         )}
 
       </MainContainer>

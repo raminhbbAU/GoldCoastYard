@@ -47,9 +47,9 @@ export function validateServiceRequestForm(values: serviceValidateProps) {
   if (!values.state) {
     errors.state = "State is required";
   }
-  if (!values.description) {
-    errors.description = "Description is required";
-  }
+  // if (!values.description) {
+  //   errors.description = "Description is required";
+  // }
   
   return errors;
 }

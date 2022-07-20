@@ -8,7 +8,7 @@ export const MainContainer = styled("section")`
 export const Overview = styled("p")`
   font-size: 22px;
   font-weight: 500;
-  color: #a8a8a8;
+  color: #474747;
   white-space:pre-line;
 `;
 

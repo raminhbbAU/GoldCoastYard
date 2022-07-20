@@ -114,6 +114,46 @@ const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps
                   <ValidationType type="state" />
             </Col>
             <Col lg={8} md={8} sm={24} xs={24}>
+                  <Input
+                    type="text"
+                    name="odometer"
+                    placeholder={t("ServiceRequestForm_odometerPlaceHolder")} 
+                    value={values.odometer || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="odometer" />
+            </Col>
+            <Col lg={8} md={8} sm={24} xs={24}>
+                  <Input
+                    type="text"
+                    name="make"
+                    placeholder={t("ServiceRequestForm_MakePlaceHolder")} 
+                    value={values.make || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="make" />
+            </Col>
+            <Col lg={8} md={8} sm={24} xs={24}>
+                  <Input
+                    type="text"
+                    name="model"
+                    placeholder={t("ServiceRequestForm_ModelPlaceHolder")} 
+                    value={values.model || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="model" />
+            </Col>
+            <Col lg={8} md={8} sm={24} xs={24}>
+                  <Input
+                    type="text"
+                    name="year"
+                    placeholder={t("ServiceRequestForm_YearPlaceHolder")} 
+                    value={values.year || ""}
+                    onChange={handleChange}
+                  />
+                  <ValidationType type="year" />
+            </Col>
+            <Col lg={24} md={24} sm={24} xs={24}>
                 <Input
                     type="text"
                     name="description"

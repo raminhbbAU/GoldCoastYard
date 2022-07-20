@@ -57,7 +57,7 @@ const EvaluationForm = ({ title, content, id, t,submitOnClick }: ContactProps) =
         </Detail>
       </Row>
 
-      <FormGroup autoComplete="off" onSubmit={evaluationFormSubmit}>
+      <FormGroup onSubmit={evaluationFormSubmit}>
         <FormContainer>
           <Row >
             <Col lg={6} md={8} sm={12} xs={24}>

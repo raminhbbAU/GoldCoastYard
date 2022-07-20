@@ -18,6 +18,7 @@ export const FullBlockContainer = styled.section<StyleProps>`
   max-height: 416px;
   min-height: 416px;
   max-width: 1200px;
+  
 
   /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
