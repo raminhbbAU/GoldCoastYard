@@ -20,6 +20,7 @@ function UsedCar({ t }: any) {
 
     setAvailableCars(loadAvailableCars());
 
+
     // loadAvailableCars()
     // .then( (res) => {
     //     console.log(res);

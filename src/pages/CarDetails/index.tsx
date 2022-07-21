@@ -15,7 +15,7 @@ import { CustomYellowButton } from "../../styles/styles";
 import FinanceRequestForm from "../../components/FinanceRequestForm";
 import Block from "../../components/Block";
 import TestDriveRequestForm from "../../components/TestDriveRequestForm";
-import { errorNotify, sucessNotify } from "../../service/toast.notification";
+import toast from 'react-hot-toast';
 
 
 interface FormProps {
@@ -38,6 +38,7 @@ function CarDetails ({t,vehicleInfo}:any) {
     const [financeDialog, setFinanceDialog] = useState(false);
     const [enquireDialog, setEnquireDialog] = useState(false);
     const [testDriveDialog, setTestDriveDialog] = useState(false);
+
 
     useEffect( () => {
 
@@ -67,10 +68,12 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
+              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
+              toast.error('something wrong was happened!',{position: 'bottom-right'});
               console.log(err);
               SetFormState(3);
               onCancel()
@@ -101,10 +104,12 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
+              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
+              toast.error('something wrong was happened!',{position: 'bottom-right'});
               console.log(err);
               SetFormState(3);
               onCancel()
@@ -135,12 +140,12 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","")
             .then ((res) => {
-              sucessNotify("We have received your enquiry. Someone from our team will get back to you as soon as possible.")
+              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
-              errorNotify("something wrong was happened!");
+              toast.error('something wrong was happened!',{position: 'bottom-right'});
               console.log(err);
               SetFormState(3);  
               onCancel()
@@ -162,6 +167,7 @@ function CarDetails ({t,vehicleInfo}:any) {
             </Modal>
         )
     }
+
 
 
     return (
@@ -208,7 +214,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                 <Col lg={6} md={6} sm={6} xs={6}>
                                                     <CarDetailIconContainerDetail>
                                                         <SvgIcon src="fuel.svg" aria-label="Fuel" width="50px" height="50px" />
-                                                        <CarDetailIconText>{carInfo.Fuel}</CarDetailIconText>
+                                                        <CarDetailIconText>{carInfo.fuel}</CarDetailIconText>
                                                     </CarDetailIconContainerDetail>
                                                 </Col>
                                             </Row>
@@ -237,7 +243,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                         <CarDetailListTitle>Manufacture</CarDetailListTitle>
                                                     </Col>
                                                     <Col lg={16} md={16} sm={12} xs={24}>
-                                                        <CarDetailListValue>{carInfo.Manufacture}</CarDetailListValue>
+                                                        <CarDetailListValue>{carInfo.manufacture}</CarDetailListValue>
                                                     </Col>
                                                 </Row>                                                                             
                                             </Container>
@@ -257,7 +263,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                         <CarDetailListTitle>Model</CarDetailListTitle>
                                                     </Col>
                                                     <Col lg={16} md={16} sm={12} xs={24}>
-                                                        <CarDetailListValue>{carInfo.Model}</CarDetailListValue>
+                                                        <CarDetailListValue>{carInfo.model}</CarDetailListValue>
                                                     </Col>
                                                 </Row>                                                                             
                                             </Container>
@@ -280,7 +286,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Year</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Year}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.year}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -290,7 +296,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Color</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Color}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.color}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -300,7 +306,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>State</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.State}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.state}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -310,7 +316,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Engine</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Engine}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.engine}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -330,7 +336,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Fuel</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Fuel}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.fuel}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -340,7 +346,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Cylinders</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Cylinders}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.cylinders}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -350,7 +356,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                                                 <CarDetailListTitle>Horsepower</CarDetailListTitle>
                                                             </Col>
                                                             <Col lg={16} md={16} sm={12} xs={24}>
-                                                                <CarDetailListValue>{carInfo.Horsepower}</CarDetailListValue>
+                                                                <CarDetailListValue>{carInfo.horsepower}</CarDetailListValue>
                                                             </Col>
                                                         </Row>                                                                             
                                                     </Container>
@@ -373,7 +379,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                                             {t("CarDetails_OverviewTitle")}
                                         </CarDetailListSectionTitle>
                                         <CarDetailListValue>
-                                            {carInfo.Overview}
+                                            {carInfo.overview}
                                         </CarDetailListValue>
                                     </Col>
                                 </Row>
@@ -382,7 +388,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                         <Col lg={6} md={6} sm={24} xs={24}>
                             <OfferRightContainer>
                                 <OfferBox title ={t("CarDetails_PriceBoxTitle")} price={'$ ' + carInfo.price} priceDetail= {""} buttonText={t("CarDetails_PriceBoxEnquireTitle")} color={"black"} onClick={ () => setEnquireDialog(true)} />
-                                <OfferBox title ={t("CarDetails_FinanceBoxTitle")} price={'$ ' + carInfo.Finance} priceDetail= {t("CarDetails_FinanceBoxDetail")} buttonText={t("CarDetails_FinanceBoxApplyTitle")} color={"black"} onClick={ () => setFinanceDialog(true)} />
+                                <OfferBox title ={t("CarDetails_FinanceBoxTitle")} price={'$ ' + carInfo.finance} priceDetail= {t("CarDetails_FinanceBoxDetail")} buttonText={t("CarDetails_FinanceBoxApplyTitle")} color={"black"} onClick={ () => setFinanceDialog(true)} />
                                 <OfferBox title ={t("CarDetails_TestDriveBoxTitle")} price={""} priceDetail= {""} buttonText={t("CarDetails_TestDriveBoxButton")} color={"black"} onClick={ () => setTestDriveDialog(true)} />
                                
                                 {/* <OptionBox title ={t("CarDetails_AvailabilityBoxTitle")} subTitle= {t("CarDetails_AvailabilityBoxDesc")} logo={t("CarDetails_AvailabilityBoxLogo")} buttonText={t("CarDetails_AvailabilityBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} /> */}

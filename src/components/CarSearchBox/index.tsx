@@ -59,6 +59,7 @@ const CarSearchBox = ({ id,title,t }: Props) => {
   const SearchClicked = () => {
 
     console.log("SearchClicked");
+    console.log(availableCars);
 
     if (selectedManufacture !=0){
       setFilterCarModels(carModels.filter( (i:any) => i.manufactureId == selectedManufacture));
@@ -129,7 +130,7 @@ const CarSearchBox = ({ id,title,t }: Props) => {
 
             <CarListSection>
               {(filterAvailableCars.length>0 && (      
-                  <Stock title={ filterAvailableCars.length + "+ vehicles are Available"} Stocks={filterAvailableCars} id="stock" limitationNumber={20} />
+                  <Stock title={ filterAvailableCars.length + "+ vehicles are Available"} Stocks={filterAvailableCars} id="stock" limitationNumber={50} />
               ))}
               {(filterAvailableCars.length ==0 && (      
                   <SvgIcon src={'illustration_404.svg'} width="450px" height="450px"/>

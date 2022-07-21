@@ -14,11 +14,11 @@ interface Props {
   transmission: string;
   odometer: any;
   body: string;
-  Fuel: string;
+  fuel: string;
   t: any;
 }
 
-const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,Fuel,t }: Props) => {
+const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: Props) => {
 
   const history = useHistory();
 
@@ -61,7 +61,7 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,Fuel,t }: 
         <Col lg={6} md={6} sm={6} xs={6}>
           <SvgIcon src="fuel.svg" aria-label="Fuel" width="25px" height="25px" />
           <FooterTitle>Fuel</FooterTitle>
-          <FooterContent>{Fuel}</FooterContent>
+          <FooterContent>{fuel}</FooterContent>
         </Col>
     </Row>
 

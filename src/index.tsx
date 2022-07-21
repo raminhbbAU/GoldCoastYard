@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import React, { Suspense, useEffect, useState } from 'react';
 import { I18nextProvider } from "react-i18next";
 import "antd/dist/antd.css";
+import { Toaster } from 'react-hot-toast';
 
 import Router from "./router";
 import i18n from "./dictionary/translation";
@@ -37,6 +38,7 @@ const App = () => {
         <BrowserRouter>
           <I18nextProvider i18n={i18n}>
             <Router />
+            <Toaster />
           </I18nextProvider>
         </BrowserRouter>
       )}
