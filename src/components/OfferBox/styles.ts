@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MainContainer = styled("section")` 
-    border:2px solid #e4e4e4;
+    border:1px solid #C5C7C6;
     border-radius: 8px;
     width:"100%";
     max-height:"500px";

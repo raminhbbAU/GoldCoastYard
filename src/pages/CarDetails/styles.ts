@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const MainContainer = styled("section")` 
     margin-top: 50px;
+    padding:5px;
 `;
 
 
@@ -89,6 +90,8 @@ export const CarDetailListTitle = styled("p")`
   font-style: bold;
   font-weight: 700;
   color: black;
+  white-space:pre-line;
+  padding:10px;
 `;
 
 export const CarDetailListValue = styled("p")`
@@ -96,6 +99,7 @@ export const CarDetailListValue = styled("p")`
   font-weight: 500;
   color: #a8a8a8;
   white-space:pre-line;
+  padding:10px;
 `;
 
 
@@ -110,6 +114,7 @@ export const MoreItemsContainer = styled("div")`
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin-bottom:10px;
 `;
 
 export const MoreItemsText = styled("p")`
@@ -119,3 +124,6 @@ export const MoreItemsText = styled("p")`
   margin-top:5px;
   margin-top:5px;
 `;
+
+
+

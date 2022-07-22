@@ -31,6 +31,7 @@ export const ImageHolder = styled("img")<any>`
   width: ${(p) => (p.width ? p.width : "100%")};
   border-radius:8px;
   position: relative;
+  filter: brightness(30%);
 `;
 
 export const ServiceName = styled("p")<any>`

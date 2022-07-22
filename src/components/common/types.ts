@@ -36,6 +36,13 @@ export interface InputProps {
   ) => void;
 }
 
+export interface TabProps {
+  tabItems:any;
+  tabOnChange:any;
+  content:any;
+  t: any;
+}
+
 export interface testDriveValidateProps {
   firstName: string;
   lastName: string;
