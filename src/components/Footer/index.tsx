@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
 import { SvgIcon } from "../../components/common/SvgIcon";
@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import {PhoneFilled,HomeFilled,MailFilled,TagFilled   } from '@ant-design/icons';
 
 import { MessengerChat } from "react-messenger-chat-plugin";
-// import { Wrapper, Status } from "@googlemaps/react-wrapper";
+
 
 import {
   MainSection,
@@ -34,6 +34,7 @@ import {
   RightSmall,
   ParaLinkSmall
 } from "./styles";
+import Map from "../common/Map";
 
 
 
@@ -63,6 +64,7 @@ const Footer = ({ t }: any) => {
       </SocialLink>
     );
   };
+
 
   return (
     <MainSection>
@@ -146,6 +148,8 @@ const Footer = ({ t }: any) => {
                 {/* <Wrapper apiKey={"YOUR_API_KEY"} render={render}>
                   <YourComponent/>
                 </Wrapper> */}
+
+                <Map></Map>
 
            </ThripleFooterContainer>
               

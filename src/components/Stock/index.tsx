@@ -42,6 +42,10 @@ const Stock = ({ title, Stocks,limitationNumber=4, id,exploreButton,t}: Props) =
 
     if (Stocks){
       
+      if (Stocks.length < limitationNumber) {
+        limitationNumber = Stocks.length; 
+      }
+
       setStockList(
         Stocks.slice(0, limitationNumber).map((member: any) => (    
           <Col lg={6} md={8} sm={12} xs={24}>

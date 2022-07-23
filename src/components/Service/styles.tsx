@@ -15,12 +15,12 @@ export const CardSection = styled("div")`
   align-items: center;     /* center items horizontally, in this case */
   background-color:#FFF;
   margin:10px;
-  border-radius: 5%;
-  box-shadow: 3px 3px 3px 3px #f5f4f4  ;
   cursor: pointer;
   opacity: 1;
   height:250px;
-  height:250px;
+  box-shadow: 1px 2px #C5C7C6  ;
+  border: solid 1px #C5C7C6;
+  border-radius: 16px;
 
   &:hover,
   &:active,

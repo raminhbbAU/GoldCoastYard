@@ -47,13 +47,15 @@ export const CardSection = styled("div")`
 `;
 
 export const SearchBoxSection = styled("section")`
-  border-radius: 2%;
   background-color:white;
   width:fit-content;
   height:fit-content;
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 2px;
+  box-shadow: 1px 2px #C5C7C6  ;
+  border: solid 1px #C5C7C6;
+  border-radius: 16px;
 
   /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
@@ -69,6 +71,8 @@ export const FilterSection = styled("div")`
 `;
 
 export const CarListSection = styled("div")`
+  display:flex;
+  width: 100%;
 `;
 
 
@@ -84,4 +88,17 @@ export const Title = styled("p")`
     font-size: 15px;
   }
 
+`;
+
+
+export const ClearSearch = styled("p")`
+  color: #7f7f7f;
+  font-size: 12px;
+  font-weight: 500;
+  word-wrap: break-word;
+  width:100%;
+  text-align:right;
+  margin-top:15px;
+  margin-right:10px;
+  cursor: pointer;
 `;

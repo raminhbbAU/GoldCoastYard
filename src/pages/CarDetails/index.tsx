@@ -449,7 +449,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                 <OfferRightContainer>
                   <OfferBox
                     title={t("CarDetails_PriceBoxTitle")}
-                    price={"$ " + carInfo.price}
+                    price={"$ " + carInfo.price.toLocaleString()}
                     priceDetail={""}
                     buttonText={t("CarDetails_PriceBoxEnquireTitle")}
                     color={"black"}
@@ -457,7 +457,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                   />
                   <OfferBox
                     title={t("CarDetails_FinanceBoxTitle")}
-                    price={"$ " + carInfo.finance}
+                    price={"$ " + carInfo.finance.toLocaleString()}
                     priceDetail={t("CarDetails_FinanceBoxDetail")}
                     buttonText={t("CarDetails_FinanceBoxApplyTitle")}
                     color={"black"}

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
+    "@react-google-maps/api": "^2.12.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",
     "@testing-library/user-event": "^13.5.0",
@@ -19,7 +20,6 @@
     "antd": "^4.18.9",
     "axios": "^0.26.1",
     "babel-preset-es2015": "^6.24.1",
-    "google-map-react": "^2.2.0",
     "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-awesome-reveal": "^3.8.1",

@@ -5,7 +5,7 @@ import { Option } from "antd/lib/mentions";
 
 import { loadAvailableCars,loadManufactures, loadModels  } from "../../API/api";
 import Stock from "../Stock";
-import { SectionContainer,CardSection,SearchBoxSection,Title,CustomSelect,FilterSection,CarListSection } from "./styles";
+import { SectionContainer,CardSection,SearchBoxSection,Title,CustomSelect,FilterSection,CarListSection, ClearSearch } from "./styles";
 import {CustomYellowButton} from "../../styles/styles";
 import Container from "../common/Container";
 import { Console } from "console";
@@ -84,6 +84,11 @@ const CarSearchBox = ({ id,title,t }: Props) => {
     }   
   }
 
+  const clearSearch = () => {
+    setSelectedModel(0);
+    setSelectedManufacture(0);
+    setFilterAvailableCars(availableCars);
+  }
 
   return (
      <SectionContainer>
@@ -98,7 +103,7 @@ const CarSearchBox = ({ id,title,t }: Props) => {
                 </Row>
                 <Row>
                   <Col lg={8} md={8} sm={12} xs={24}>
-                    <CustomSelect  placeholder={t("SearchBoxMakeTitle")} size={"large"} style={{ width: '220px' }}  onChange={changeManufactures}>
+                    <CustomSelect  placeholder={t("SearchBoxMakeTitle")} size={"large"} style={{ width: '220px' }}  onChange={changeManufactures} value={selectedManufacture !=0 ? selectedManufacture : t("SearchBoxMakeTitle") } >
                       {carManufactures && (
                         carManufactures.map((item: any) => (    
                           <Option value={item.id}>{item.title}</Option>
@@ -120,6 +125,11 @@ const CarSearchBox = ({ id,title,t }: Props) => {
                       {t("SearchBoxButton")}
                     </CustomYellowButton>
                   </Col>
+                </Row>
+                <Row>
+                  <ClearSearch onClick={() => clearSearch()}>
+                    {t("ClearSearch")}     
+                  </ClearSearch>
                 </Row>
               </SearchBoxSection>
             </CardSection>

@@ -17,7 +17,7 @@ export const CardsHolder = styled("div")`
   justify-content: center;
   align-items: center;
   padding:5px;
-  opacity: 0.6;
+  opacity: 1;
 
   &:hover,
   &:active,

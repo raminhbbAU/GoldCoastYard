@@ -58,4 +58,7 @@ export const FooterContent = styled("p")`
   font-size: 10px;
   font-weight: 500;
   color: #a8a8a8;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
 `;

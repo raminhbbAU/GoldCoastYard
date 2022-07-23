@@ -1,19 +1,26 @@
 import styled from "styled-components";
 
-export const StockSection = styled("section")`
-  position: relative;
+export const StockSection = styled("div")`
+  display:flex;
+  flex-direction:column;
   text-align: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 5px 20px 5px 20px;
   margin-top: 50px;
+  margin-bottom: 50px;
+  width:100%;
 `;
 
 export const CardSection = styled("div")`
   background-color:#FFF;
-  margin:10px;
+  margin-right:10px;
+  margin-bottom:10px;
   border-radius: 7%;
   padding: 10px;
-  box-shadow: 2px 3px #FAFAFA  ;
+  box-shadow: 1px 2px #C5C7C6  ;
+  width:98%;
+  border: solid 1px #C5C7C6;
+  border-radius: 16px;
 `;
 
 
@@ -50,13 +57,3 @@ export const StockLogo = styled("img")`
   height:64px;
 `;
 
-export const ContentWrapper = styled("div")`
-  max-width: 570px;
-  display: flex;
-  justify-content: center;
-  alignItems: 'center',
-
-  @media only screen and (max-width: 768px) {
-    max-width: 100%;
-  }
-`;

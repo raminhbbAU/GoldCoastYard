@@ -38,7 +38,7 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: 
 
     <Title>{title}</Title>
 
-    <Price>{'$' + price}</Price>
+    <Price>{'$ ' + price.toLocaleString()}</Price>
 
     <Container border={true} marginBottom={"10px"}/>
 
