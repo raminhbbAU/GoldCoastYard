@@ -355,7 +355,7 @@ function CarDetails ({t,vehicleInfo}:any) {
         {carInfo && (
           <MainContainer>
             <PageMapLinkTitle href="/usedcar">
-              <LeftOutlined style={{ fontSize: "14px", color: "#f0da13" }} />{" "}
+              <LeftOutlined style={{ fontSize: "14px", color: "#f0da13" }}/> {" "}
               {t("CarDetails_BackToSearchResultTitle")}
             </PageMapLinkTitle>
 

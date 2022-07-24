@@ -3,6 +3,8 @@ export interface ContactProps {
   content: string;
   id: string;
   t: any;
+  submitOnClick:any;
+  specificColumnSize:any;
 }
 
 export interface ValidationTypeProps {

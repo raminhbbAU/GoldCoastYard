@@ -4,13 +4,14 @@ export const MainContainer = styled("div")`
   margin-top:30px;
   padding: 15px;
   background-color:white;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px #f5f4f4;
   display:flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction:column;
+  box-shadow: 1px 2px #C5C7C6  ;
+  border: solid 1px #C5C7C6;
+  border-radius: 16px;
 
   @media only screen and (max-width: 1024px) {
     padding: 3rem 0;

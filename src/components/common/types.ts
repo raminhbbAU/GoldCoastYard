@@ -99,3 +99,12 @@ export interface serviceValidateProps {
   state: string;
   description: string;
 }
+
+export interface ContactValidateProps {
+  title: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  message: string;
+}

@@ -1,4 +1,4 @@
-import { validateProps,evaluationValidateProps,SellCarRequestValidateProps,financeValidateProps,insuranceValidateProps,serviceValidateProps, testDriveValidateProps } from "../../common/types";
+import { validateProps,evaluationValidateProps,SellCarRequestValidateProps,financeValidateProps,insuranceValidateProps,serviceValidateProps, testDriveValidateProps, ContactValidateProps } from "../../common/types";
 
 export function validateTestDriveRequestForm(values: testDriveValidateProps) {
   let errors = {} as testDriveValidateProps;
@@ -146,6 +146,30 @@ export function validateEvaluationForm(values: evaluationValidateProps) {
     errors.odometer = "odometer should be a number";
   }
   
+  
+  return errors;
+}
+
+export function validateContactForm(values: ContactValidateProps) {
+  let errors = {} as ContactValidateProps;
+
+  if (!values.firstName) {
+    errors.firstName = "FirstName is required";
+  }
+  if (!values.lastName) {
+    errors.lastName = "LastName is required";
+  }
+  if (!values.email) {
+    errors.email = "Email address is required";
+  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    errors.email = "Email address is invalid";
+  }
+  if (!values.phoneNumber) {
+    errors.phoneNumber = "phone is required";
+  }
+  if (!values.message) {
+    errors.message = "Message is required";
+  }
   
   return errors;
 }

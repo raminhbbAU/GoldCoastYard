@@ -135,21 +135,8 @@ const Footer = ({ t }: any) => {
 
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer alignItems={"center"}>
-                {/* <Language>{t("Online Chat")}</Language> */}
-                {/* <Para marginbottom={"15px"}>
-                  {t(`Do you have any question? Feel free to reach out.`)}
-                </Para> */}
-                
-                {/* <ChatOnlineLink href="https://wa.me/989381424797">
-                  <Chat>{t(`Let's Chat`)}</Chat>
-                  <SvgIcon src={'chat.svg'} width="96px" height="96px"/>
-                </ChatOnlineLink> */}
 
-                {/* <Wrapper apiKey={"YOUR_API_KEY"} render={render}>
-                  <YourComponent/>
-                </Wrapper> */}
-
-                <Map></Map>
+                {/* <Map></Map> */}
 
            </ThripleFooterContainer>
               
