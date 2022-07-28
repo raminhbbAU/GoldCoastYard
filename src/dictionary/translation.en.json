@@ -106,8 +106,8 @@
     "SellCarRequestForm_FormPhone":"Phone or Mobile",
     "SellCarRequestForm_FormCondition":"Condition",
     "SellCarRequestForm_SubmitButton":"Request Evaluation Now",
-    "SellCarRequestForm_ResultTitle":"Your evaluation request has been registered sucessfully!",
-    "SellCarRequestForm_ResultDescription":"Someone from our team will get back to you as soon as possible.",
+    "SellCarRequestForm_ResultTitle":"You'r vehicle will be valuated!",
+    "SellCarRequestForm_ResultDescription":"Our team will contact you as soon as possible.",
     "SellCarRequestForm_ButtonText":"Home Page",
 
 
@@ -189,6 +189,7 @@
 
 
     "ContactPage_MainTitle":"GOLD COAST CAR YARD",
+    "ContactPage_SubTitle":"If you would like to learn more about our quality <strong>Used Cars</strong> or would like to enquire about our <strong>Car Finance</strong> solutions, please don’t hesitate to contact the expert team at Gold Coast Car Yard, Car Sales for more information. Alternatively, visit our CAR YARD car dealership during our opening hours to talk to one of our friendly team members in person.",
     "ContactPage_LocationTitle":"49 Brisbane Rd, Biggera waters, QLD 4216",
     "ContactPage_SaleDepartmentTitle":"Sale & Finance Departments",
     "ContactPage_SalePhone1":"0490 715 388",

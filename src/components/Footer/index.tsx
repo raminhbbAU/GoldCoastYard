@@ -48,7 +48,7 @@ const Footer = ({ t }: any) => {
   const history = useHistory();
 
   const navigateTo = (id: string) => {
-    history.push(`/${id}`);
+    if (id != "") history.push(`/${id}`);   
   };
 
   const SocialIcons = ({ href, src }: SocialLinkProps) => {
@@ -127,18 +127,16 @@ const Footer = ({ t }: any) => {
                 <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
                 <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
                 <ParaLink onClick={() => navigateTo('Insurance')}>Insurance</ParaLink>
-                <ParaLink onClick={() => navigateTo('Terms')}>Terms & Conditions</ParaLink>
-                <ParaLink onClick={() => navigateTo('Privacy')}>Privacy Notice</ParaLink>
-                <ParaLink onClick={() => navigateTo('Cookie')}>Cookie Policies</ParaLink>
+                <ParaLink onClick={() => navigateTo('')}>Terms & Conditions</ParaLink>
+                <ParaLink onClick={() => navigateTo('')}>Privacy Notice</ParaLink>
+                <ParaLink onClick={() => navigateTo('')}>Cookie Policies</ParaLink>
               </ThripleFooterContainer>
             </Col>
 
             <Col lg={8} md={8} sm={8} xs={24}>
               <ThripleFooterContainer alignItems={"center"}>
-
-                {/* <Map></Map> */}
-
-           </ThripleFooterContainer>
+                <Map></Map>
+              </ThripleFooterContainer>
               
             </Col>
 
@@ -155,7 +153,7 @@ const Footer = ({ t }: any) => {
           <Col lg={6} md={6} sm={6} xs={24}>
             <LogoContainer onClick={() => navigateTo('home')}>
               <SvgIcon
-                src="logo2.svg"
+                src="logo-image2.svg"
                 aria-label="homepage"
                 width="96px"
                 height="96px"

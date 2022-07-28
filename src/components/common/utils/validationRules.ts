@@ -3,6 +3,7 @@ import { validateProps,evaluationValidateProps,SellCarRequestValidateProps,finan
 export function validateTestDriveRequestForm(values: testDriveValidateProps) {
   let errors = {} as testDriveValidateProps;
 
+
   if (!values.firstName) {
     errors.firstName = "FirstName is required";
   }
@@ -21,8 +22,17 @@ export function validateTestDriveRequestForm(values: testDriveValidateProps) {
     errors.date = "Date is required";
   }
   if (!values.time) {
-    errors.date = "Date is required";
+    errors.time = "Time is required";
   }
+
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var varDate = new Date(values.date);
+
+  if (varDate < today) {
+    errors.date = "Date is invalid";
+  }
+
   
   return errors;
 }

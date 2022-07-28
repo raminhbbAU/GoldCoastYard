@@ -1,11 +1,45 @@
 import styled from "styled-components";
 
+
+export const TitleContainer = styled("div")<any>`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  align-content:center;
+  text-align: center;
+  justify-content: center;
+  margin-top:50px;
+  margin-bottom:25px;
+`;
+
 export const MainTitle = styled("p")<any>`
   color: black;
   font-size: 25px;
   font-style:bold;
   font-weight: 700;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "20px")};
+`;
+
+export const SubTitle = styled("div")<any>`
+  color: black;
+  font-size: 15px;
+  margin-right:100px;
+  margin-left:100px;
+  color: #5B5B5B;
+
+  @media only screen and (max-width: 768px) 
+  {
+    margin-right:10px;
+    margin-left:10px;
+  }
+
+`;
+
+export const subtitlebold = styled("p")<any>`
+  color: red;
+  font-style:bold;
+  font-size: 13px;
+  font-weight: 700;
 `;
 
 export const LocationTitle = styled("p")<any>`

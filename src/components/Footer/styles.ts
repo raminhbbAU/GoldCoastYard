@@ -25,6 +25,7 @@ export const ThripleFooterContainer = styled("div")<any>`
   flex-direction: column;  /* make main axis vertical */
   justify-content: center; /* center items vertically, in this case */
   align-items: ${(p)=> (p.alignItems ? p.alignItems : "stretch")} ;
+  align-content:center;
   padding-left:65px;     
   height:100%;
   width:100%;
