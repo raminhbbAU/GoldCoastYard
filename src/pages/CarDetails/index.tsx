@@ -7,6 +7,10 @@ import Container from "../../components/common/Container";
 import OfferBox from "../../components/OfferBox";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import Gallery from "../../components/Gallery";
+import ReactPixel from 'react-facebook-pixel';
+import { EnvVarLoader } from '../../service/environmentvariable.loader';
+import { getDeviceInfo } from '../../service/deviceinfo.service';
+
 
 import { MainContainer,GalleryLeftContainer,GalleryContainer,OfferRightContainer, CarDetailIconContainer, CarDetailIconText, CarTitle, CarDetailListContainer, CarDetailListTitle, CarDetailListValue, CarDetailListSectionTitle, PageMapLinkTitle, MoreItemsText, MoreItemsContainer, CarDetailIconContainerDetail } from "./styles";
 import OptionBox from "../../components/OptionBox";
@@ -18,6 +22,11 @@ import TestDriveRequestForm from "../../components/TestDriveRequestForm";
 import toast from 'react-hot-toast';
 import Tab from "../../components/common/Tab";
 
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: true, // enable logs
+};
 
 interface FormProps {
     visible: boolean;
@@ -50,9 +59,14 @@ function CarDetails ({t,vehicleInfo}:any) {
         }
         else
         {
-            setCarInfo(loadCarInfo(carId));
+            let carInfo = loadCarInfo(carId);
+            setCarInfo(carInfo);
             setIsLoading(true);  
-            console.log(customMatch);     
+            console.log(customMatch);
+            
+            ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
+            ReactPixel.fbq('trackCustom', 'CarDetail_Visit',{carId:carInfo.id,title:carInfo.title});
+        
         }
 
     },[carId])

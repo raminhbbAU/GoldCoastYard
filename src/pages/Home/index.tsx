@@ -2,6 +2,7 @@ import React,{ lazy,useEffect,useState } from 'react';
 import { withTranslation } from "react-i18next";
 import i18n from "i18next";
 import useGeoLocation from "../../service/location.service";
+import ReactPixel from 'react-facebook-pixel';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -16,7 +17,14 @@ const ServiceWithFullImage = lazy(() => import("../../components/ServiceWithFull
 import { loadAvailableCars,loadModels } from "../../API/api";
 import { BannerHolder } from '../../components/common/BannerHolder';
 import { Button } from 'antd';
+import useEnvVarLoader, { EnvVarLoader } from '../../service/environmentvariable.loader';
+import { getDeviceInfo } from '../../service/deviceinfo.service';
 
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: true, // enable logs
+};
 
 function Home({ t }: any) {
 
@@ -24,6 +32,7 @@ function Home({ t }: any) {
 
   const [height,setHeight] = useState(416);
   const [width,setwidth] = useState(1200);
+  // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
 
 
   const setSize = (percentage:any) => {
@@ -33,20 +42,12 @@ function Home({ t }: any) {
     
   }
 
+
+
   useEffect(() => {  
-
-
     setAvailableCars(loadAvailableCars());
-
-    // loadAvailableCars()
-    // .then( (res) => {
-    //     console.log(res);
-    //     setAvailableCars(res);
-    // }).catch( (err) => {
-    //     console.log(err);
-    // })
-
-
+    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
+    ReactPixel.fbq('trackCustom', 'HomePage_Visit');
   }, []);
 
 

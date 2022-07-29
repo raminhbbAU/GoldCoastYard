@@ -5,11 +5,20 @@ import EvaluationForm from '../../components/EvaluationForm';
 import FormSubmitResponse from '../../components/FormSubmitResponse';
 import SellCarRequestForm from '../../components/SellCarRequestForm';
 import { MainContainer } from './styles';
+import ReactPixel from 'react-facebook-pixel';
+import { EnvVarLoader } from '../../service/environmentvariable.loader';
+import { getDeviceInfo } from '../../service/deviceinfo.service';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: true, // enable logs
+};
+
 
 function SellCar({ t }: any) {
 
@@ -18,7 +27,8 @@ function SellCar({ t }: any) {
   const [contactRequestValues,setContactRequestValues] = useState();
 
   useEffect(() => {  
- 
+    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
+    ReactPixel.fbq('trackCustom', 'SellCar_Visit');
   }, []);
 
 

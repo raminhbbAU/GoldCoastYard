@@ -1,17 +1,25 @@
 import { Col, Row } from "antd";
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
 import Map from "../../components/common/Map";
 import ContactForm from "../../components/ContactForm";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
-import { AlternativeWayTitle, ContactFormContainer, EnquirePhone, EnquireTitle, LocationTitle, MainTitle, SaleDepartmentTitle, SalePhone, SalePhoneContainer, SubTitle, TitleContainer } from "./styles";
+import { AlternativeWayTitle, ContactFormContainer, EnquirePhone, EnquireTitle, LocationTitle, MainTitle, MapContainer, SaleDepartmentTitle, SalePhone, SalePhoneContainer, SubTitle, TitleContainer } from "./styles";
 import parse from 'html-react-parser'
+import ReactPixel from 'react-facebook-pixel';
+import useEnvVarLoader, { EnvVarLoader } from "../../service/environmentvariable.loader";
+
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
+
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: true, // enable logs
+};
 
 
 function Contact({ t }: any) {
@@ -19,6 +27,13 @@ function Contact({ t }: any) {
     const [loading,setLoading] = useState(true);
     const [FormState,SetFormState] = useState(0);
     const [formItems,setFormItems] = useState();
+    // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
+
+    useEffect(() => {  
+      ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
+      ReactPixel.trackSingle(EnvVarLoader("FACEBOOK_PIXEL_ID") || "", "Contact", undefined); // For tracking default events.
+    }, []);
+
 
     const onSubmitForm = (data:any) => {
       setFormItems(data);
@@ -75,7 +90,9 @@ function Contact({ t }: any) {
                     </ContactFormContainer>
                 </Col>
                 <Col lg={12} md={12} sm={24} xs={24}>
-                    <Map></Map>
+                    <MapContainer>
+                      <Map/>
+                    </MapContainer>
                 </Col>
               </Row>
             </>

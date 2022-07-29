@@ -26,19 +26,42 @@ export const ThripleFooterContainer = styled("div")<any>`
   justify-content: center; /* center items vertically, in this case */
   align-items: ${(p)=> (p.alignItems ? p.alignItems : "stretch")} ;
   align-content:center;
-  padding-left:65px;     
-  height:100%;
-  width:100%;
+  padding:${(p)=> (p.padding ? p.padding : "0px 0px 0px 65px")};     
+  height: ${(p)=> (p.height ? p.height : "100%")};
+  width:${(p)=> (p.width ? p.width : "100%")};
+  background-color:${(p)=> (p.backgroundcolor ? p.backgroundcolor : "")};
 
   @media only screen and (max-width: 768px) 
   {
     padding:0px;
-    height:100%;
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+`;
+
+export const MapContainer = styled("div")<any>`
+  display: flex;           /* establish flex container */
+  flex-direction: row;  /* make main axis vertical */
+  justify-content: center; /* center items vertically, in this case */
+  align-items: ${(p)=> (p.alignItems ? p.alignItems : "center")} ;
+  align-content:center;
+  padding:${(p)=> (p.padding ? p.padding : "0px 0px 0px 65px")};     
+  height: ${(p)=> (p.height ? p.height : "100%")};
+  width:${(p)=> (p.width ? p.width : "100%")};
+  background-color:${(p)=> (p.backgroundcolor ? p.backgroundcolor : "")};
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding:20px;
     width:100%;
     display:flex;
     text-align: center;
     justify-content: center;
     align-items: center;
+    align-content:center;
   }
 
 `;

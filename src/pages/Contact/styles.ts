@@ -1,6 +1,23 @@
 import styled from "styled-components";
 
 
+export const MapContainer = styled("section")<any>`
+  height:100%;
+  width:100%;
+  box-shadow: 1px 1px 1px 1px #C5C7C6;
+  border-radius: 16px;
+  padding:3px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding:10px;
+    width:100%;
+    height:300px;
+    margin:10px;
+  }
+
+`;
+
 export const TitleContainer = styled("div")<any>`
   display:flex;
   flex-direction:column;
@@ -10,6 +27,8 @@ export const TitleContainer = styled("div")<any>`
   justify-content: center;
   margin-top:50px;
   margin-bottom:25px;
+
+
 `;
 
 export const MainTitle = styled("p")<any>`
@@ -47,6 +66,12 @@ export const LocationTitle = styled("p")<any>`
   font-size: 12px;
   font-weight: 400;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "30px")};
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
 `;
 
 export const SaleDepartmentTitle = styled("p")<any>`
@@ -54,12 +79,24 @@ export const SaleDepartmentTitle = styled("p")<any>`
   font-size: 13px;
   font-weight: 500;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "10px")};
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
 `;
 
 export const SalePhoneContainer = styled("div")<any>`
   display:flex;
   flex-direction:column;
   margin-bottom:10px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
 `;
 
 export const SalePhone = styled("a")<any>`
@@ -68,6 +105,13 @@ export const SalePhone = styled("a")<any>`
   font-style:bold;
   font-weight: 700;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "5px")};
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+
 `;
 
 export const EnquireTitle = styled("p")<any>`
@@ -75,6 +119,13 @@ export const EnquireTitle = styled("p")<any>`
   font-size: 13px;
   font-weight: 500;
   margin-bottom:${(p) => (p.marginbottom ? p.marginbottom : "10px")};
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+
 `;
 
 export const EnquirePhone = styled("a")<any>`
@@ -82,6 +133,13 @@ export const EnquirePhone = styled("a")<any>`
   font-size: 17px;
   font-style:bold;
   font-weight: 700;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+
 `;
 
 export const AlternativeWayTitle = styled("p")<any>`
@@ -89,6 +147,13 @@ export const AlternativeWayTitle = styled("p")<any>`
   font-size: 13px;
   font-weight: 500;
   margin-top:40px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    padding-left:10px;
+    padding-right:10px;
+  }
+
 `;
 
 export const ContactFormContainer = styled("div")<any>`

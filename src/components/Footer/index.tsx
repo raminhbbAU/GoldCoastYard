@@ -32,9 +32,11 @@ import {
   SocialLinkContainer,
   ParaLink,
   RightSmall,
-  ParaLinkSmall
+  ParaLinkSmall,
+  MapContainer
 } from "./styles";
 import Map from "../common/Map";
+import useEnvVarLoader, { EnvVarLoader } from "../../service/environmentvariable.loader";
 
 
 
@@ -44,6 +46,9 @@ interface SocialLinkProps {
 }
 
 const Footer = ({ t }: any) => {
+
+  // const [facebookChatID] = useEnvVarLoader("FACEBOOK_CHAT_ID");
+
 
   const history = useHistory();
 
@@ -70,7 +75,7 @@ const Footer = ({ t }: any) => {
     <MainSection>
 
       <MessengerChat
-                  pageId="101507375914843"
+                  pageId={EnvVarLoader("FACEBOOK_CHAT_ID")}
                   // language="en_US"
                   themeColor={"#f0da13"}
                   bottomSpacing={50}
@@ -78,24 +83,6 @@ const Footer = ({ t }: any) => {
                   loggedOutGreeting={t("FaceBookChatloggedOutGreeting")}
                   greetingDialogDisplay={"fade"}
                   debugMode={false}
-                  onMessengerShow={() => {
-                    console.log("onMessengerShow");
-                  }}
-                  onMessengerHide={() => {
-                    console.log("onMessengerHide");
-                  }}
-                  onMessengerDialogShow={() => {
-                    console.log("onMessengerDialogShow");
-                  }}
-                  onMessengerDialogHide={() => {
-                    console.log("onMessengerDialogHide");
-                  }}
-                  onMessengerMounted={() => {
-                    console.log("onMessengerMounted");
-                  }}
-                  onMessengerLoad={() => {
-                    console.log("onMessengerLoad");
-                  }}
         />
 
       <FooterSection id={"contact"}>
@@ -127,16 +114,16 @@ const Footer = ({ t }: any) => {
                 <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
                 <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
                 <ParaLink onClick={() => navigateTo('Insurance')}>Insurance</ParaLink>
-                <ParaLink onClick={() => navigateTo('')}>Terms & Conditions</ParaLink>
+                {/* <ParaLink onClick={() => navigateTo('')}>Terms & Conditions</ParaLink>
                 <ParaLink onClick={() => navigateTo('')}>Privacy Notice</ParaLink>
-                <ParaLink onClick={() => navigateTo('')}>Cookie Policies</ParaLink>
+                <ParaLink onClick={() => navigateTo('')}>Cookie Policies</ParaLink> */}
               </ThripleFooterContainer>
             </Col>
 
             <Col lg={8} md={8} sm={8} xs={24}>
-              <ThripleFooterContainer alignItems={"center"}>
+              <MapContainer padding={"0px 65px 0px 0px"} height={"200px"} width={"350px"}>
                 <Map></Map>
-              </ThripleFooterContainer>
+              </MapContainer>
               
             </Col>
 

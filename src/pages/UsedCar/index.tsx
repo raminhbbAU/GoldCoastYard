@@ -10,7 +10,14 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 import { loadAvailableCars } from "../../API/api";
 import CarSearchBox from '../../components/CarSearchBox';
+import ReactPixel from 'react-facebook-pixel';
+import { EnvVarLoader } from '../../service/environmentvariable.loader';
+import { getDeviceInfo } from '../../service/deviceinfo.service';
 
+const options = {
+  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
+  debug: true, // enable logs
+};
 
 function UsedCar({ t }: any) {
 
@@ -19,7 +26,8 @@ function UsedCar({ t }: any) {
   useEffect(() => {  
 
     setAvailableCars(loadAvailableCars());
-
+    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
+    ReactPixel.fbq('trackCustom', 'UsedCar_Visit');
 
     // loadAvailableCars()
     // .then( (res) => {

@@ -1,5 +1,6 @@
 import axios from "axios";
 import emailjs from '@emailjs/browser';
+import useEnvVarLoader, { EnvVarLoader } from "../service/environmentvariable.loader";
 
 
 export function loadAvailableCars():any[] {
@@ -44,7 +45,12 @@ export async function SendEmail(formName:any,rego:any,state:any,odometer:any,ful
 
     console.log({rego,state,odometer,fullName,email,phone,condition,description,messagecontent})
 
-    let res =  await emailjs.send('gccaryard', 'template_rqo9zdb', {
+    // const [serviceID] = useEnvVarLoader("EMAILJS_SERVICE_ID");
+    // const [templateID] = useEnvVarLoader("EMAILJS_SERVICE_TEMPLATEID");
+    // const [serviceKey] = useEnvVarLoader("EMAILJS_SERVICE_KEY");
+
+
+    let res =  await emailjs.send(EnvVarLoader("EMAILJS_SERVICE_ID"), EnvVarLoader("EMAILJS_SERVICE_TEMPLATEID"), {
         subject: formName || "New Message from www.gccy.com.au",
         from_name: formName || "Web administrator",
         to_name: "GCCY Manager",
@@ -66,7 +72,7 @@ export async function SendEmail(formName:any,rego:any,state:any,odometer:any,ful
         message: messagecontent || "This message has generated automatically from www.gccy.com.au",
         Send_To: "info@gccy.com.au",
         }
-        , '_w2WCmWQNWtKQCDvE');
+        , EnvVarLoader("EMAILJS_SERVICE_KEY"));
 
     return res;
 }
