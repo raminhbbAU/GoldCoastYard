@@ -11,6 +11,8 @@ import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
 import { EvaluationFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
+import Select from "../common/Select";
+import { StateList } from "../../constant/constantDataset";
 
 const EvaluationForm = ({ title, content, id, t,submitOnClick }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
@@ -71,12 +73,12 @@ const EvaluationForm = ({ title, content, id, t,submitOnClick }: ContactProps) =
                   <ValidationType type="rego" />
             </Col>
             <Col lg={6} md={8} sm={12} xs={24}>
-                <Input
-                    type="text"
+                  <Select
                     name="state"
                     placeholder={t("EvaluationForm_StatePlaceHolder")} 
+                    itemList = {StateList}
                     value={values.state || ""}
-                    onChange={handleChange}
+                    onChange={handleChange} 
                   />
                   <ValidationType type="state" />
             </Col>

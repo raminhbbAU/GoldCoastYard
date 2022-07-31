@@ -60,6 +60,7 @@ export const Styles = createGlobalStyle`
     }
 
     input,
+    select,
     textarea {
         border-radius: 4px;
         border: 0;

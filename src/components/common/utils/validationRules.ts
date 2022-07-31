@@ -110,8 +110,8 @@ export function validateFinanceRequestForm(values: financeValidateProps) {
   }
   if (!values.state) {
     errors.state = "State is required";
-  }else if (values.state.toLowerCase() != "act" && values.state.toLowerCase() != "nsw" && values.state.toLowerCase() != "nt" && values.state.toLowerCase() != "qld" && values.state.toLowerCase() != "sa" && values.state.toLowerCase() != "vic" && values.state.toLowerCase() != "tas" && values.state.toLowerCase() != "wa") {
-    errors.state = "States are QLD, VIC, NSW ... ";
+  }else if (values.state.toString() === "") {
+    errors.state = "State is required";
   }
 
   // if (!values.description) {

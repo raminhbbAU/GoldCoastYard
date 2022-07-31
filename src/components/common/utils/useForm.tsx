@@ -44,6 +44,7 @@ export const useForm = (validate: any) => {
       [event.target.name]: event.target.value,
     }));
     setErrors((errors) => ({ ...errors, [event.target.name]: "" }));
+    //console.table(values);
   };
 
   return {

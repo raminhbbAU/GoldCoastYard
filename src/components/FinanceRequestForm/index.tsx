@@ -11,6 +11,8 @@ import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
 import { MainFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
+import Select from "../common/Select";
+import { EmploymentTypeList, StateList } from "../../constant/constantDataset";
 
 const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
@@ -42,6 +44,7 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
     
     
   }
+
 
   return (
     <MainFormContainer id={id}>
@@ -105,27 +108,28 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
                   <ValidationType type="phoneNumber" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                  <Input
-                    type="text"
+                  <Select
                     name="state"
                     placeholder={t("FinanceRequestForm_StatePlaceHolder")} 
+                    itemList = {StateList}
                     value={values.state || ""}
-                    onChange={handleChange}
+                    onChange={handleChange} 
                   />
                   <ValidationType type="state" />
             </Col>
             <Col lg={specificColumnSize || 8} md={specificColumnSize || 8} sm={24} xs={24}>
-                  <TextArea
-                    name="description"
-                    placeholder={t("FinanceRequestForm_DescriptionPlaceHolder")} 
-                    value={values.description || ""}
-                    onChange={handleChange}
+                  <Select
+                    name="employment"
+                    placeholder={t("FinanceRequestForm_EmploymentStatusPlaceHolder")} 
+                    itemList = {EmploymentTypeList}
+                    value={values.employment || ""}
+                    onChange={handleChange} 
                   />
-                  <ValidationType type="description" />
+                  <ValidationType type="employment" />
             </Col>
           </Row>
           <Row>
-            <Col lg={24} md={24} sm={24} xs={24}>
+            <Col lg={24} md={24} sm={24} xs={24}> 
                   <ButtonContainer>
                       <CustomYellowButton width={"220px"} type="submit">
                         {t("FinanceRequestForm_Button")}
@@ -133,6 +137,7 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
                   </ButtonContainer>
             </Col>   
           </Row>
+
 
         </FormContainer>
         

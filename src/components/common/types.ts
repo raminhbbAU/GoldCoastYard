@@ -1,4 +1,5 @@
 export interface ContainerProps {
+  id?: string;
   border?: boolean;
   marginTop?:any;
   marginBottom?:any;
@@ -33,6 +34,19 @@ export interface InputProps {
     event:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
+}
+
+export interface SelectProps {
+  name?: string;
+  placeholder: string;
+  t: any;
+  itemList: any;
+  value:string;
+  onChange: (
+    event:
+      | React.ChangeEvent<HTMLOptionElement>
+      | React.ChangeEvent<HTMLSelectElement>
   ) => void;
 }
 

@@ -24,7 +24,7 @@ function UsedCar({ t }: any) {
   const [availableCars,setAvailableCars]= useState<any>();
 
   useEffect(() => {  
-
+    scrollTo("UsedCarMainContainer");
     setAvailableCars(loadAvailableCars());
     ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
     ReactPixel.fbq('trackCustom', 'UsedCar_Visit');
@@ -39,8 +39,17 @@ function UsedCar({ t }: any) {
 
   }, []);
 
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    if (element){
+        element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
-    <Container>
+    <Container id={"UsedCarMainContainer"}>
        {/* <ScrollToTop /> */}
        
        <ContentBlock

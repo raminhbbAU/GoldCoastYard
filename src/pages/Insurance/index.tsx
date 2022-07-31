@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
 import InsuranceRquestForm from "../../components/InsuranceRequestForm";
@@ -16,13 +16,27 @@ function Insurance({ t }: any) {
   const [FormState,SetFormState] = useState(0);
   const [formItems,setFormItems] = useState();
 
+
+  useEffect(() => {  
+    scrollTo("InsuranceMainContainer");
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    if (element){
+        element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   const onSubmitForm = (data:any) => {
     setFormItems(data);
     SetFormState(1);
   }
 
   return (
-    <Container>
+    <Container id={"InsuranceMainContainer"}>
 
        {/* <ScrollToTop /> */}
        

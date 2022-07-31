@@ -27,10 +27,19 @@ function SellCar({ t }: any) {
   const [contactRequestValues,setContactRequestValues] = useState();
 
   useEffect(() => {  
+    scrollTo("SellCarMainContainer");
     ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
     ReactPixel.fbq('trackCustom', 'SellCar_Visit');
   }, []);
 
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    if (element){
+        element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   const onSubmitEvaluation = (data:any) => {
     setRequestValues(data);
@@ -52,7 +61,7 @@ function SellCar({ t }: any) {
   }
 
   return (
-    <Container>
+    <Container id={"SellCarMainContainer"}>
 
        {/* <ScrollToTop /> */}
        

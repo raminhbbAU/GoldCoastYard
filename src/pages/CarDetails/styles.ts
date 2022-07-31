@@ -34,7 +34,7 @@ export const GalleryContainer = styled("div")`
 export const CarDetailIconContainer = styled("section")` 
     width:"auto";
     height: auto;
-    background-color:#f2f2f2;
+    background-color:white; //#f2f2f2;
     margin-top: 15px;
     margin-bottom:30px;
     margin-right:5px;

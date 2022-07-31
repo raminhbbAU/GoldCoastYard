@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
 import { MainContainer, Overview } from "./styles";
@@ -15,11 +15,25 @@ function Finance({ t }: any) {
     const [FormState,SetFormState] = useState(0);
     const [formItems,setFormItems] = useState();
 
+
+    useEffect(() => {  
+      scrollTo("FinanceMainContainer");
+    }, []);
+
+    const scrollTo = (id: string) => {
+      const element = document.getElementById(id) as HTMLDivElement;
+      if (element){
+          element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    };
+
     const onSubmitForm = (data:any) => {
       setFormItems(data);
       console.log(data);
 
-      SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","","","","","")
+      SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.employment,"","","","","","","","")
       .then ((res) => {
         console.log(res);
         SetFormState(1);
@@ -31,7 +45,7 @@ function Finance({ t }: any) {
     }
 
     return (
-        <Container>
+        <Container id={"FinanceMainContainer"}>
     
            {/* <ScrollToTop /> */}
            

@@ -1,4 +1,4 @@
-import { Col, Row,Modal } from "antd";
+import { Col, Row,Modal, Button } from "antd";
 import React, { useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { useRouteMatch } from "react-router-dom";
@@ -21,6 +21,7 @@ import Block from "../../components/Block";
 import TestDriveRequestForm from "../../components/TestDriveRequestForm";
 import toast from 'react-hot-toast';
 import Tab from "../../components/common/Tab";
+import { errorNotify, sucessNotify } from "../../service/toast.notification";
 
 
 const options = {
@@ -53,6 +54,8 @@ function CarDetails ({t,vehicleInfo}:any) {
 
     useEffect( () => {
 
+        scrollTo("CarDetailMainContainer");
+
         if (!carId)
         {
             setCarId(customMatch.params.id);
@@ -66,11 +69,19 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
             ReactPixel.fbq('trackCustom', 'CarDetail_Visit',{carId:carInfo.id,title:carInfo.title});
-        
+      
         }
 
     },[carId])
 
+    const scrollTo = (id: string) => {
+      const element = document.getElementById(id) as HTMLDivElement;
+      if (element){
+          element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    };
 
     const changeFullCarDetails = () => {
         setFullCarDetail(!fullCarDetails);
@@ -82,14 +93,14 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
-            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
+            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.employment,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
-              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
+              sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
-              toast.error('something wrong was happened!',{position: 'bottom-right'});
+              errorNotify('Something wrong was happened!',undefined,5000);
               console.log(err);
               SetFormState(3);
               onCancel()
@@ -120,12 +131,12 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
-              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
+              sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
-              toast.error('something wrong was happened!',{position: 'bottom-right'});
+              errorNotify('Something wrong was happened!',undefined,5000);
               console.log(err);
               SetFormState(3);
               onCancel()
@@ -156,12 +167,12 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","")
             .then ((res) => {
-              toast.success('We have received your enquiry. we will get back to you!',{position: 'bottom-right'});
+              sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);
               SetFormState(2);
               onCancel()
             }).catch ((err) => {
-              toast.error('something wrong was happened!',{position: 'bottom-right'});
+              errorNotify('Something wrong was happened!',undefined,5000);
               console.log(err);
               SetFormState(3);  
               onCancel()
@@ -187,6 +198,7 @@ function CarDetails ({t,vehicleInfo}:any) {
     const DetailSection = () => {
         return (
           <>
+           
             <CarDetailListContainer>
               <Container>
                 <Row>
@@ -365,9 +377,9 @@ function CarDetails ({t,vehicleInfo}:any) {
     }
 
     return (
-      <Container>
+      <Container id="CarDetailMainContainer">
         {carInfo && (
-          <MainContainer>
+          <MainContainer >
             <PageMapLinkTitle href="/usedcar">
               <LeftOutlined style={{ fontSize: "14px", color: "#f0da13" }}/> {" "}
               {t("CarDetails_BackToSearchResultTitle")}

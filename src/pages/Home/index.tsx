@@ -35,24 +35,24 @@ function Home({ t }: any) {
   // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
 
 
-  const setSize = (percentage:any) => {
-
-    setHeight(height + (height * (percentage/100)));
-    setwidth(width + (width * (percentage/100)));
-    
-  }
-
-
-
   useEffect(() => {  
+    scrollTo("HomeMainContainer");
     setAvailableCars(loadAvailableCars());
     ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
     ReactPixel.fbq('trackCustom', 'HomePage_Visit');
   }, []);
 
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id) as HTMLDivElement;
+    if (element){
+        element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <Container>
+    <Container id={"HomeMainContainer"}>
        {/* <ScrollToTop /> */}
        
        <ContentBlock

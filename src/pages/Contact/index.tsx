@@ -30,9 +30,19 @@ function Contact({ t }: any) {
     // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
 
     useEffect(() => {  
+      scrollTo("ContactMainContainer");
       ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
       ReactPixel.trackSingle(EnvVarLoader("FACEBOOK_PIXEL_ID") || "", "Contact", undefined); // For tracking default events.
     }, []);
+
+    const scrollTo = (id: string) => {
+      const element = document.getElementById(id) as HTMLDivElement;
+      if (element){
+          element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    };
 
 
     const onSubmitForm = (data:any) => {
@@ -52,7 +62,7 @@ function Contact({ t }: any) {
 
 
     return (
-        <Container>
+        <Container id={"ContactMainContainer"}>
     
          {loading && (
 

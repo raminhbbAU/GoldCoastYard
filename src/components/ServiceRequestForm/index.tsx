@@ -11,6 +11,8 @@ import Input from "../../components/common/Input";
 import TextArea from "../../components/common/TextArea";
 import { MainFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
+import Select from "../common/Select";
+import { StateList } from "../../constant/constantDataset";
 
 const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
@@ -104,12 +106,12 @@ const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps
                   <ValidationType type="phoneNumber" />
             </Col>
             <Col lg={8} md={8} sm={24} xs={24}>
-                  <Input
-                    type="text"
+                  <Select
                     name="state"
                     placeholder={t("ServiceRequestForm_StatePlaceHolder")} 
+                    itemList = {StateList}
                     value={values.state || ""}
-                    onChange={handleChange}
+                    onChange={handleChange} 
                   />
                   <ValidationType type="state" />
             </Col>

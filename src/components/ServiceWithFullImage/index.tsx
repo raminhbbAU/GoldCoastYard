@@ -22,7 +22,7 @@ const ServiceWithFullImage = ({ title, services, id, t }: Props) => {
 
   const serviceList = services.map((member: any) => (    
     <Col lg={12} md={12} sm={24} xs={24}>
-      <CardsHolder>         
+      <CardsHolder onClick={() => navigateTo(member.link)}>         
         <ImageHolder src={member.img} alt={member.name}></ImageHolder>
         <ServiceName>{member.name}</ServiceName>
       </CardsHolder>
