@@ -7,19 +7,15 @@ import ContactForm from "../../components/ContactForm";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
 import { AlternativeWayTitle, ContactFormContainer, EnquirePhone, EnquireTitle, LocationTitle, MainTitle, MapContainer, SaleDepartmentTitle, SalePhone, SalePhoneContainer, SubTitle, TitleContainer } from "./styles";
 import parse from 'html-react-parser'
-import ReactPixel from 'react-facebook-pixel';
 import useEnvVarLoader, { EnvVarLoader } from "../../service/environmentvariable.loader";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
+import { scrollTo } from "../../service/utility.service";
 
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
-
-const options = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: true, // enable logs
-};
 
 
 function Contact({ t }: any) {
@@ -31,23 +27,14 @@ function Contact({ t }: any) {
 
     useEffect(() => {  
       scrollTo("ContactMainContainer");
-      ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
-      ReactPixel.trackSingle(EnvVarLoader("FACEBOOK_PIXEL_ID") || "", "Contact", undefined); // For tracking default events.
+      facebookPixelFBQ('ContactPage_Visit');
     }, []);
-
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      if (element){
-          element.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    };
 
 
     const onSubmitForm = (data:any) => {
       setFormItems(data);
-      console.log(data);
+
+      facebookPixelFBQ('ContactPage_SubmitContactForm');
 
       SendEmail("Contact Form","","","",data.title + ' ' + data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.message,"","","","","","","","")
       .then ((res) => {

@@ -1,8 +1,11 @@
 import { Col, Row } from "antd";
 import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
+import { SendEmail } from "../../API/api";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
 import InsuranceRquestForm from "../../components/InsuranceRequestForm";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
+import { scrollTo } from "../../service/utility.service";
 import { CardSection, Description, HaedLine, MainContainer, ServiceContainers, Title } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -19,20 +22,24 @@ function Insurance({ t }: any) {
 
   useEffect(() => {  
     scrollTo("InsuranceMainContainer");
+    facebookPixelFBQ('InsurancePage_Visit');
   }, []);
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    if (element){
-        element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   const onSubmitForm = (data:any) => {
     setFormItems(data);
-    SetFormState(1);
+  
+    facebookPixelFBQ('InsurancePage_SubmitInsuranceForm');
+
+    SendEmail("Insurance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","","","","","")
+    .then ((res) => {
+      console.log(res);
+      SetFormState(1);
+    }).catch ((err) => {
+      console.log(err);
+      SetFormState(2);
+    })
+
   }
 
   return (
@@ -101,8 +108,8 @@ function Insurance({ t }: any) {
           <InsuranceRquestForm id="InsuranceRequestForm" title={t("InsuranceRequestForm_Title")} content={t("InsuranceRequestForm_Description")} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
         )}
 
-        { FormState == 1 && (
-          <FormSubmitResponse id="submitResult" status={true} title={t("InsuranceRequestForm_ResultTitle")} subtile={t("InsuranceRequestForm_ResultDescription")} buttonText={t("InsuranceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+        { (FormState == 1 || FormState == 2) && (
+          <FormSubmitResponse id="submitResult" status={FormState ==1 ? true : false} title={t("InsuranceRequestForm_ResultTitle")} subtile={t("InsuranceRequestForm_ResultDescription")} buttonText={t("InsuranceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
         )}
 
       </MainContainer>

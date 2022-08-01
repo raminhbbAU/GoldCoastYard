@@ -2,7 +2,6 @@ import React,{ lazy,useEffect,useState } from 'react';
 import { withTranslation } from "react-i18next";
 import i18n from "i18next";
 import useGeoLocation from "../../service/location.service";
-import ReactPixel from 'react-facebook-pixel';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -19,12 +18,11 @@ import { BannerHolder } from '../../components/common/BannerHolder';
 import { Button } from 'antd';
 import useEnvVarLoader, { EnvVarLoader } from '../../service/environmentvariable.loader';
 import { getDeviceInfo } from '../../service/deviceinfo.service';
+import { facebookPixelFBQ } from '../../service/facebookpixel.tracer';
+import { scrollTo } from '../../service/utility.service';
 
 
-const options = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: true, // enable logs
-};
+
 
 function Home({ t }: any) {
 
@@ -32,24 +30,14 @@ function Home({ t }: any) {
 
   const [height,setHeight] = useState(416);
   const [width,setwidth] = useState(1200);
-  // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
 
 
   useEffect(() => {  
     scrollTo("HomeMainContainer");
     setAvailableCars(loadAvailableCars());
-    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
-    ReactPixel.fbq('trackCustom', 'HomePage_Visit');
+    facebookPixelFBQ('HomePage_Visit');
   }, []);
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    if (element){
-        element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <Container id={"HomeMainContainer"}>

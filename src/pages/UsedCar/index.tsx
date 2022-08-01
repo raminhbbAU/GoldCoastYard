@@ -10,14 +10,11 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
 import { loadAvailableCars } from "../../API/api";
 import CarSearchBox from '../../components/CarSearchBox';
-import ReactPixel from 'react-facebook-pixel';
 import { EnvVarLoader } from '../../service/environmentvariable.loader';
 import { getDeviceInfo } from '../../service/deviceinfo.service';
+import { facebookPixelFBQ } from '../../service/facebookpixel.tracer';
+import { scrollTo } from '../../service/utility.service';
 
-const options = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: true, // enable logs
-};
 
 function UsedCar({ t }: any) {
 
@@ -26,8 +23,7 @@ function UsedCar({ t }: any) {
   useEffect(() => {  
     scrollTo("UsedCarMainContainer");
     setAvailableCars(loadAvailableCars());
-    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
-    ReactPixel.fbq('trackCustom', 'UsedCar_Visit');
+    facebookPixelFBQ('UsedCarPage_Visit');
 
     // loadAvailableCars()
     // .then( (res) => {
@@ -39,14 +35,6 @@ function UsedCar({ t }: any) {
 
   }, []);
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    if (element){
-        element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   return (
     <Container id={"UsedCarMainContainer"}>

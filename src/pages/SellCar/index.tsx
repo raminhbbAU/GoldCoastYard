@@ -5,19 +5,15 @@ import EvaluationForm from '../../components/EvaluationForm';
 import FormSubmitResponse from '../../components/FormSubmitResponse';
 import SellCarRequestForm from '../../components/SellCarRequestForm';
 import { MainContainer } from './styles';
-import ReactPixel from 'react-facebook-pixel';
 import { EnvVarLoader } from '../../service/environmentvariable.loader';
 import { getDeviceInfo } from '../../service/deviceinfo.service';
+import { facebookPixelFBQ } from '../../service/facebookpixel.tracer';
+import { scrollTo } from '../../service/utility.service';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
-
-const options = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: true, // enable logs
-};
 
 
 function SellCar({ t }: any) {
@@ -28,18 +24,9 @@ function SellCar({ t }: any) {
 
   useEffect(() => {  
     scrollTo("SellCarMainContainer");
-    ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
-    ReactPixel.fbq('trackCustom', 'SellCar_Visit');
+    facebookPixelFBQ('SellCarPage_Visit');
   }, []);
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    if (element){
-        element.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  };
 
   const onSubmitEvaluation = (data:any) => {
     setRequestValues(data);
@@ -48,6 +35,8 @@ function SellCar({ t }: any) {
 
   const onSubmitRequestForm = (data:any) => {
     setContactRequestValues(data);
+
+    facebookPixelFBQ('SellCarPage_SubmitSellCarForm');
 
     SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","","","","")
     .then ((res) => {

@@ -1,6 +1,8 @@
 import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
+import { scrollTo } from "../../service/utility.service";
 import { MainContainer, Overview } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -18,20 +20,14 @@ function Finance({ t }: any) {
 
     useEffect(() => {  
       scrollTo("FinanceMainContainer");
+      facebookPixelFBQ('FinancePage_Visit');
     }, []);
 
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      if (element){
-          element.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    };
 
     const onSubmitForm = (data:any) => {
       setFormItems(data);
-      console.log(data);
+      
+      facebookPixelFBQ('FinancePage_SubmitFinanceForm');
 
       SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.employment,"","","","","","","","")
       .then ((res) => {

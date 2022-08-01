@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { Button } from "../../components/common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
+import { scrollTo } from "../../service/utility.service";
 
 interface MiddleBlockProps {
   title: string;
@@ -13,12 +14,7 @@ interface MiddleBlockProps {
 }
 
 const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+
   return (
     <MiddleBlockSection>
       <Slide direction="up">

@@ -7,7 +7,7 @@ import Container from "../../components/common/Container";
 import OfferBox from "../../components/OfferBox";
 import { SvgIcon } from "../../components/common/SvgIcon";
 import Gallery from "../../components/Gallery";
-import ReactPixel from 'react-facebook-pixel';
+
 import { EnvVarLoader } from '../../service/environmentvariable.loader';
 import { getDeviceInfo } from '../../service/deviceinfo.service';
 
@@ -22,12 +22,10 @@ import TestDriveRequestForm from "../../components/TestDriveRequestForm";
 import toast from 'react-hot-toast';
 import Tab from "../../components/common/Tab";
 import { errorNotify, sucessNotify } from "../../service/toast.notification";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
+import { scrollTo } from "../../service/utility.service";
 
 
-const options = {
-  autoConfig: true, // set pixel's autoConfig. More info: https://developers.facebook.com/docs/facebook-pixel/advanced/
-  debug: true, // enable logs
-};
 
 interface FormProps {
     visible: boolean;
@@ -67,21 +65,11 @@ function CarDetails ({t,vehicleInfo}:any) {
             setIsLoading(true);  
             console.log(customMatch);
             
-            ReactPixel.init(EnvVarLoader("FACEBOOK_PIXEL_ID"),undefined, options);
-            ReactPixel.fbq('trackCustom', 'CarDetail_Visit',{carId:carInfo.id,title:carInfo.title});
-      
+            facebookPixelFBQ('CarDetail_Visit',{carId:carInfo.id,title:carInfo.title});
         }
 
     },[carId])
 
-    const scrollTo = (id: string) => {
-      const element = document.getElementById(id) as HTMLDivElement;
-      if (element){
-          element.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    };
 
     const changeFullCarDetails = () => {
         setFullCarDetail(!fullCarDetails);
@@ -93,6 +81,8 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
+            facebookPixelFBQ('CarDetail_FinanceRequest_SubmitForm');
+
             SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.employment,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
@@ -129,6 +119,8 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
+            facebookPixelFBQ('CarDetail_EnquireRequest_SubmitForm');
+
             SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
@@ -165,6 +157,8 @@ function CarDetails ({t,vehicleInfo}:any) {
 
         const onSubmitForm = (values:any) => {
             
+            facebookPixelFBQ('CarDetail_TestDriveRequest_SubmitForm');
+
             SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
@@ -378,6 +372,7 @@ function CarDetails ({t,vehicleInfo}:any) {
 
     return (
       <Container id="CarDetailMainContainer">
+
         {carInfo && (
           <MainContainer >
             <PageMapLinkTitle href="/usedcar">
@@ -479,7 +474,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                     priceDetail={""}
                     buttonText={t("CarDetails_PriceBoxEnquireTitle")}
                     color={"black"}
-                    onClick={() => setEnquireDialog(true)}
+                    onClick={() => {facebookPixelFBQ('CarDetail_EnquireRequest_Click');setEnquireDialog(true)}}
                   />
                   <OfferBox
                     title={t("CarDetails_FinanceBoxTitle")}
@@ -487,7 +482,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                     priceDetail={t("CarDetails_FinanceBoxDetail")}
                     buttonText={t("CarDetails_FinanceBoxApplyTitle")}
                     color={"black"}
-                    onClick={() => setFinanceDialog(true)}
+                    onClick={() => {facebookPixelFBQ('CarDetail_FinanceRequest_Click');setFinanceDialog(true)}}
                   />
                   <OfferBox
                     title={t("CarDetails_TestDriveBoxTitle")}
@@ -495,7 +490,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                     priceDetail={""}
                     buttonText={t("CarDetails_TestDriveBoxButton")}
                     color={"black"}
-                    onClick={() => setTestDriveDialog(true)}
+                    onClick={() => {facebookPixelFBQ('CarDetail_TestDriveRequest_Click');setTestDriveDialog(true)}}
                   />
 
                   {/* <OptionBox title ={t("CarDetails_AvailabilityBoxTitle")} subTitle= {t("CarDetails_AvailabilityBoxDesc")} logo={t("CarDetails_AvailabilityBoxLogo")} buttonText={t("CarDetails_AvailabilityBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} /> */}
@@ -523,8 +518,6 @@ function CarDetails ({t,vehicleInfo}:any) {
           onSubmit={(values) => console.table(values)}
           onCancel={() => setTestDriveDialog(false)}
         />
-
-        
 
       </Container>
     );

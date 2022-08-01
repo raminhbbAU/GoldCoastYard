@@ -10,6 +10,7 @@ import {CustomYellowButton} from "../../styles/styles";
 import Container from "../common/Container";
 import { Console } from "console";
 import { SvgIcon } from "../common/SvgIcon";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
 
 interface Props {
   id: any,
@@ -60,6 +61,7 @@ const CarSearchBox = ({ id,title,t }: Props) => {
 
     console.log("SearchClicked");
     console.log(availableCars);
+    facebookPixelFBQ('UsedCarPage_SearchClick');
 
     if (selectedManufacture !=0){
       setFilterCarModels(carModels.filter( (i:any) => i.manufactureId == selectedManufacture));

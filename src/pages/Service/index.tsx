@@ -1,8 +1,10 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
 import FormSubmitResponse from "../../components/FormSubmitResponse";
 import ServiceRequestForm from "../../components/ServiceRequestForm";
+import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
+import { scrollTo } from "../../service/utility.service";
 import { MainContainer, Overview } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -16,8 +18,17 @@ function Service({ t }: any) {
   const [FormState,SetFormState] = useState(0);
   const [formItems,setFormItems] = useState();
 
+  useEffect(() => {  
+    scrollTo("UsedCarMainContainer");
+    facebookPixelFBQ('ServicePage_Visit');
+
+  }, []);
+
+
   const onSubmitForm = (data:any) => {
     setFormItems(data);
+
+    facebookPixelFBQ('ServicePage_SubmitServiceForm');
 
     SendEmail("Service Request","",data.state,data.odometer,data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","",data.make,data.model,data.year,"")
     .then ((res) => {
@@ -31,7 +42,7 @@ function Service({ t }: any) {
   }
 
   return (
-    <Container>
+    <Container id={"UsedCarMainContainer"}>
 
        {/* <ScrollToTop /> */}
        

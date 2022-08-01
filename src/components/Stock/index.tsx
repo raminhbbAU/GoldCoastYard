@@ -21,13 +21,6 @@ const Stock = ({ title, Stocks,limitationNumber=4, id,exploreButton,t}: Props) =
   const history = useHistory();
   const [stockList,setStockList] = useState<any>();
 
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   const navigateTo = (route: string) => {
     history.push(`/${route}`);
   };
