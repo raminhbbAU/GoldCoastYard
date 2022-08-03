@@ -4,7 +4,7 @@ import { withTranslation } from "react-i18next";
 import { CustomYellowButton } from '../../styles/styles';
 import { MainContainer, Price, PriceDetail, Title } from './styles';
 
-const OfferBox = ({t,title,price,priceDetail,buttonText,color,onClick}:any) => {
+const OfferBox = ({t,title,price,priceDetail,buttonText,color,disable,onClick}:any) => {
  
     return (
         <MainContainer>
@@ -39,7 +39,7 @@ const OfferBox = ({t,title,price,priceDetail,buttonText,color,onClick}:any) => {
 
             <Row>
                 <Col lg={24} md={24} sm={24} xs={24}>
-                    <CustomYellowButton backgroundColor={"#f0da13"} width={"100%"} onClick ={() => onClick()}>
+                    <CustomYellowButton disabled={disable} backgroundColor={disable ? "#C5C7C6" : "#f0da13"} width={"100%"} onClick ={disable ? ()=> console.log('it is disable!') :() => onClick()}>
                         {buttonText}
                     </CustomYellowButton>           
                 </Col>

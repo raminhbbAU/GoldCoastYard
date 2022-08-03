@@ -36,6 +36,12 @@ export const MainImageNavigator = styled("div")<any>`
 `;
 
 
+export const SoldBadge = styled("div")<any>`
+  position: absolute;
+  top: 25%;
+  left: 25%;
+`;
+
 export const ImageSelector = styled("section")<any>` 
   display: flex;           /* establish flex container */
   flex-direction: ${(p) => (p.direction ? p.direction : "column")};  /* make main axis vertical */

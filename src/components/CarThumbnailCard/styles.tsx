@@ -22,6 +22,30 @@ export const CardSection = styled("section")`
   }
 `;
 
+
+export const MainImageHolder = styled("div")` 
+    height : 100%;
+    width : 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+`;
+
+export const MainImage = styled("img")<any>`
+  height: ${(p) => (p.height ? p.height : "100%")};
+  width: ${(p) => (p.width ? p.width : "100%")};
+  border-radius:2px;
+  position: relative;
+  top: 0;
+  left: 0;
+`;
+
+export const SoldBadge = styled("div")<any>`
+  position: absolute;
+  top: 25%;
+  left: 25%;
+`;
+
 export const Logo = styled.img`
   border-radius: 2%;
   /* height : 160px; */

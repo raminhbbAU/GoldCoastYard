@@ -470,19 +470,21 @@ function CarDetails ({t,vehicleInfo}:any) {
                 <OfferRightContainer>
                   <OfferBox
                     title={t("CarDetails_PriceBoxTitle")}
-                    price={"$ " + carInfo.price.toLocaleString()}
+                    price={carInfo.sold ? "SOLD" : "$ " + carInfo.price.toLocaleString() }
                     priceDetail={""}
                     buttonText={t("CarDetails_PriceBoxEnquireTitle")}
                     color={"black"}
                     onClick={() => {facebookPixelFBQ('CarDetail_EnquireRequest_Click');setEnquireDialog(true)}}
+                    disable={carInfo.sold ? true : false}
                   />
                   <OfferBox
                     title={t("CarDetails_FinanceBoxTitle")}
-                    price={"$ " + carInfo.finance.toLocaleString()}
+                    price={carInfo.sold ? "SOLD" : "$ " + carInfo.price.toLocaleString() }
                     priceDetail={t("CarDetails_FinanceBoxDetail")}
                     buttonText={t("CarDetails_FinanceBoxApplyTitle")}
                     color={"black"}
                     onClick={() => {facebookPixelFBQ('CarDetail_FinanceRequest_Click');setFinanceDialog(true)}}
+                    disable={carInfo.sold ? true : false}
                   />
                   <OfferBox
                     title={t("CarDetails_TestDriveBoxTitle")}
@@ -491,6 +493,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                     buttonText={t("CarDetails_TestDriveBoxButton")}
                     color={"black"}
                     onClick={() => {facebookPixelFBQ('CarDetail_TestDriveRequest_Click');setTestDriveDialog(true)}}
+                    disable={carInfo.sold ? true : false}
                   />
 
                   {/* <OptionBox title ={t("CarDetails_AvailabilityBoxTitle")} subTitle= {t("CarDetails_AvailabilityBoxDesc")} logo={t("CarDetails_AvailabilityBoxLogo")} buttonText={t("CarDetails_AvailabilityBoxButton")} color={"#f0da13"} onClick={ () => console.log("Click!")} /> */}

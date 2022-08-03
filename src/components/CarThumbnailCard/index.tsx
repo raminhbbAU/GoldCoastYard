@@ -1,11 +1,14 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { withTranslation } from "react-i18next";
-import { CardSection, Logo  ,Title, Price,FooterTitle,FooterContent } from "./styles";
+import { CardSection, Logo  ,Title, Price,FooterTitle,FooterContent, MainImageHolder, MainImage, SoldBadge } from "./styles";
 import {CustomYellowButton} from "../../styles/styles";
 import { SvgIcon } from "../common/SvgIcon";
 import Container from "../common/Container";
 import { useHistory } from "react-router-dom";
+import { LeftCircleOutlined,RightCircleOutlined } from '@ant-design/icons';
+import { PngImage } from "../common/PngImage";
+
 
 interface Props {
   id: any,
@@ -15,10 +18,11 @@ interface Props {
   odometer: any;
   body: string;
   fuel: string;
+  sold:Boolean;
   t: any;
 }
 
-const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: Props) => {
+const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,sold,t }: Props) => {
 
   const history = useHistory();
 
@@ -34,7 +38,15 @@ const CarThumbnailCard = ({ id,title,price,transmission,odometer,body,fuel,t }: 
   return (
   <CardSection>
 
-    <Logo src={findThumbnail(id)} onClick={() => navigateTo(id)}></Logo>
+
+    <MainImageHolder onClick={() => navigateTo(id)}>
+      <MainImage src={findThumbnail(id)} alt={title} aria-label={title} />
+      {sold && (
+        <SoldBadge left={"15px"}><PngImage src="sold.png" aria-label="sold" width="99px" height="77px" /></SoldBadge>
+      )}   
+    </MainImageHolder>
+
+    {/* <Logo src={findThumbnail(id)} onClick={() => navigateTo(id)}></Logo> */}
 
     <Title>{title}</Title>
 

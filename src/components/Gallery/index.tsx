@@ -2,9 +2,10 @@ import { Col, Row } from 'antd';
 import React,{useState,useEffect} from 'react';
 import { withTranslation } from "react-i18next";
 
-import { ImageSelector, MainContainer, MainImage, MainImageHolder,ImageSelectorArrow, ImageSelectorThumbnail, MainImageNavigator, ImageSelectorArrowHorizontal } from './styles';
+import { ImageSelector, MainContainer, MainImage, MainImageHolder,ImageSelectorArrow, ImageSelectorThumbnail, MainImageNavigator, ImageSelectorArrowHorizontal, SoldBadge } from './styles';
 import { CaretUpOutlined,CaretDownOutlined,LeftCircleOutlined,RightCircleOutlined,CaretLeftOutlined,CaretRightOutlined } from '@ant-design/icons';
 import { loadCarPictures } from '../../API/api';
+import { PngImage } from '../common/PngImage';
 
 
 const Gallery = ({t,carInfo}:any) => {
@@ -143,6 +144,9 @@ const Gallery = ({t,carInfo}:any) => {
                                 <MainImage src={curImage} alt={carInfo.title} />
                                 <MainImageNavigator left={"15px"}><LeftCircleOutlined style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> showPreviousImage()}/></MainImageNavigator> 
                                 <MainImageNavigator right={"15px"}><RightCircleOutlined style={{ fontSize: '20px', color: '#f0da13' }} onClick={()=> showNextImage()}/></MainImageNavigator>
+                                {carInfo.sold && (
+                                    <SoldBadge left={"15px"}><PngImage src="sold.png" aria-label="sold" width="234px" height="180px" /></SoldBadge>
+                                )}   
                             </MainImageHolder>
                         </Col>
                         <Col lg={4} md={0} sm={0} xs={0}>
