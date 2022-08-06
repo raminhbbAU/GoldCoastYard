@@ -5,7 +5,7 @@ import FormSubmitResponse from "../../components/FormSubmitResponse";
 import ServiceRequestForm from "../../components/ServiceRequestForm";
 import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
 import { scrollTo } from "../../service/utility.service";
-import { MainContainer, Overview } from "./styles";
+import { Content, MainContainer, Overview, Title, Title2 } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
@@ -30,7 +30,7 @@ function Service({ t }: any) {
 
     facebookPixelFBQ('ServicePage_SubmitServiceForm');
 
-    SendEmail("Service Request","",data.state,data.odometer,data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","",data.make,data.model,data.year,"")
+    SendEmail("Service Request","","","",data.name,data.email,data.phoneNumber,"","","","","","",data.make,data.model,data.year,data.cylinders,data.fuel,"")
     .then ((res) => {
       console.log(res);
       SetFormState(1);
@@ -58,7 +58,10 @@ function Service({ t }: any) {
       <MainContainer>
 
         <Overview>
-          {t("ServicePage_Overview")}
+          <Title>{t("ServicePage_OverviewTitle1")}</Title>
+          <Content>{t("ServicePage_OverviewContent1")}</Content>
+          <Title2>{t("ServicePage_OverviewTitle2")}</Title2> 
+          <Title>{t("ServicePage_OverviewTitle3")}</Title>      
         </Overview>
 
         { FormState == 0 && (

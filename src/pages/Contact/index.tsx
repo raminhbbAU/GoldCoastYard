@@ -36,7 +36,7 @@ function Contact({ t }: any) {
 
       facebookPixelFBQ('ContactPage_SubmitContactForm');
 
-      SendEmail("Contact Form","","","",data.title + ' ' + data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.message,"","","","","","","","")
+      SendEmail("Contact Form","","","",data.title + ' ' + data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.message,"","","","","","","","","","")
       .then ((res) => {
         console.log(res);
         SetFormState(1);

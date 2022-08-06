@@ -40,26 +40,37 @@ export function validateTestDriveRequestForm(values: testDriveValidateProps) {
 export function validateServiceRequestForm(values: serviceValidateProps) {
   let errors = {} as serviceValidateProps;
 
-  if (!values.firstName) {
-    errors.firstName = "FirstName is required";
+  if (!values.name) {
+    errors.name = "Name is required";
   }
-  if (!values.lastName) {
-    errors.lastName = "LastName is required";
+  if (!values.phoneNumber) {
+    errors.phoneNumber = "phone is required";
   }
   if (!values.email) {
     errors.email = "Email address is required";
   } else if (!/\S+@\S+\.\S+/.test(values.email)) {
     errors.email = "Email address is invalid";
   }
-  if (!values.phoneNumber) {
-    errors.phoneNumber = "phone is required";
+  if (!values.make) {
+    errors.make = "Make is required";
   }
-  if (!values.state) {
-    errors.state = "State is required";
+  if (!values.model) {
+    errors.model = "Model is required";
   }
-  // if (!values.description) {
-  //   errors.description = "Description is required";
-  // }
+  if (!values.year) {
+    errors.year = "year is required";
+  }
+  if (!values.cylinders) {
+    errors.cylinders = "Cylinders is required";
+  }else if (values.cylinders.toString() === "") {
+    errors.cylinders = "Cylinders is required";
+  }
+  if (!values.fuel) {
+    errors.fuel = "Fuel Type is required";
+  }else if (values.fuel.toString() === "") {
+    errors.fuel = "Fuel Type is required";
+  }
+
   
   return errors;
 }
@@ -114,9 +125,6 @@ export function validateFinanceRequestForm(values: financeValidateProps) {
     errors.state = "State is required";
   }
 
-  // if (!values.description) {
-  //   errors.description = "Description is required";
-  // }
   
   return errors;
 }

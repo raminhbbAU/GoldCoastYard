@@ -31,7 +31,7 @@ function Insurance({ t }: any) {
   
     facebookPixelFBQ('InsurancePage_SubmitInsuranceForm');
 
-    SendEmail("Insurance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","","","","","")
+    SendEmail("Insurance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.description,"","","","","","","","","","")
     .then ((res) => {
       console.log(res);
       SetFormState(1);

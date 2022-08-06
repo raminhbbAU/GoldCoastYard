@@ -83,7 +83,7 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             facebookPixelFBQ('CarDetail_FinanceRequest_SubmitForm');
 
-            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.employment,carInfo.id,carInfo.title,"","","","","","")
+            SendEmail("Finance Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.employment,carInfo.id,carInfo.title,"","","","","","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);
@@ -121,7 +121,7 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             facebookPixelFBQ('CarDetail_EnquireRequest_SubmitForm');
 
-            SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","")
+            SendEmail("Enquire Request", "",values.state,"",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"",values.description,carInfo.id,carInfo.title,"","","","","","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);
@@ -159,7 +159,7 @@ function CarDetails ({t,vehicleInfo}:any) {
             
             facebookPixelFBQ('CarDetail_TestDriveRequest_SubmitForm');
 
-            SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","")
+            SendEmail("Test Drive Request", "","","",values.firstName + " " + values.lastName,values.email,values.phoneNumber,"","",carInfo.id,carInfo.title,values.date,values.time,"","","","","","")
             .then ((res) => {
               sucessNotify('We have received your enquiry. we will get back to you soon!',undefined,5000);
               console.log(res);

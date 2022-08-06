@@ -29,7 +29,7 @@ function Finance({ t }: any) {
       
       facebookPixelFBQ('FinancePage_SubmitFinanceForm');
 
-      SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.employment,"","","","","","","","")
+      SendEmail("Finance Request","",data.state,"",data.firstName + ' ' + data.lastName,data.email,data.phoneNumber,"",data.employment,"","","","","","","","","","")
       .then ((res) => {
         console.log(res);
         SetFormState(1);

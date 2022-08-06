@@ -12,7 +12,7 @@ import TextArea from "../../components/common/TextArea";
 import { MainFormContainer, FormGroup, Span, ButtonContainer, Title, Detail, FormContainer } from "./styles";
 import { CustomYellowButton } from "../../styles/styles";
 import Select from "../common/Select";
-import { StateList } from "../../constant/constantDataset";
+import { CylinderTypeList, FuelTypeList, StateList } from "../../constant/constantDataset";
 
 const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps) => {
   const { values, errors, handleChange, handleSubmit,setErrors } = useForm(
@@ -62,25 +62,31 @@ const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps
         <FormContainer>
           
           <Row>
+            <Col lg={24} md={24} sm={24} xs={24}>
+              <Title>{t("InsuranceRequestForm_Category1Title")} </Title>
+            </Col>
+          </Row>
+
+          <Row>
             <Col lg={8} md={8} sm={24} xs={24}>
                   <Input
                     type="text"
-                    name="firstName"
-                    placeholder={t("ServiceRequestForm_FirstNamePlaceHolder")} 
-                    value={values.firstName || ""}
+                    name="name"
+                    placeholder={t("ServiceRequestForm_NamePlaceHolder")} 
+                    value={values.name || ""}
                     onChange={handleChange}
                   />
-                  <ValidationType type="firstName" />
+                  <ValidationType type="name" />
             </Col>
             <Col lg={8} md={8} sm={24} xs={24}>
                 <Input
                     type="text"
-                    name="lastName"
-                    placeholder={t("ServiceRequestForm_LastNamePlaceHolder")} 
-                    value={values.lastName || ""}
+                    name="phoneNumber"
+                    placeholder={t("ServiceRequestForm_PhonePlaceHolder")} 
+                    value={values.phoneNumber || ""}
                     onChange={handleChange}
                   />
-                  <ValidationType type="lastName" />
+                  <ValidationType type="phoneNumber" />
             </Col>
             <Col lg={8} md={8} sm={24} xs={24}>
                   <Input
@@ -95,36 +101,12 @@ const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps
           </Row>
 
           <Row>
-            <Col lg={8} md={8} sm={24} xs={24}>
-                <Input
-                    type="text"
-                    name="phoneNumber"
-                    placeholder={t("ServiceRequestForm_PhonePlaceHolder")} 
-                    value={values.phoneNumber || ""}
-                    onChange={handleChange}
-                  />
-                  <ValidationType type="phoneNumber" />
+            <Col lg={24} md={24} sm={24} xs={24}>
+              <Title>{t("InsuranceRequestForm_Category2Title")} </Title>
             </Col>
-            <Col lg={8} md={8} sm={24} xs={24}>
-                  <Select
-                    name="state"
-                    placeholder={t("ServiceRequestForm_StatePlaceHolder")} 
-                    itemList = {StateList}
-                    value={values.state || ""}
-                    onChange={handleChange} 
-                  />
-                  <ValidationType type="state" />
-            </Col>
-            <Col lg={8} md={8} sm={24} xs={24}>
-                  <Input
-                    type="text"
-                    name="odometer"
-                    placeholder={t("ServiceRequestForm_odometerPlaceHolder")} 
-                    value={values.odometer || ""}
-                    onChange={handleChange}
-                  />
-                  <ValidationType type="odometer" />
-            </Col>
+          </Row>
+
+          <Row>
             <Col lg={8} md={8} sm={24} xs={24}>
                   <Input
                     type="text"
@@ -155,17 +137,41 @@ const ServiceRquestForm = ({ title, content, id, t,submitOnClick }: ContactProps
                   />
                   <ValidationType type="year" />
             </Col>
-            <Col lg={24} md={24} sm={24} xs={24}>
-                <Input
+          </Row>
+
+          <Row>
+            <Col lg={8} md={8} sm={24} xs={24}>
+                  <Select
+                    name="cylinders"
+                    placeholder={t("InsuranceRequestForm_CylindersPlaceHolder")} 
+                    itemList = {CylinderTypeList}
+                    value={values.cylinders || ""}
+                    onChange={handleChange} 
+                  />
+                  <ValidationType type="cylinders" />
+            </Col>
+            <Col lg={8} md={8} sm={24} xs={24}>
+                  <Select
+                    name="fuel"
+                    placeholder={t("InsuranceRequestForm_FuelPlaceHolder")} 
+                    itemList = {FuelTypeList}
+                    value={values.fuel || ""}
+                    onChange={handleChange} 
+                  />
+                  <ValidationType type="fuel" />
+            </Col>
+            {/* <Col lg={8} md={8} sm={24} xs={24}>
+                  <Input
                     type="text"
-                    name="description"
-                    placeholder={t("ServiceRequestForm_DescriptionPlaceHolder")} 
-                    value={values.description || ""}
+                    name="odometer"
+                    placeholder={t("ServiceRequestForm_odometerPlaceHolder")} 
+                    value={values.odometer || ""}
                     onChange={handleChange}
                   />
-                  <ValidationType type="description" />
-            </Col>
+                  <ValidationType type="odometer" />
+            </Col> */}
           </Row>
+
           <Row>
             <Col lg={24} md={24} sm={24} xs={24}>
                   <ButtonContainer>

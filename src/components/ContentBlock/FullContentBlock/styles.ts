@@ -52,12 +52,14 @@ export const CustomContainer = styled("div")<any>`
 export const Heading = styled("h6")`
   margin: 1.5rem 0 2rem 0;
   color:#f0da13;
-  font-style:bold;
+  font-family:"Poppins Extra Bold Italic";
 `;
 
 export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
   color:#FFFFFF;
+  font-family:"Poppins Light";
+  
 `;
 
 export const ContentWrapper = styled("div")`

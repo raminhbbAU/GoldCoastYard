@@ -38,7 +38,7 @@ function SellCar({ t }: any) {
 
     facebookPixelFBQ('SellCarPage_SubmitSellCarForm');
 
-    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","","","","")
+    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","","","","","","")
     .then ((res) => {
       console.log(res);
       SetFormState(2);

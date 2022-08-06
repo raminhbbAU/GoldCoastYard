@@ -106,12 +106,15 @@ export interface insuranceValidateProps {
 }
 
 export interface serviceValidateProps {
-  firstName: string;
-  lastName: string;
-  email: string;
+  name: string;
   phoneNumber: string;
-  state: string;
-  description: string;
+  email: string;
+  make: string;
+  model: string;
+  year: string;
+  cylinders:string;
+  fuel:string;
+  odometer:string;
 }
 
 export interface ContactValidateProps {
