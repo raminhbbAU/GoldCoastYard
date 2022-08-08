@@ -1,14 +1,14 @@
 import React,{ lazy,useEffect,useState } from 'react';
 import { withTranslation } from "react-i18next";
 import { SendEmail } from '../../API/api';
-import EvaluationForm from '../../components/EvaluationForm';
 import FormSubmitResponse from '../../components/FormSubmitResponse';
-import SellCarRequestForm from '../../components/SellCarRequestForm';
-import { MainContainer } from './styles';
+import SellCarRequestFormFull from '../../components/SellCarRequestFormFull';
+import { Content, InnerBannerContainer, InnerBannerImage, InnerBannerText, MainContainer, Overview, Title, Title2 } from './styles';
 import { EnvVarLoader } from '../../service/environmentvariable.loader';
 import { getDeviceInfo } from '../../service/deviceinfo.service';
 import { facebookPixelFBQ } from '../../service/facebookpixel.tracer';
 import { scrollTo } from '../../service/utility.service';
+import { Col, Row } from 'antd';
 
 
 const Container = lazy(() => import("../../components/common/Container"));
@@ -19,7 +19,6 @@ const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 function SellCar({ t }: any) {
 
   const [FormState,SetFormState] = useState(0);
-  const [requestValues,setRequestValues] = useState<any>({});
   const [contactRequestValues,setContactRequestValues] = useState();
 
   useEffect(() => {  
@@ -28,23 +27,19 @@ function SellCar({ t }: any) {
   }, []);
 
 
-  const onSubmitEvaluation = (data:any) => {
-    setRequestValues(data);
-    SetFormState(1);
-  }
 
   const onSubmitRequestForm = (data:any) => {
     setContactRequestValues(data);
 
     facebookPixelFBQ('SellCarPage_SubmitSellCarForm');
 
-    SendEmail("Sell Car Request", requestValues.rego,requestValues.state,requestValues.odometer,data.fullName,data.email,data.phone,data.condition,"","","","","","","","","","","")
+    SendEmail("Sell Car Request", data.rego,"",data.odometer,data.fullName,data.email,data.phone,data.comments,data.address,"","","","",data.make,data.model,data.year,"","","enquiry:" + data.enquiry)
     .then ((res) => {
       console.log(res);
-      SetFormState(2);
+      SetFormState(1);
     }).catch ((err) => {
       console.log(err);
-      SetFormState(3);
+      SetFormState(2);
     })
  
   }
@@ -63,20 +58,40 @@ function SellCar({ t }: any) {
       />     
 
 
-
-
       <MainContainer>
 
+
+        <Overview>
+          <Title>{t("SellCar_Title2")}</Title>
+          <Content>{t("SellCar_Description2")}</Content>   
+        </Overview>
+
+        <InnerBannerContainer>
+            <Row>
+              <Col lg={12} md={12} sm={24} xs={24}>
+                <InnerBannerImage src={process.env.PUBLIC_URL + '/img/gallery/Sellmycar.jpg'} />
+              </Col>
+              <Col lg={12} md={12} sm={24} xs={24}>
+                <InnerBannerText>{t("SellCar_InnerBannerText")}</InnerBannerText>
+              </Col>
+            </Row>
+        </InnerBannerContainer>
+
+
+        <Overview>
+          <Content>{t("SellCar_Description3")}</Content>   
+        </Overview>
+
+        <Overview>
+          <Title>{t("SellCar_Title4")}</Title>  
+        </Overview>
+
         { FormState == 0 && (
-          <EvaluationForm id="evaluationForm" title={t("EvaluationForm_Title")} content={t("EvaluationForm_Detail")} submitOnClick ={ (data:any) => onSubmitEvaluation(data)}/>
+          <SellCarRequestFormFull id="CarRequestForm" title={""} content={""}  submitOnClick ={ (data:any) => onSubmitRequestForm(data)}/>
         )}
 
-        { FormState == 1 && (
-          <SellCarRequestForm id="CarRequestForm" title={""} content={""} requestValues= {requestValues} submitOnClick ={ (data:any) => onSubmitRequestForm(data)}/>
-        )}
-
-        { (FormState == 2 || FormState == 3) && (
-          <FormSubmitResponse id="submitResult" status={FormState ==2 ? true : false} title={t("SellCarRequestForm_ResultTitle")} subtile={t("SellCarRequestForm_ResultDescription")} buttonText={t("SellCarRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
+        { (FormState == 1 || FormState == 2) && (
+          <FormSubmitResponse id="submitResult" status={FormState ==1 ? true : false} title={t("SellCarRequestForm_ResultTitle")} subtile={t("SellCarRequestForm_ResultDescription")} buttonText={t("SellCarRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
         )}
 
       </MainContainer>

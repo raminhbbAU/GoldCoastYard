@@ -1,7 +1,7 @@
 {
     "Menu":"Menu",
     "Home":"Home",
-    "UsedCar":"UsedCar",
+    "UsedCar":"Our Cars",
     "Finance":"Finance",
     "Service":"Service",
     "News":"News",
@@ -9,9 +9,9 @@
     "Contact":"Contact",
     "SellMyCar":"Sell My Car",
 
-    "Intro_Title":"Let's Find Your Next Car",
-    "Intro_Description":"Search for the best online inventories of used cars from dealers across the country",
-    "Intro_Button":[{"id":1,"color":"#FFF","title":"Read More","link":"usedcar"}] ,
+    "Intro_Title":"Let's find your next car",
+    "Intro_Description":"Search our online inventory of our used cars.",
+    "Intro_Button":[{"id":1,"color":"#FFF","title":"Our Cars","link":"usedcar"}] ,
 
     "Service_Title":"",
     "Service_Description":"",
@@ -75,9 +75,14 @@
     "CarDetails_Finance2BoxButton":"Apply Now", 
     "CarDetails_Finance2BoxLogo":"applyfinance.png", 
 
-    "SellCar_Title":"Thinking about selling your car?",
-    "SellCar_SubTitle":"FREE best price no obligation quote", 
+    "SellCar_Title":"Thinking about UPGRADING?",
+    "SellCar_SubTitle":"", 
     "SellCar_Description" : "Fill in the information below to help us find your car and get a FREE no obligation quote!",
+    "SellCar_Title2":"Sell my car / Trade in!",
+    "SellCar_Description2":"At GOLD COAST CAR YARD, we take the hassle out of selling your vehicle.\nOur team prides ourselves on our quick turnaround time.\nWe can assess your vehicle and present you with an offer in no time.",
+    "SellCar_InnerBannerText":"If you would like to trade in your vehicle for one of our vehicle  for one of our vehicles, we will assess your car and offer you a trade-in calue to lower the purchase price.", 
+    "SellCar_Description3":"If you want to learn more about what your vehicle is worth, complete the vehicle evaluation form below.\nAlternatively, bring your car into our dealership for a more accurate evaluation.", 
+    "SellCar_Title4":"Sell / Trade in enquiry",
 
     "EvaluationForm_Title":"Buy your car in two simple steps",
     "EvaluationForm_Detail":"Simply give your vehicle registration and mileage along with a way to receive your valuation.",
@@ -85,8 +90,6 @@
     "EvaluationForm_StatePlaceHolder":"State",
     "EvaluationForm_OdometerPlaceHolder":"Odometer",
     "EvaluationForm_EvaluateButton":"Check Value",
-
-
     "SellCarRequestForm_VehicleTitle":"Your vehicle",
     "SellCarRequestForm_VehicleDesc":"Please see your vehicle details below",
     "SellCarRequestForm_ModelTitle":"Model",
@@ -104,6 +107,9 @@
     "SellCarRequestForm_FormFullName":"Full Name",
     "SellCarRequestForm_FormEmail":"Email Address",
     "SellCarRequestForm_FormPhone":"Phone or Mobile",
+    "SellCarRequestForm_FormAddress":"Address",
+    "SellCarRequestForm_FormEnquiry":"Enquiry",
+    "SellCarRequestForm_FormComments":"Comments",
     "SellCarRequestForm_FormCondition":"Condition",
     "SellCarRequestForm_SubmitButton":"Request Evaluation Now",
     "SellCarRequestForm_ResultTitle":"You'r vehicle will be valuated!",
@@ -160,7 +166,7 @@
     "ServicePage_BannerDescription":"you can apply in few simple steps",
     "ServicePage_BannerButton":[{"id":1,"color":"#111","title":"Book Now","link":""}] ,
     "ServicePage_OverviewTitle1":"Vehicle servicing through GOLD COAST CAR YARD partners!",
-    "ServicePage_OverviewContent1":"Our partnering companies use state of the art manufacturing technology with a team of healthy qualified and trained mechanics to ensure your vehicle gives you many years of motoring satisfaction and safety to the highest standard.\nHandling all your servicing needs from log book servicing to RWC, Aircon re-gas, and wheels and tyers.\nServicing all makes and models.",
+    "ServicePage_OverviewContent1":"Our partnering companies use state of the art manufacturing technology with a team of healthy qualified and trained mechanics to ensure your vehicle gives you many years of motoring satisfaction and safety to the highest standard.\n\nHandling all your servicing needs from log book servicing to RWC, Aircon re-gas, and wheels and tyers.\nServicing all makes and models.",
     "ServicePage_OverviewTitle2":"",
     "ServicePage_OverviewTitle3":"Book a service today by filling out the service request from below",
     "ServiceRequestForm_Title":"",

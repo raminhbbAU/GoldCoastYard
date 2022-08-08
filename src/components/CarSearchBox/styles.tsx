@@ -3,7 +3,7 @@ import { Select } from 'antd';
 
 
 export const CustomSelect = styled(Select)`
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom:5px;
     margin-right:5px;
 
@@ -44,6 +44,7 @@ export const CardSection = styled("div")`
   text-align: center;
   justify-content: center;
   align-items: center;  
+  min-width:600px;
 `;
 
 export const SearchBoxSection = styled("section")`
@@ -73,6 +74,15 @@ export const FilterSection = styled("div")`
 export const CarListSection = styled("div")`
   display:flex;
   width: 100%;
+`;
+
+export const NotFoundSection = styled("div")`
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top:30px;
 `;
 
 

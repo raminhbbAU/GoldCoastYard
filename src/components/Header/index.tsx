@@ -70,9 +70,9 @@ const Header = ({ t }: any) => {
         {/* <CustomNavLinkSmall onClick={() => navigateTo("News")}>
           <Span>{t("News")}</Span>
         </CustomNavLinkSmall> */}
-        <CustomNavLinkSmall onClick={() => navigateTo("insurance")}>
+        {/* <CustomNavLinkSmall onClick={() => navigateTo("insurance")}>
           <Span>{t("Insurance")}</Span>
-        </CustomNavLinkSmall>
+        </CustomNavLinkSmall> */}
         <CustomNavLinkSmall onClick={() => navigateTo("Contact")}>
           <Span>{t("Contact")}</Span>
         </CustomNavLinkSmall>

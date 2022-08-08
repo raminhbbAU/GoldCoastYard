@@ -75,7 +75,8 @@ function Home({ t }: any) {
       
 
       <Stock
-       title={t("Stock_Title")}
+      //  title={t("Stock_Title")}
+       title={ availableCars.length + "+ vehicles are Available"}
        Stocks={availableCars}
        id="stock"
        exploreButton={true}

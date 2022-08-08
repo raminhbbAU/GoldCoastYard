@@ -43,6 +43,7 @@ export interface SelectProps {
   t: any;
   itemList: any;
   value:string;
+  objectField?:string;
   onChange: (
     event:
       | React.ChangeEvent<HTMLOptionElement>
@@ -83,7 +84,14 @@ export interface SellCarRequestValidateProps {
   fullName: string;
   email: string;
   phone: string;
-  condition: string;
+  address:string;
+  make: string;
+  model: string;
+  year: string;
+  odometer:string;
+  rego: string;
+  enquiry: string;
+  comments: string;
 }
 
 export interface financeValidateProps {

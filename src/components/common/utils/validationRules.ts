@@ -143,6 +143,21 @@ export function validateSellCarRequestForm(values: SellCarRequestValidateProps) 
   if (!values.phone) {
     errors.phone = "phone is required";
   }
+  if (!values.make) {
+    errors.make = "Make is required";
+  }
+  if (!values.model) {
+    errors.model = "Model is required";
+  }
+  if (!values.year) {
+    errors.year = "Year is required";
+  }
+  if (!values.odometer) {
+    errors.odometer = "Odometer is required";
+  }
+  if (!values.rego) {
+    errors.rego = "Rego is required";
+  }
   
   return errors;
 }

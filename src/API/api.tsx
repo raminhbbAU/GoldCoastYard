@@ -7,7 +7,12 @@ export function loadAvailableCars():any[] {
 
     //let res = await axios.get('./Stock Data.json');
     //console.log(carRepo);
-    return carRepo();
+    let res = carRepo().sort((i,j)=> {return j.id - i.id;})
+                       .sort((i,j) => {
+                            return Number(i.sold == undefined ? false : i.sold) - Number(j.sold == undefined ? false : j.sold);;
+                       });
+
+    return res;
 }
 
 export function loadCarInfo(id:any):any {
@@ -1150,6 +1155,7 @@ function carManufacture():any[] {
                "horsepower":0,
                "fuel":"Petrol",
                "finance":50,
+               "sold":true,
                "overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control"
             },
             {

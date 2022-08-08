@@ -113,7 +113,7 @@ const Footer = ({ t }: any) => {
                 <ParaLink onClick={() => navigateTo('SellCar')}>Value My Car</ParaLink>
                 <ParaLink onClick={() => navigateTo('Service')}>Book a Service</ParaLink>
                 <ParaLink onClick={() => navigateTo('Finance')}>Finance</ParaLink>
-                <ParaLink onClick={() => navigateTo('Insurance')}>Insurance</ParaLink>
+                <ParaLink>Insurance</ParaLink>
                 {/* <ParaLink onClick={() => navigateTo('')}>Terms & Conditions</ParaLink>
                 <ParaLink onClick={() => navigateTo('')}>Privacy Notice</ParaLink>
                 <ParaLink onClick={() => navigateTo('')}>Cookie Policies</ParaLink> */}

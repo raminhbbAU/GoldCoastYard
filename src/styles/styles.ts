@@ -293,7 +293,7 @@ export const Styles = createGlobalStyle`
 export const CustomYellowButton = styled("button")<any>`
   background-color: ${(p) => (p.backgroundColor ? p.backgroundColor : "#f0da13")};
   border: ${(p) => (p.border ? p.border : "0px solid transparent")};
-  border-radius: 10px;
+  border-radius: ${(p) => (p.borderradius ? p.borderradius : "10px")}; ;
   box-sizing: border-box;
   color: ${(p) => (p.color ? p.color : "#212121")};
   cursor: pointer;
@@ -309,7 +309,9 @@ export const CustomYellowButton = styled("button")<any>`
   touch-action: manipulation;
   vertical-align: middle;
   white-space: nowrap;
+  height: ${(p) => (p.height ? p.height : "auto")};
   width: ${(p) => (p.width ? p.width : "auto")};
+  min-width: ${(p) => (p.minWidth ? p.minWidth : "")};
   opacity: 1;
 
   &:hover,

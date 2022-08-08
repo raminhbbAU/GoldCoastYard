@@ -5,3 +5,5 @@ export const EmploymentTypeList = ["Full-time","Part-time","Casual","Contract","
 export const CylinderTypeList = ["3","4","5","6","8","10","12"]
 
 export const FuelTypeList = ["Petrol","Diesel","LPG"]
+
+export const EnquiryTypeList = ["Trade-in","Sale"]

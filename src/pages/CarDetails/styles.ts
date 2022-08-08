@@ -43,6 +43,10 @@ export const CarDetailIconContainer = styled("section")`
     border-bottom:1px solid #e6e6ec;
     border-right:5px solid #f0da13;
     border-left:5px solid #f0da13;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
     padding:15px;
     display:flex-row;
     align-items:center;
@@ -87,19 +91,19 @@ export const CarDetailListContainer = styled("section")`
 
 export const CarDetailListTitle = styled("p")`
   font-size: 16px;
-  font-style: bold;
-  font-weight: 700;
-  color: black;
+  font-weight: 600;
+  color: #a8a8a8;
   white-space:pre-line;
   padding:10px;
 `;
 
 export const CarDetailListValue = styled("p")`
   font-size: 16px;
-  font-weight: 500;
-  color: #a8a8a8;
+  font-weight: 700;
+  color: black;
   white-space:pre-line;
   padding:10px;
+  line-height:25px;
 `;
 
 
