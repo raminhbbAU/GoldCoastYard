@@ -25,7 +25,7 @@ export const Content = styled("p")<any>`
   white-space:pre-line;
   display: ${(p)=> (p.display ? p.display : "")} ;
   font-family:"Poppins Light";
-`;
+`;  
 
 export const Title2 = styled("p")`
   font-size: 22px;
