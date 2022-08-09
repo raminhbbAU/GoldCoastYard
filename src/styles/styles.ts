@@ -4,7 +4,7 @@ import styled,{ createGlobalStyle } from "styled-components";
 export const Styles = createGlobalStyle`
 
 
-    /* @font-face {
+    @font-face {
         font-family: "Poppins Black";
         src: url("/fonts/Poppins-Black.TTF") format("truetype");
     }
@@ -67,7 +67,7 @@ export const Styles = createGlobalStyle`
 
     @font-face {
         font-family: "Poppins Regular";
-        src: url("/fonts/Poppins-Regular.TTF") format("truetype");
+        src: url("/fonts/PoppinsRegular.TTF") format("truetype");
     }
 
     @font-face {
@@ -87,16 +87,16 @@ export const Styles = createGlobalStyle`
     @font-face {
         font-family: "Poppins Thin Italic";
         src: url("/fonts/Poppins-ThinItalic.TTF") format("truetype");
-    } */
+    } 
 
     @font-face {
-        font-family: "PoppinsExtraBoldItalic";
+        font-family: "Poppins Extra Bold Italic";
         src: url("/fonts/PoppinsExtraBoldItalic.TTF") format("truetype");
         font-style:bold;
     }
 
     @font-face {
-        font-family: "PoppinsLight";
+        font-family: "Poppins Light";
         src: url("/fonts/PoppinsLight.TTF") format("truetype");
     }
 
@@ -138,7 +138,7 @@ export const Styles = createGlobalStyle`
 
 
     * {
-        font-family: 'Century Gothic';
+        font-family: 'Century Gothic';//'Century Gothic';
     }
 
 
@@ -149,7 +149,7 @@ export const Styles = createGlobalStyle`
         outline: 0;
         background: #f1f2f2; //#f0f0ed;// #fffef9;
         overflow-x: hidden;
-        font-family: 'Century Gothic';
+        font-family: 'Century Gothic';//'Century Gothic';
     }
 
     a:hover {

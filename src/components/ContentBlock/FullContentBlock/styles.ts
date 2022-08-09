@@ -39,6 +39,8 @@ export const CustomContainer = styled("div")<any>`
   width:50%;
   position: absolute;
   right: ${props => props.leftToRight =="left" ? "0px": "auto"};
+  max-height: 400px;
+  min-height: 400px;
 
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 768px) 
@@ -52,20 +54,28 @@ export const CustomContainer = styled("div")<any>`
 export const Heading = styled("h6")`
   margin: 1.5rem 0 2rem 0;
   color:#f0da13;
-  font-family:"Poppins Extra Bold Italic";
+  //font-family:"Poppins Extra Bold Italic";
+  font-family:"Poppins Semi Bold";
 `;
 
 export const Content = styled("p")`
   margin: 1.5rem 0 2rem 0;
   color:#FFFFFF;
-  font-family:"Poppins Light";
+  font-family:"Poppins Extra Bold Italic";
   
 `;
 
 export const ContentWrapper = styled("div")`
   position: relative;
   max-width: 540px;
-  
+  max-height: 400px;
+  min-height: 400px;
+  display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
   /* Extra small devices (phones, 600px and down) */
   @media only screen and (max-width: 768px) 
   {
@@ -81,7 +91,7 @@ export const ContentWrapper = styled("div")`
 export const ButtonWrapper = styled("div")`
   display: flex;
   justify-content: center;
-  align-items: 'center',
+  align-items: 'center';
   @media screen and (min-width: 1024px) {
     max-width: 80%;
   }

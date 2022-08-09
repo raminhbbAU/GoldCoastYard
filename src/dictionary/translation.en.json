@@ -117,12 +117,21 @@
     "SellCarRequestForm_ButtonText":"Home Page",
 
 
-    "FinancePage_BannerTitle":"Finance Options",
-    "FinancePage_BannerDescription":"Get Fast and Easy Approval!",
+    "FinancePage_BannerTitle":"Apply Today",
+    "FinancePage_BannerDescription":"DRIVE AWAY TOMORROW",
     "FinancePage_BannerButton":[{"id":1,"color":"#111","title":"Apply Now","link":"Home"}] ,
     "FinancePage_Overview":"Wanting to purchase a new car but you need that little bit of extra help?\n\nWe've got you covered, with over 40+ lenders and fast easy approvals.\n\nFrom as little as $50 A WEEK you could be driving away happy today.",
     "FinanceRequestForm_Title":"Finance Request Form",
     "FinanceRequestForm_Description":"Fill the form below and get your finance.",
+
+    "FinancePage_Title2":"Are you looking to purchase a new car?",
+    "FinancePage_Description2":"Found the perfect vehicle from our used car range but need help sourcing car finance?Speed up your car buying experience with our flexible and affordable finance solutions!",
+    "FinancePage_Title3":"GOLD COAST CAR YARD",
+    "FinancePage_Description3":" finance team works with Australia’s top banks and financiers provide you with the best rates available.",
+    "FinancePage_InnerBanner1":"We can help you!",
+    "FinancePage_InnerBanner2":"Here at GOLD COAST CAR YARD, we have a team of brokers who work individually with our customers to tailor finance that best suits them.\nWith access to over 40+ lenders, meaning our customers can rest assured knowing they are getting the perfect car finance suited to them!",
+    "FinancePage_Title4":"How do I apply?",
+    "FinancePage_Description4":"Start your car finance application by filling out our form. For more information about financing your new car from GOLD COAST CAR YARD, please don't hesitate to contact us directly.",
     "FinanceRequestForm_FirstNamePlaceHolder":"Firstname",
     "FinanceRequestForm_LastNamePlaceHolder":"Lastname",
     "FinanceRequestForm_EmailPlaceHolder":"E-mail",

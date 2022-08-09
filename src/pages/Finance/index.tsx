@@ -1,9 +1,10 @@
+import { Col, Row } from "antd";
 import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
 import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
 import { scrollTo } from "../../service/utility.service";
-import { MainContainer, Overview } from "./styles";
+import { Content, InnerBannerContainer, InnerBannerText, MainContainer, Overview, Title } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
@@ -41,39 +42,73 @@ function Finance({ t }: any) {
     }
 
     return (
-        <Container id={"FinanceMainContainer"}>
-    
-           {/* <ScrollToTop /> */}
-           
-           <ContentBlock
-            type= "full"
-            title={t("FinancePage_BannerTitle")}
-            content={t("FinancePage_BannerDescription")}
-            picture={process.env.PUBLIC_URL + '/img/gallery/banner06.jpg'}
-            button={t("FinancePage_BannerButton", { returnObjects: true })}
-            id="finance"
-          />    
+      <Container id={"FinanceMainContainer"}>
+        {/* <ScrollToTop /> */}
 
-          <MainContainer>
+        <ContentBlock
+          type="full"
+          title={t("FinancePage_BannerTitle")}
+          content={t("FinancePage_BannerDescription")}
+          picture={process.env.PUBLIC_URL + "/img/gallery/banner06.jpg"}
+          //button={t("FinancePage_BannerButton", { returnObjects: true })}
+          id="finance"
+        />
 
+        <MainContainer>
+          <Overview>
+            <Title>{t("FinancePage_Title2")}</Title>
+            <Content>{t("FinancePage_Description2")}</Content>
+          </Overview>
 
-            <Overview>
-              {t("FinancePage_Overview")}
-            </Overview>
-            
-            { FormState == 0 && (
-              <FinanceRquestForm id="FinanceRequestForm" title={t("FinanceRequestForm_Title")} content={t("FinanceRequestForm_Description")} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
-            )}
+          <Overview>
+            <Title display={"inline"}>{t("FinancePage_Title3")}</Title>
+            <Content display={"inline"}>
+              {t("FinancePage_Description3")}
+            </Content>
+          </Overview>
 
-            { (FormState == 1 || FormState == 2) && (
-              <FormSubmitResponse id="submitResult" status={FormState ==1 ? true : false} title={t("FinanceRequestForm_ResultTitle")} subtile={t("FinanceRequestForm_ResultDescription")} buttonText={t("FinanceRequestForm_ButtonText")} buttonLink={"home"}></FormSubmitResponse>
-            )}
+          <InnerBannerContainer>
+            <Row>
+              <Col lg={8} md={8} sm={24} xs={24}>
+                <InnerBannerText >
+                  {t("FinancePage_InnerBanner1")}
+                </InnerBannerText>
+              </Col>
+              <Col lg={16} md={16} sm={24} xs={24}>
+                <InnerBannerText color={"white"} fontsize={"16px"} textalign={"left"}>
+                  {t("FinancePage_InnerBanner2")}
+                </InnerBannerText>
+              </Col>
+            </Row>
+          </InnerBannerContainer>
 
-          </MainContainer>
+          <Overview>
+            <Title>{t("FinancePage_Title4")}</Title>
+            <Content>{t("FinancePage_Description4")}</Content>
+          </Overview>
 
+          {FormState == 0 && (
+            <FinanceRquestForm
+              id="FinanceRequestForm"
+              title ={""} // title={t("FinanceRequestForm_Title")}
+              content={""} // content={t("FinanceRequestForm_Description")}
+              submitOnClick={(data: any) => onSubmitForm(data)}
+            />
+          )}
 
-        </Container>
-      );
+          {(FormState == 1 || FormState == 2) && (
+            <FormSubmitResponse
+              id="submitResult"
+              status={FormState == 1 ? true : false}
+              title={t("FinanceRequestForm_ResultTitle")}
+              subtile={t("FinanceRequestForm_ResultDescription")}
+              buttonText={t("FinanceRequestForm_ButtonText")}
+              buttonLink={"home"}
+            ></FormSubmitResponse>
+          )}
+        </MainContainer>
+      </Container>
+    );
 
 }
 

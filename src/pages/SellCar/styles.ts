@@ -10,17 +10,21 @@ export const Overview = styled("div")`
   margin-bottom:35px;
 `;
 
-export const Title = styled("p")`
+export const Title = styled("p")<any>`
   font-size: 22px;
   font-weight: 800;
   color: #474747;
   white-space:pre-line;
+  display: ${(p)=> (p.display ? p.display : "")} ;
+  font-family:"Poppins Semi Bold";
 `;
 
-export const Content = styled("p")`
+export const Content = styled("p")<any>`
   font-size: 22px;
   color: #474747;
   white-space:pre-line;
+  display: ${(p)=> (p.display ? p.display : "")} ;
+  font-family:"Poppins Light";
 `;
 
 export const Title2 = styled("p")`
@@ -36,6 +40,14 @@ export const InnerBannerContainer = styled("div")`
   border-radius:5px;
   height:350px;
   margin-bottom:35px;
+
+  /* Extra small devices (phones, 768px and down) */
+  @media only screen and (max-width: 768px) 
+  {
+    height:700px;
+  }
+
+
 `;
 
 export const InnerBannerImage = styled("img")`

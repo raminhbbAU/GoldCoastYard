@@ -61,6 +61,7 @@ export const Title = styled("p")`
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 
+  font-family:"Poppins Semi Bold";
 `;
 
 export const Price = styled("p")`
@@ -69,6 +70,7 @@ export const Price = styled("p")`
   color: #424242;
   font-weight: 900;
   text-align:left;
+  font-family:"Poppins Semi Bold Italic";
 `;
 
 export const FooterTitle = styled("p")`
