@@ -55,7 +55,7 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled("p")`
-  color: #dcc709;
+  color: #9e8f06;// #dcc709;
   font-size: 15px;
   font-weight: 700;
   white-space: nowrap; 
@@ -73,15 +73,15 @@ export const Price = styled("p")`
 
 export const FooterTitle = styled("p")`
   font-size: 8px;
-  font-weight: 800;
-  color:#424242;
+  font-weight: 500;
+  color:#a8a8a8;
 `;
 
 
 export const FooterContent = styled("p")`
   font-size: 10px;
-  font-weight: 500;
-  color: #a8a8a8;
+  font-weight: 800;
+  color: #424242;
   white-space: nowrap; 
   overflow: hidden;
   text-overflow: ellipsis; 

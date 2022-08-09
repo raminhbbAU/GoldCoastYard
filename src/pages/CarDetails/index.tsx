@@ -479,7 +479,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                   />
                   <OfferBox
                     title={t("CarDetails_FinanceBoxTitle")}
-                    price={carInfo.sold ? "SOLD" : "$ " + carInfo.price.toLocaleString() }
+                    price={carInfo.sold ? "SOLD" : "$ " + carInfo.finance.toLocaleString() }
                     priceDetail={t("CarDetails_FinanceBoxDetail")}
                     buttonText={t("CarDetails_FinanceBoxApplyTitle")}
                     color={"black"}
