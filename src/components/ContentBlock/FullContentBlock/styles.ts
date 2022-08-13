@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface StyleProps {
   image?: string;
+  imageMobile?: string;
   minimumheight?:any;
 } 
 
@@ -23,8 +24,12 @@ export const FullBlockContainer = styled.section<StyleProps>`
   /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
   {
-      background-image:none;
-      background-color:black;
+      //background-image:none;
+      //background-color:black;
+      background-image: url(${props => props.imageMobile});
+      background-repeat:no-repeat;
+      background-size: 600px 100%;
+
       display:flex;
       text-align: center;
       justify-content: center;
