@@ -45,7 +45,8 @@ function UsedCar({ t }: any) {
         title={t("Intro_Title")}
         content={t("Intro_Description")}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner07.jpg'}
-        id="home"
+        pictureMobile={process.env.PUBLIC_URL + '/img/gallery/banner07-mobile.jpg'}
+        id="usedcar"
       />
 
       <CarSearchBox
@@ -60,7 +61,7 @@ function UsedCar({ t }: any) {
         picture={process.env.PUBLIC_URL + '/img/gallery/INSURANCE-banner.jpg'}
         button={t("SearchBoxFinanceButton", { returnObjects: true })}
         leftToRight={"left"}
-        id="home"
+        id="finance"
       />
 
     </Container>

@@ -26,7 +26,8 @@ export const FullBlockContainer = styled.section<StyleProps>`
   {
       //background-image:none;
       //background-color:black;
-      background-image: url(${props => props.imageMobile});
+      background-image: url(${props => props.imageMobile ? props.imageMobile: "none"});
+      background-color: ${props => props.imageMobile ? "": "black"};
       background-repeat:no-repeat;
       background-size: 600px 100%;
 

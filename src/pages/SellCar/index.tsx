@@ -53,7 +53,8 @@ function SellCar({ t }: any) {
         type= "full"
         title={t("SellCar_Title")}
         content={t("SellCar_SubTitle")}
-        picture={process.env.PUBLIC_URL + '/img/gallery/banner06.jpg'}
+        picture={process.env.PUBLIC_URL + '/img/gallery/banner07.jpg'}
+        pictureMobile={process.env.PUBLIC_URL + '/img/gallery/banner07-mobile.jpg'}
         id="sellcar"
       />     
 
