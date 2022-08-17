@@ -49,7 +49,6 @@ function Home({ t }: any) {
         content={t("Intro_Description")}
         button={t("Intro_Button", { returnObjects: true })}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner04.jpg'}
-        pictureMobile={process.env.PUBLIC_URL + '/img/gallery/banner04-mobile.jpg'}
         id="home"
        />
 
