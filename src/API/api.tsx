@@ -999,7 +999,7 @@ function carManufacture():any[] {
             "modelId":18,
             "title":"Lexus RX300 2003",
             "manufacture":"Lexus",
-            "body":"Wagon",
+            "body":"SUV",
             "model":"RX330 Sports MCU38R",
             "cylinders":6,
             "horsepower":0,
@@ -1022,7 +1022,7 @@ function carManufacture():any[] {
             "modelId":17,
             "title":"Nissan Cube 2005",
             "manufacture":"Nissan",
-            "body":"Hatchback",
+            "body":"People Mover",
             "model":"Cube",
             "cylinders":4,
             "horsepower":0,
@@ -1471,7 +1471,7 @@ function carManufacture():any[] {
             "vin":"JMOKE102100121845",
             "price":14990,
             "horsepower":0,
-            "fuel":"Petrol",
+            "fuel":"Diesel",
             "finance":50,
             "sold":false,
             "overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control"
@@ -1494,7 +1494,7 @@ function carManufacture():any[] {
             "vin":"0",
             "price":16990,
             "horsepower":0,
-            "fuel":"Petrol",
+            "fuel":"Diesel",
             "finance":50,
             "sold":false,
             "overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control"
@@ -1574,7 +1574,7 @@ function carManufacture():any[] {
             "modelId":1,
             "title":"Mazda 6 2015",
             "manufacture":"Mazda",
-            "body":"Wagon",
+            "body":"Sedan",
             "model":"6",
             "cylinders":4,
             "odometer":121678,
@@ -1689,7 +1689,7 @@ function carManufacture():any[] {
             "modelId":6,
             "title":"Kia Rio 2014",
             "manufacture":"Kia",
-            "body":"Sedan",
+            "body":"Hatchback",
             "model":"Rio",
             "cylinders":4,
             "horsepower":0,
@@ -1712,7 +1712,7 @@ function carManufacture():any[] {
             "modelId":7,
             "title":"Kia Sportage SLI 2011",
             "manufacture":"Kia",
-            "body":"Wagon",
+            "body":"SUV",
             "model":"Sportage SLI",
             "cylinders":4,
             "horsepower":0,
@@ -2005,6 +2005,6 @@ function carManufacture():any[] {
             "sold":false,
             "overview":"6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)\nCruise Control"
          }
-      ]	
+      ]
     )
 }

@@ -8,6 +8,7 @@ export interface ContentBlockProps {
   id: string;
   type?: string;
   picture?: string;
+  imageMobile?: string;
   minHeight?:any;
   leftToRight?:string
 }

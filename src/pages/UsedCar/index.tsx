@@ -45,6 +45,7 @@ function UsedCar({ t }: any) {
         title={t("Intro_Title")}
         content={t("Intro_Description")}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner07.jpg'}
+        imageMobile={process.env.PUBLIC_URL + "/img/gallery/banner07-mobile.jpg"}
         id="home"
       />
 
@@ -58,6 +59,7 @@ function UsedCar({ t }: any) {
         title={t("SearchBoxFinanceTitle")}
         content={t("SearchBoxFinanceDescription")}
         picture={process.env.PUBLIC_URL + '/img/gallery/INSURANCE-banner.jpg'}
+        imageMobile={process.env.PUBLIC_URL + "/img/gallery/INSURANCE-banner-mobile.jpg"}
         button={t("SearchBoxFinanceButton", { returnObjects: true })}
         leftToRight={"left"}
         id="home"

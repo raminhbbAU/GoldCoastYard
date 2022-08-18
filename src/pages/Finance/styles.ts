@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const MainContainer = styled("section")` 
     margin-top: 50px;
     margin-left:20px;
-    margin-left:20px;
+    margin-right:20px;
 `;
 export const Overview = styled("div")`
   margin-bottom:35px;

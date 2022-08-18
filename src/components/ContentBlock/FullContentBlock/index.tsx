@@ -26,6 +26,7 @@ const FullBlock = ({
   t,
   id,
   picture,
+  imageMobile,
   leftToRight
 }: ContentBlockProps) => {
 
@@ -37,7 +38,7 @@ const FullBlock = ({
   
   return (
 
-    <FullBlockContainer id={id} image ={picture}>
+    <FullBlockContainer id={id} image ={picture} imageMobile={imageMobile}>
     <Fade direction={leftToRight=="left" ? "left" : "right"}>
       <CustomContainer leftToRight={leftToRight}>
         <Row >

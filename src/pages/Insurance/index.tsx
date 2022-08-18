@@ -52,6 +52,7 @@ function Insurance({ t }: any) {
         title={t("InsurancePage_BannerTitle")}
         content={t("InsurancePage_BannerDescription")}
         picture={process.env.PUBLIC_URL + '/img/gallery/banner06.jpg'}
+        imageMobile={process.env.PUBLIC_URL + "/img/gallery/banner06-mobile.jpg"}
         button={t("InsurancePage_BannerButton", { returnObjects: true })}
         id="Insurance"
       />    

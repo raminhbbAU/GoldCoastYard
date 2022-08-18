@@ -50,6 +50,7 @@ function Finance({ t }: any) {
           title={t("FinancePage_BannerTitle")}
           content={t("FinancePage_BannerDescription")}
           picture={process.env.PUBLIC_URL + "/img/gallery/banner06.jpg"}
+          imageMobile={process.env.PUBLIC_URL + "/img/gallery/banner06-mobile.jpg"}
           //button={t("FinancePage_BannerButton", { returnObjects: true })}
           id="finance"
         />
