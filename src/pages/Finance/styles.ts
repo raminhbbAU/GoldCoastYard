@@ -43,21 +43,24 @@ export const InnerBannerContainer = styled("div")`
 
 `;
 
-export const InnerBannerText = styled("p")<any>`
-  font-size:${(p)=> (p.fontsize ? p.fontsize : "22px")};
-  font-weight:700;
-  color:${(p)=> (p.color ? p.color : "#f0da13")};
+export const InnerBannerTextContainer = styled("div")`
+  width:100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
   align-content:center;
-  text-align:${(p)=> (p.textalign ? p.textalign : "center")};
-  height:100%;
+  text-align:center;
   padding-right:40px;
   padding-left:40px;
-  white-space:pre-line;
+`;
 
+export const InnerBannerText = styled("p")<any>`
+  font-size:${(p)=> (p.fontsize ? p.fontsize : "22px")};
+  font-weight:700;
+  color:${(p)=> (p.color ? p.color : "#f0da13")};
+  text-align:${(p)=> (p.textalign ? p.textalign : "center")};
+  white-space:pre-line;
 `;
 
 export const FormContainer = styled("section")` 

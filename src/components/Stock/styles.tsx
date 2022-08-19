@@ -40,6 +40,12 @@ export const PageTitle = styled("h6")`
   color:#616161;
   text-align:center;
 
+  @media only screen and (max-width: 768px) {
+    margin-right:5px;
+    font-size: 16px;
+  }
+
+
 `;
 
 export const StockName = styled("p")`

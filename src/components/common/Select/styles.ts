@@ -7,9 +7,10 @@ export const Container = styled("div")`
 `;
 
 export const StyledSelect = styled("select")`
-  font-size: 0.875rem;
   height: 55px;
   width:100%;
   background-color:#e6e6e6;
   padding-left:10px;
+  font-size: 12px;
+  font-family: 'Poppins Semi Bold';
 `;

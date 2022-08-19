@@ -7,6 +7,7 @@ export const Container = styled("div")`
 `;
 
 export const StyledInput = styled("input")`
-  font-size: 0.875rem;
+  font-size: 12px;
   background-color:#e6e6e6;
+  font-family: 'Poppins Semi Bold';
 `;

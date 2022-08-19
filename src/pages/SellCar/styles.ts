@@ -44,30 +44,46 @@ export const InnerBannerContainer = styled("div")`
   /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
   {
-    height:700px;
+    width:100%;
+    height:auto;
   }
 
 
 `;
 
-export const InnerBannerImage = styled("img")`
+export const InnerBannerImage = styled("img")<any>`
   width:100%;
   height:350px;
   border-top-left-radius:5px;
   border-bottom-left-radius:5px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    height:245px;
+  }
+
 `;
 
-export const InnerBannerText = styled("p")`
-  font-size:22px;
-  font-weight:700;
-  color:#f0da13;
+export const InnerBannerTextContainer = styled("div")`
+  height:350px;
+  width:100%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items:center;
   align-content:center;
   text-align:center;
-  height:100%;
   padding-right:40px;
   padding-left:40px;
+
+  @media only screen and (max-width: 768px) 
+  {
+    height:350px;
+  }
+`;
+
+export const InnerBannerText = styled("p")`
+  font-size:22px;
+  font-weight:700;
+  color:#f0da13; 
 `;

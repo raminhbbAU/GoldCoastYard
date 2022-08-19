@@ -17,8 +17,7 @@ import SpanInput from "../common/SpanInput";
 
 const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColumnSize }: ContactProps) => {
 
-  const dateFormat = 'HH:mm:ss';
-  const selectedStartDate = moment('2000-11-11 23:15:14', dateFormat);
+  const today = new Date().toISOString().split('T')[0];
 
   const { values, errors, handleChange, handleSubmit,setErrors,setValues } = useForm(
     validateTestDriveRequestForm
@@ -78,11 +77,13 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
           {title}
         </Title>
       </Row>
-      <Row>
-        <Detail>
-          {content}
-        </Detail>
-      </Row>
+      {content && (
+        <Row>
+          <Detail>
+            {content}
+          </Detail>
+        </Row>
+      )}
 
       <FormGroup onSubmit={FormSubmit}>
         <FormContainer>
@@ -136,7 +137,7 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
                     type="date"
                     name="date"
                     placeholder="Date"
-                    value={values.date || ""}
+                    value={values.date || today}
                     onChange={handleChange}
                   />
                   <ValidationType type="date" />
@@ -146,7 +147,7 @@ const TestDriveRequestForm = ({ title, content, id, t,submitOnClick,specificColu
                     type="time"
                     name="time"
                     placeholder="Time"
-                    value={values.time || ""}
+                    value={values.time || "09:00"}
                     onChange={handleChange}
                   />
                   <ValidationType type="time" />

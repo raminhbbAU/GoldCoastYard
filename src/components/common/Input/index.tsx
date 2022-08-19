@@ -11,7 +11,7 @@ const Input = ({ name, placeholder, onChange,withTitle,type, t }: InputProps) =>
     )}   
     <StyledInput
       type = {type}
-      placeholder={t(placeholder)}
+      placeholder={placeholder}
       name={name}
       id={name}
       onChange={onChange}

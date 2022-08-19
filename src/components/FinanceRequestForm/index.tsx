@@ -54,11 +54,13 @@ const FinanceRquestForm = ({ title, content, id, t,submitOnClick,specificColumnS
           {title}
         </Title>
       </Row>
-      <Row>
-        <Detail>
-          {content}
-        </Detail>
-      </Row>
+      {content && (
+        <Row>
+          <Detail>
+            {content}
+          </Detail>
+        </Row>
+      )}
 
       <FormGroup onSubmit={FormSubmit}>
         <FormContainer>

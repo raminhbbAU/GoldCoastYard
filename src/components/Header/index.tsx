@@ -55,16 +55,16 @@ const Header = ({ t }: any) => {
 
     return (
       <>
-        <CustomNavLinkSmall onClick={() => navigateTo("home")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("home")}}>
           <Span>{t("Home")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => navigateTo("usedcar")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("usedcar")}}>
           <Span>{t("UsedCar")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => navigateTo("Finance")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Finance")}}>
           <Span>{t("Finance")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => navigateTo("Service")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Service")}}>
           <Span>{t("Service")}</Span>
         </CustomNavLinkSmall>
         {/* <CustomNavLinkSmall onClick={() => navigateTo("News")}>
@@ -73,10 +73,10 @@ const Header = ({ t }: any) => {
         {/* <CustomNavLinkSmall onClick={() => navigateTo("insurance")}>
           <Span>{t("Insurance")}</Span>
         </CustomNavLinkSmall> */}
-        <CustomNavLinkSmall onClick={() => navigateTo("Contact")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Contact")}}>
           <Span>{t("Contact")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => navigateTo("SellCar")}>
+        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("SellCar")}}>
           <CustomYellowButton>{t("Sell My Car")}</CustomYellowButton>
         </CustomNavLinkSmall>
 

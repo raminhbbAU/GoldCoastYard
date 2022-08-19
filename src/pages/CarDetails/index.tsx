@@ -144,7 +144,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                 okButtonProps={{ style: { display: 'none' } }}
             >
                 { FormState == 0 && (
-                    <FinanceRequestForm id="EnquireRequestForm" title={"Enquire Request"} content={t("FinanceRequestForm_Description")} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
+                    <FinanceRequestForm id="EnquireRequestForm" title={"Enquire Request"} content={""} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
                 )}
                 
             </Modal>
@@ -182,7 +182,7 @@ function CarDetails ({t,vehicleInfo}:any) {
                 okButtonProps={{ style: { display: 'none' } }}
             >
                 { FormState == 0 && (
-                    <TestDriveRequestForm id="TestDriveRequestForm" title={"Test Drive Request"} content={t("FinanceRequestForm_Description")} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
+                    <TestDriveRequestForm id="TestDriveRequestForm" title={"Test Drive Request"} content={""} specificColumnSize={24} submitOnClick ={ (data:any) => onSubmitForm(data)}/>
                 )}
                 
             </Modal>

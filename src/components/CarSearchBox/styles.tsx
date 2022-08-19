@@ -44,7 +44,6 @@ export const CardSection = styled("div")`
   text-align: center;
   justify-content: center;
   align-items: center;  
-  min-width:600px;
 `;
 
 export const SearchBoxSection = styled("section")`
@@ -61,8 +60,8 @@ export const SearchBoxSection = styled("section")`
   /* Extra small devices (phones, 768px and down) */
   @media only screen and (max-width: 768px) 
   {
-    width:90%;
-    height:inherit;
+    width:380px;
+    max-width:380px;
   }
 
 `;

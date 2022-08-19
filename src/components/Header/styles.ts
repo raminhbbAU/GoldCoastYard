@@ -20,7 +20,7 @@ export const LogoContainer = styled("div")`
   text-align: left;
   justify-content: center;
   align-items: center;
-  padding-left:10px;
+  padding-left:15px;
 `;
 
 export const MenuContainer = styled("div")`

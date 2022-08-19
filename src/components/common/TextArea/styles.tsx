@@ -9,13 +9,15 @@ export const StyledContainer = styled("div")`
 
 export const StyledTextArea = styled("textarea")`
   resize: none;
-  font-size: 0.875rem;
   height: 55px;
+  font-size: 12px;
   background-color:#e6e6e6;
+  font-family: 'Poppins Semi Bold';
 `;
 
 export const Label = styled("label")`
   display: block;
   padding-bottom: 10px;
   text-transform: capitalize;
+  
 `;

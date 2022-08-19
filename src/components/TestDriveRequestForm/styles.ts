@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
 export const MainFormContainer = styled("div")`
-  margin-top:20px;
-  padding: 25px;
+  padding: 5px; 
   background-color:white;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px #f5f4f4;
-
-  /* @media only screen and (max-width: 1024px) {
-    padding: 10px;
-  } */
+  box-shadow: 1px 2px #C5C7C6  ;
+  border: solid 1px #C5C7C6;
+  border-radius: 16px; 
 `;
 
 export const FormGroup = styled("form")`

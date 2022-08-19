@@ -177,6 +177,10 @@ const Footer = ({ t }: any) => {
                         href={t("WhatsUp")}
                         src="whatsapp.svg"
               />
+              <SocialIcons
+                        href={t("Linkedin")}
+                        src="linkedin.svg"
+              />
               {/* <SocialIcons
                         href={t("Email")}
                         src="email.svg"

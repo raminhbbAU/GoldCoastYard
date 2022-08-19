@@ -1,10 +1,11 @@
 import { Col, Row } from "antd";
 import React, { lazy, useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
 import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
 import { scrollTo } from "../../service/utility.service";
-import { Content, InnerBannerContainer, InnerBannerText, MainContainer, Overview, Title } from "./styles";
+import { Content, InnerBannerContainer, InnerBannerText, InnerBannerTextContainer, MainContainer, Overview, Title } from "./styles";
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
@@ -50,7 +51,7 @@ function Finance({ t }: any) {
           title={t("FinancePage_BannerTitle")}
           content={t("FinancePage_BannerDescription")}
           picture={process.env.PUBLIC_URL + "/img/gallery/banner06.jpg"}
-          imageMobile={process.env.PUBLIC_URL + "/img/gallery/banner06-mobile.jpg"}
+          imageMobile={process.env.PUBLIC_URL + "/img/gallery/INSURANCE-banner-mobile.jpg"}
           //button={t("FinancePage_BannerButton", { returnObjects: true })}
           id="finance"
         />
@@ -71,14 +72,22 @@ function Finance({ t }: any) {
           <InnerBannerContainer>
             <Row>
               <Col lg={8} md={8} sm={24} xs={24}>
-                <InnerBannerText >
-                  {t("FinancePage_InnerBanner1")}
-                </InnerBannerText>
+                <Fade direction={"left"}>
+                  <InnerBannerTextContainer>
+                    <InnerBannerText >
+                      {t("FinancePage_InnerBanner1")}
+                    </InnerBannerText>
+                  </InnerBannerTextContainer>
+                </Fade>
               </Col>
               <Col lg={16} md={16} sm={24} xs={24}>
-                <InnerBannerText color={"white"} fontsize={"16px"} textalign={"left"}>
-                  {t("FinancePage_InnerBanner2")}
-                </InnerBannerText>
+                <Fade direction={"right"}>
+                  <InnerBannerTextContainer>
+                    <InnerBannerText color={"white"} fontsize={"16px"} textalign={"left"}>
+                      {t("FinancePage_InnerBanner2")}
+                    </InnerBannerText>
+                  </InnerBannerTextContainer>
+                </Fade>
               </Col>
             </Row>
           </InnerBannerContainer>
