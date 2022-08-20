@@ -37,7 +37,7 @@ const Header = ({ t }: any) => {
   };
 
   const onClose = () => {
-    setVisibility(!visible);
+      setVisibility(!visible);
   };
 
       
@@ -48,6 +48,7 @@ const Header = ({ t }: any) => {
   
   const navigateTo = (id: string) => {
     history.push(`/${id}`);
+    setVisibility(false);
   };
 
   const MenuItem = () => {
@@ -55,16 +56,16 @@ const Header = ({ t }: any) => {
 
     return (
       <>
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("home")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("home")}>
           <Span>{t("Home")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("usedcar")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("usedcar")}>
           <Span>{t("UsedCar")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Finance")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Finance")}>
           <Span>{t("Finance")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Service")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Service")}>
           <Span>{t("Service")}</Span>
         </CustomNavLinkSmall>
         {/* <CustomNavLinkSmall onClick={() => navigateTo("News")}>
@@ -73,10 +74,10 @@ const Header = ({ t }: any) => {
         {/* <CustomNavLinkSmall onClick={() => navigateTo("insurance")}>
           <Span>{t("Insurance")}</Span>
         </CustomNavLinkSmall> */}
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("Contact")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("Contact")}>
           <Span>{t("Contact")}</Span>
         </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => {onClose(); navigateTo("SellCar")}}>
+        <CustomNavLinkSmall onClick={() => navigateTo("SellCar")}>
           <CustomYellowButton>{t("Sell My Car")}</CustomYellowButton>
         </CustomNavLinkSmall>
 
