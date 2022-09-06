@@ -2517,7 +2517,7 @@ function carManufacture():any[] {
              "price": 10990,
              "fuel": "Petrol",
              "finance": 50,
-             "sold": true,
+             "sold": false,
              "overview": "6 Months Registration\n1 Year Warranty\nRoadworthy Certificate\nClear Title (no accident history)"
           }
        ]
