@@ -71,7 +71,7 @@ function CarDetails ({t,vehicleInfo}:any) {
         }
 
         const date1:any = new Date();
-        const date2:any = new Date('2022/09/29');
+        const date2:any = new Date('2022/10/05');
         const diffTime:any = date2 - date1;
         if (diffTime <=0) {
           setValidLicence(false);

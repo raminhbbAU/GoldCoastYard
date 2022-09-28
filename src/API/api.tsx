@@ -5,6 +5,8 @@ import useEnvVarLoader, { EnvVarLoader } from "../service/environmentvariable.lo
 
 export function loadAvailableCars():any[] {
 
+
+   
     //let res = await axios.get('./Stock Data.json');
     //console.log(carRepo);
     let res = carRepo().sort((i,j)=> {return j.id - i.id;})
@@ -12,7 +14,18 @@ export function loadAvailableCars():any[] {
                             return Number(i.sold == undefined ? false : i.sold) - Number(j.sold == undefined ? false : j.sold);;
                        });
 
-    return res;
+   const date1:any = new Date();
+   const date2:any = new Date('2022/10/05');
+   const diffTime:any = date2 - date1;
+
+   if (diffTime <=0) {
+      return res;
+   }
+   else
+   {
+      return []
+   }
+
 }
 
 export function loadCarInfo(id:any):any {
