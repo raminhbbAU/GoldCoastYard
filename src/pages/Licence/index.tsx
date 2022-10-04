@@ -26,12 +26,12 @@ function Licence() {
           </Row>  
           <Row>
             <Title>
-              {"Technical issue"}
+              {"www.gccy.com.au trial version has expired !!!"}
             </Title>
           </Row>
           <Row>
             <Detail>
-              {"Something wrong was happend, please feel free to contact the site administrator."}
+              {"The bill amount for the design and development of www.gccy.com.au hasn't been paid yet by the website owner and because of that, access to the website has been restricted."}
             </Detail>
           </Row>
           <Row>
@@ -40,9 +40,9 @@ function Licence() {
             </Title>
           </Row>
           <Row>
-            <a href="mailto:Raminhbb.au@gmail.com">
+            <a href="mailto:ramindev1990@gmail.com">
               <Detail>
-                {"RaminHbb.au@gmail.com"}
+                {"ramindev1990@gmail.com"}
               </Detail>
             </a>
           </Row>

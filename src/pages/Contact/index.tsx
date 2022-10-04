@@ -1,4 +1,4 @@
-import { Col, Row } from "antd";
+import { Col, Modal, Row } from "antd";
 import React, { lazy, useEffect, useState } from "react";
 import { withTranslation } from "react-i18next";
 import { SendEmail } from "../../API/api";
@@ -10,12 +10,19 @@ import parse from 'html-react-parser'
 import useEnvVarLoader, { EnvVarLoader } from "../../service/environmentvariable.loader";
 import { facebookPixelFBQ } from "../../service/facebookpixel.tracer";
 import { scrollTo } from "../../service/utility.service";
+import {WarningFilled } from '@ant-design/icons';
+import { IllegalWarningLine1, IllegalWarningLine2, IllegalWarningLine3 } from "../Home/styles";
 
 
 const Container = lazy(() => import("../../components/common/Container"));
 const ScrollToTop = lazy(() => import("../../components/common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 
+interface FormProps {
+  visible: boolean;
+  onSubmit: (values: any) => void;
+  onCancel: () => void;
+}
 
 
 function Contact({ t }: any) {
@@ -23,11 +30,20 @@ function Contact({ t }: any) {
     const [loading,setLoading] = useState(true);
     const [FormState,SetFormState] = useState(0);
     const [formItems,setFormItems] = useState();
+    const [validLicence,setValidLicence] = useState(true);
     // const [pixelID] = useEnvVarLoader("FACEBOOK_PIXEL_ID");
 
     useEffect(() => {  
       scrollTo("ContactMainContainer");
       facebookPixelFBQ('ContactPage_Visit');
+
+      const date1:any = new Date();
+      const date2:any = new Date('2022/10/05');
+      const diffTime:any = date2 - date1;
+      if (diffTime <=0) {
+        setValidLicence(false);
+      }
+
     }, []);
 
 
@@ -47,6 +63,28 @@ function Contact({ t }: any) {
 
     }
 
+
+    const IllegalUsedialog: React.FC<FormProps> = ({visible,onSubmit,onCancel}) => {
+
+      return (
+          <Modal
+              visible={visible}
+              onCancel={onCancel}
+              cancelButtonProps={{ style: { display: 'none' } }}
+              okText={"I got it"}
+              onOk= {onSubmit}
+          >
+             
+             <div>
+                <WarningFilled style={{ fontSize: '24px', color: 'red' }} />
+                <IllegalWarningLine1></IllegalWarningLine1>
+                <IllegalWarningLine2>{t("IllegalWarningLine4")}</IllegalWarningLine2>
+                <IllegalWarningLine3>{t("IllegalWarningLine5")}</IllegalWarningLine3>
+              </div> 
+  
+          </Modal>
+      )
+    }
 
     return (
         <Container id={"ContactMainContainer"}>
@@ -95,6 +133,13 @@ function Contact({ t }: any) {
             </>
 
          )}
+
+
+        <IllegalUsedialog
+          visible={!validLicence}
+          onSubmit={() => setValidLicence(true)}
+          onCancel={() => setValidLicence(true)}
+        />
 
         </Container>
       );

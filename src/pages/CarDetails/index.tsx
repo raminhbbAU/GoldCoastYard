@@ -211,9 +211,9 @@ function CarDetails ({t,vehicleInfo}:any) {
              
             <div>
               <WarningFilled style={{ fontSize: '24px', color: 'red' }} />
-              <IllegalWarningLine1>All rights and information of this website is belong to Mr.Mostafa, the owner of this business. (Gold Coast Car Yard).</IllegalWarningLine1>
-              <IllegalWarningLine2>We had a deal to develop and design this website for his business but after the completion of the project, he avoids paying the contract amount (3600 AUD).</IllegalWarningLine2>
-              <IllegalWarningLine3>Just for your information to realize how unprofessional and cheap he is.</IllegalWarningLine3>
+              <IllegalWarningLine1></IllegalWarningLine1>
+              <IllegalWarningLine2>{t("IllegalWarningLine4")}</IllegalWarningLine2>
+              <IllegalWarningLine3>{t("IllegalWarningLine5")}</IllegalWarningLine3>
             </div> 
   
           </Modal>
